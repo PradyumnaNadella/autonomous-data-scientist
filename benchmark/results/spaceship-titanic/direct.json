@@ -1,0 +1,35 @@
+{
+  "task": "spaceship-titanic",
+  "system": "direct",
+  "metric": "accuracy",
+  "dropped_columns": [
+    "Cabin",
+    "Name"
+  ],
+  "results": [
+    {
+      "model": "logistic_regression",
+      "cv_score": 0.7849,
+      "holdout_score": 0.7832,
+      "seconds": 0.4
+    },
+    {
+      "model": "random_forest",
+      "cv_score": 0.7834,
+      "holdout_score": 0.7861,
+      "seconds": 2.6
+    },
+    {
+      "model": "lightgbm",
+      "cv_score": 0.7895,
+      "holdout_score": 0.8039,
+      "seconds": 0.7
+    },
+    {
+      "model": "mlp",
+      "cv_score": 0.7932,
+      "holdout_score": 0.7907,
+      "seconds": 28.5
+    }
+  ]
+}
