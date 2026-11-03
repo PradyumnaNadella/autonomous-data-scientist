@@ -1,0 +1,9 @@
+name: spaceship-titanic
+competition: spaceship-titanic
+train_file: train.csv
+target: Transported
+id_column: PassengerId
+task_type: classification
+metric: accuracy
+holdout_fraction: 0.2
+seed: 42
