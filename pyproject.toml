@@ -1,0 +1,23 @@
+[project]
+name = "autonomousds"
+version = "0.1.0"
+description = "AI agents that solve ML problems end to end"
+requires-python = ">=3.10"
+dependencies = [
+    "langchain",
+    "langchain-google-genai",
+    "pyyaml",
+    "python-dotenv",
+    "pandas",
+    "scikit-learn",
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "ruff"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]

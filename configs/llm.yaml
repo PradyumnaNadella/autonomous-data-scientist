@@ -1,0 +1,18 @@
+# All LLM calls read these settings. Free by default.
+default_model: google_genai:gemini-3.1-flash-lite
+# default_model: google_genai:gemini-3.5-flash-lite
+
+allow_paid: false          # paid calls refused unless true (and ALLOW_PAID=true in .env)
+max_retries: 0             # no automatic retries
+max_output_tokens: 1000    # cap every response
+max_input_tokens: 20000    # refuse oversized prompts
+timeout_seconds: 60
+
+per_run_budget_usd: 0.25   # stop a single agent run at this estimated spend
+total_budget_usd: 2.00     # stop everything at this estimated total
+
+# Prices per 1M tokens, used only to ESTIMATE cost in the log
+prices:
+  google_genai:gemini-3.1-flash-lite: {input: 0.25, output: 1.50}
+  google_genai:gemini-3.5-flash-lite: {input: 0.30, output: 2.50}
+  
