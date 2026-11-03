@@ -10,6 +10,7 @@ dependencies = [
     "python-dotenv",
     "pandas",
     "scikit-learn",
+    "kaggle",
 ]
 
 [project.optional-dependencies]
