@@ -1,0 +1,78 @@
+{
+  "task": "spaceship-titanic",
+  "system": "automl",
+  "metric": "accuracy",
+  "time_limit_seconds": 300,
+  "preset": "best_quality",
+  "best_model": "WeightedEnsemble_L2",
+  "holdout_score": 0.801,
+  "seconds": 319.2,
+  "results": [
+    {
+      "model": "XGBoost_BAG_L1",
+      "cv_score": 0.8003,
+      "holdout_score": 0.8056,
+      "fit_seconds": 10.8
+    },
+    {
+      "model": "WeightedEnsemble_L2",
+      "cv_score": 0.8033,
+      "holdout_score": 0.801,
+      "fit_seconds": 103.7
+    },
+    {
+      "model": "LightGBMXT_BAG_L1",
+      "cv_score": 0.8024,
+      "holdout_score": 0.7982,
+      "fit_seconds": 4.6
+    },
+    {
+      "model": "CatBoost_BAG_L1",
+      "cv_score": 0.8017,
+      "holdout_score": 0.7964,
+      "fit_seconds": 43.5
+    },
+    {
+      "model": "LightGBM_BAG_L1",
+      "cv_score": 0.8,
+      "holdout_score": 0.7959,
+      "fit_seconds": 5.5
+    },
+    {
+      "model": "RandomForestGini_BAG_L1",
+      "cv_score": 0.7794,
+      "holdout_score": 0.7936,
+      "fit_seconds": 2.4
+    },
+    {
+      "model": "RandomForestEntr_BAG_L1",
+      "cv_score": 0.7788,
+      "holdout_score": 0.789,
+      "fit_seconds": 2.2
+    },
+    {
+      "model": "NeuralNetFastAI_BAG_L1",
+      "cv_score": 0.7935,
+      "holdout_score": 0.7867,
+      "fit_seconds": 54.6
+    },
+    {
+      "model": "ExtraTreesGini_BAG_L1",
+      "cv_score": 0.7827,
+      "holdout_score": 0.7861,
+      "fit_seconds": 3.7
+    },
+    {
+      "model": "ExtraTreesEntr_BAG_L1",
+      "cv_score": 0.7837,
+      "holdout_score": 0.7809,
+      "fit_seconds": 1.9
+    },
+    {
+      "model": "NeuralNetTorch_BAG_L1",
+      "cv_score": 0.7575,
+      "holdout_score": 0.7619,
+      "fit_seconds": 28.5
+    }
+  ]
+}
