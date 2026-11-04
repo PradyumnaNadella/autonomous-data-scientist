@@ -1,6 +1,7 @@
 """Direct baseline: apply each ML family with default settings. No LLM, no tuning."""
 from __future__ import annotations
 
+import warnings
 import json
 import time
 
@@ -42,6 +43,46 @@ def models_for(task: Task) -> dict:
         "mlp": MLPRegressor(max_iter=500, random_state=s),
     }
 
+def clean_generic(train: pd.DataFrame, test: pd.DataFrame, skip: list[str]):
+    """Dataset-agnostic fixes. Decisions are made on train, applied to both."""
+    train, test = train.copy(), test.copy()
+    for col in train.columns:
+        if col in skip:
+            continue
+        s = train[col]
+        present = s.notna().sum()
+
+        # True/False columns -> 1/0
+        if s.dtype == bool:
+            train[col] = s.astype(int)
+            test[col] = test[col].astype(int)
+            continue
+        if s.dtype != object or present == 0:
+            continue
+
+        # Numbers stored as text: "$1,200", "45%", " 3.5 "
+        def to_num(x):
+            return pd.to_numeric(x.astype(str).str.replace(r"[,$%\s]", "", regex=True),
+                                 errors="coerce")
+        if to_num(s).notna().sum() >= 0.9 * present:
+            train[col], test[col] = to_num(s), to_num(test[col])
+            continue
+
+        # Date columns -> year, month, weekday
+        with warnings.catch_warnings():
+            warnings.simplefilter("ignore")
+            parsed = pd.to_datetime(s, errors="coerce", format="mixed")
+        if parsed.notna().sum() >= 0.9 * present:
+            for df in (train, test):
+                with warnings.catch_warnings():
+                    warnings.simplefilter("ignore")
+                    d = pd.to_datetime(df[col], errors="coerce", format="mixed")
+                df[f"{col}_year"] = d.dt.year
+                df[f"{col}_month"] = d.dt.month
+                df[f"{col}_weekday"] = d.dt.dayofweek
+                df.drop(columns=[col], inplace=True)
+    return train, test
+
 
 def build_features(task: Task, train: pd.DataFrame, test: pd.DataFrame):
     """Generic preprocessing with no knowledge of the dataset."""
@@ -69,6 +110,7 @@ def preprocessor() -> ColumnTransformer:
 def run_direct(task: Task) -> list[dict]:
     train = pd.read_csv(task.agent_dir / "train.csv")
     test = pd.read_csv(task.agent_dir / "test.csv")
+    train, test = clean_generic(train, test, skip=[task.target, task.id_column])
     X, X_test, dropped = build_features(task, train, test)
     y = train[task.target]
     print(f"Task: {task.name} | metric: {task.metric} | dropped columns: {dropped}")
@@ -91,8 +133,12 @@ def run_direct(task: Task) -> list[dict]:
 
     out_dir = RESULTS_DIR / task.name
     out_dir.mkdir(parents=True, exist_ok=True)
-    out = {"task": task.name, "system": "direct",
-            "metric": task.metric, "dropped_columns": dropped, "results": results}
+    pick = min if task.metric == "rmse" else max
+    best = pick(results, key=lambda r: r["cv_score"])   # choose by validation only
+    print(f"  CHOSEN by CV: {best['model']}  hidden_test={best['holdout_score']:.4f}")
+    out = {"task": task.name, "system": "direct", "metric": task.metric,
+           "best_model": best["model"], "holdout_score": best["holdout_score"],
+           "dropped_columns": dropped, "results": results}
     (out_dir / "direct.json").write_text(json.dumps(out, indent=2))
     print(f"Saved: {out_dir / 'direct.json'}")
     return results

@@ -2,6 +2,8 @@
   "task": "spaceship-titanic",
   "system": "direct",
   "metric": "accuracy",
+  "best_model": "mlp",
+  "holdout_score": 0.7907,
   "dropped_columns": [
     "Cabin",
     "Name"
@@ -17,19 +19,19 @@
       "model": "random_forest",
       "cv_score": 0.7834,
       "holdout_score": 0.7861,
-      "seconds": 2.6
+      "seconds": 2.5
     },
     {
       "model": "lightgbm",
       "cv_score": 0.7895,
       "holdout_score": 0.8039,
-      "seconds": 0.7
+      "seconds": 0.6
     },
     {
       "model": "mlp",
       "cv_score": 0.7932,
       "holdout_score": 0.7907,
-      "seconds": 28.5
+      "seconds": 29.7
     }
   ]
 }
