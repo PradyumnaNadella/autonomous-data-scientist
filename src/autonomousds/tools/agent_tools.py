@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import pandas as pd
+import json
 from langchain_core.tools import tool
 
 from autonomousds.benchmark.tasks import Task
@@ -9,6 +10,7 @@ from autonomousds.sandbox.docker_runner import DockerSandbox
 
 MAX_READ_CHARS = 3000
 HIDDEN_FILES = ("step_", "sandbox_log")     # sandbox bookkeeping, not for the agent
+MIN_EXPERIMENTS = 2
 
 
 def setup_run(task: Task, run_id: str | None = None,
@@ -21,7 +23,7 @@ def setup_run(task: Task, run_id: str | None = None,
 
 
 def make_tools(sb: DockerSandbox, task: Task):
-    state = {"submitted": None}             # filled when predictions are accepted
+    state = {"submitted": None, "experiments": []}  # filled when predictions are accepted
 
     @tool(parse_docstring=True)
     def run_python(code: str) -> str:
@@ -63,6 +65,23 @@ def make_tools(sb: DockerSandbox, task: Task):
         return path.read_text(errors="replace")[:MAX_READ_CHARS]
 
     @tool(parse_docstring=True)
+    def log_experiment(model: str, cv_score: float, notes: str = "") -> str:
+        """Record the cross-validation result of one model.
+
+        Call this once for every model you evaluate, using the same CV setup.
+
+        Args:
+            model: Short model description, e.g. "LightGBM, default params".
+            cv_score: Mean cross-validation score on train.csv.
+            notes: Optional details, e.g. features or parameters used.
+        """
+        entry = {"model": model, "cv_score": cv_score, "notes": notes}
+        state["experiments"].append(entry)
+        with (sb.workdir / "experiments.jsonl").open("a") as f:
+            f.write(json.dumps(entry) + "\n")
+        return f"Logged experiment #{len(state['experiments'])}: {model} = {cv_score}"    
+    
+    @tool(parse_docstring=True)
     def submit_predictions(filename: str = "predictions.csv") -> str:
         """Check and submit the final predictions CSV.
 
@@ -73,6 +92,10 @@ def make_tools(sb: DockerSandbox, task: Task):
             filename: CSV in the working directory with one row per test.csv row
                 and two columns: the id column and the target column.
         """
+        models = {e["model"] for e in state["experiments"]}
+        if len(models) < MIN_EXPERIMENTS:
+            return (f"Not accepted: log at least {MIN_EXPERIMENTS} experiments with "
+                    f"different models first (logged: {len(models)}).")        
         path = sb.workdir / filename
         if not path.is_file():
             return f"Not accepted: '{filename}' does not exist."
@@ -103,4 +126,4 @@ def make_tools(sb: DockerSandbox, task: Task):
         state["submitted"] = filename
         return "Accepted. Predictions are final."
 
-    return [run_python, list_files, read_file, submit_predictions], state
+    return [run_python, list_files, read_file, log_experiment, submit_predictions], state

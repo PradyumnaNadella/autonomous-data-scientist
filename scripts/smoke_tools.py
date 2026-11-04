@@ -11,7 +11,12 @@ print("1. list_files:\n", t["list_files"].invoke({}))
 print("\n2. run_python:\n", t["run_python"].invoke({"code":
     "import pandas as pd\ndf = pd.read_csv('train.csv')\nprint(df.shape)"}))
 
+print("\n2b. submit before logging experiments (should be rejected):")
+print(t["submit_predictions"].invoke({"filename": "predictions.csv"}))
+
 print("\n3. bad submission (1/0 instead of True/False):")
+t["log_experiment"].invoke({"model": "baseline A", "cv_score": 0.5})
+t["log_experiment"].invoke({"model": "baseline B", "cv_score": 0.5})
 t["run_python"].invoke({"code":
     "import pandas as pd\nt = pd.read_csv('test.csv')\n"
     "pd.DataFrame({'PassengerId': t.PassengerId, 'Transported': 1})"

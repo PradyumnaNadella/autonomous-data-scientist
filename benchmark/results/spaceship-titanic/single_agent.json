@@ -1,0 +1,132 @@
+{
+  "task": "spaceship-titanic",
+  "system": "single_agent",
+  "metric": "accuracy",
+  "runs": [
+    {
+      "run_id": "single-spaceship-titanic-f023b7",
+      "experiments": [
+        {
+          "model": "RandomForestClassifier, default params",
+          "cv_score": 0.7864543390449394,
+          "notes": "Features: Age, RoomService, FoodCourt, ShoppingMall, Spa, VRDeck, HomePlanet, CryoSleep, Destination, VIP. Simple imputation."
+        },
+        {
+          "model": "LogisticRegression, default params",
+          "cv_score": 0.786024029087298,
+          "notes": "Features: Age, RoomService, FoodCourt, ShoppingMall, Spa, VRDeck, HomePlanet, CryoSleep, Destination, VIP. Simple imputation."
+        }
+      ],
+      "submitted": true,
+      "holdout_score": 0.7844,
+      "tool_calls": 7,
+      "seconds": 23.7,
+      "error": null,
+      "final_summary": "The task was to predict whether passengers were 'Transported' based on the provided data. After performing brief data exploration and handling missing values with simple imputation (median for numeric, most-frequent for categorical), I compared two model families using 5-fold cross-validation:\n\n- **RandomForestClassifier**: 78.6% CV accuracy\n- **LogisticRegression**: 78.6% CV accuracy\n\nThe Random Forest was selected as the final model and re-trained on the full training set with an increased number of estimators (200) to improve generalization.\n\n**Final model:** RandomForestClassifier (n_estimators=200)\n**CV score:** ~0.786\n**Key features:** Age, RoomService, FoodCourt, ShoppingMall, Spa, VRDeck, HomePlanet, CryoSleep, Destination, VIP.",
+      "llm_calls": 8,
+      "input_tokens": 16168,
+      "output_tokens": 1390,
+      "est_cost_usd": 0.0061
+    },
+    {
+      "run_id": "single-spaceship-titanic-edb571",
+      "experiments": [
+        {
+          "model": "Random Forest, default params",
+          "cv_score": 0.784586,
+          "notes": "Includes Cabin split engineering, imputing missing values, scaling numeric."
+        },
+        {
+          "model": "Logistic Regression, max_iter=1000",
+          "cv_score": 0.789186,
+          "notes": "Includes Cabin split engineering, imputing missing values, scaling numeric."
+        }
+      ],
+      "submitted": true,
+      "holdout_score": 0.7918,
+      "tool_calls": 8,
+      "seconds": 24.8,
+      "error": null,
+      "final_summary": "The final model used was a Logistic Regression pipeline with median imputation and standard scaling for numeric features, and most-frequent imputation and one-hot encoding for categorical features. The model was trained on the entire training set after achieving the highest accuracy in cross-validation (0.789). Key features included basic demographic information (Age, HomePlanet), sleep status (CryoSleep), expenditure columns (RoomService, FoodCourt, etc.), and engineered features extracted from the 'Cabin' column (Deck and Side).",
+      "llm_calls": 9,
+      "input_tokens": 20174,
+      "output_tokens": 1738,
+      "est_cost_usd": 0.0077
+    },
+    {
+      "run_id": "single-spaceship-titanic-09986e",
+      "experiments": [
+        {
+          "model": "RandomForestClassifier, default params",
+          "cv_score": 0.784586,
+          "notes": "Standard preprocessing: median imputation, scaling, one-hot encoding, feature engineering on Cabin."
+        },
+        {
+          "model": "GradientBoostingClassifier, default params",
+          "cv_score": 0.79724,
+          "notes": "Standard preprocessing: median imputation, scaling, one-hot encoding, feature engineering on Cabin."
+        }
+      ],
+      "submitted": true,
+      "holdout_score": 0.8085,
+      "tool_calls": 9,
+      "seconds": 27.8,
+      "error": null,
+      "final_summary": "The machine learning task for predicting 'Transported' passengers was completed using a `GradientBoostingClassifier`.\n\n### Summary:\n- **Final Model:** GradientBoostingClassifier\n- **CV Score:** 0.7972 (GradientBoosting) vs 0.7846 (RandomForest)\n- **Key Features:**\n    - Cabin features (Deck, Side, Num) were engineered by splitting the 'Cabin' column.\n    - Numerical features (Age, RoomService, FoodCourt, ShoppingMall, Spa, VRDeck) were imputed with the median and scaled.\n    - Categorical features (HomePlanet, CryoSleep, Destination, VIP, Deck, Side) were imputed with the most frequent value and one-hot encoded.\n\nThe preprocessing pipeline ensured that all transformations were fit on training data and applied consistently to the test data. The submission was accepted.",
+      "llm_calls": 10,
+      "input_tokens": 20887,
+      "output_tokens": 1610,
+      "est_cost_usd": 0.0076
+    },
+    {
+      "run_id": "single-spaceship-titanic-961635",
+      "experiments": [
+        {
+          "model": "RandomForest, default params",
+          "cv_score": 0.7861664658208731,
+          "notes": "Basic preprocessing: median imputation for numerical, most frequent for categorical, OHE for categorical. Cabin split."
+        },
+        {
+          "model": "GradientBoosting, default params",
+          "cv_score": 0.7975274762217545,
+          "notes": "Basic preprocessing: median imputation for numerical, most frequent for categorical, OHE for categorical. Cabin split."
+        }
+      ],
+      "submitted": true,
+      "holdout_score": 0.8085,
+      "tool_calls": 10,
+      "seconds": 36.7,
+      "error": null,
+      "final_summary": "The final model is a Gradient Boosting Classifier, which achieved a cross-validation accuracy of approximately 0.7975. Key features used in the model included numerical features (Age, RoomService, FoodCourt, ShoppingMall, Spa, VRDeck) and categorical features (HomePlanet, CryoSleep, Destination, VIP, and features extracted from the Cabin ID such as Deck and Side). These were processed using median imputation for numerical data, mode imputation for categorical data, and One-Hot Encoding for categorical variables. All preprocessing steps were encapsulated within a scikit-learn pipeline to prevent data leakage.",
+      "llm_calls": 11,
+      "input_tokens": 27665,
+      "output_tokens": 2196,
+      "est_cost_usd": 0.0102
+    },
+    {
+      "run_id": "single-spaceship-titanic-8a0012",
+      "experiments": [
+        {
+          "model": "RandomForest, default params",
+          "cv_score": 0.786,
+          "notes": "Features: Age, RoomService, FoodCourt, ShoppingMall, Spa, VRDeck, HomePlanet, CryoSleep, Destination, VIP, Deck, Side. Imputation used."
+        },
+        {
+          "model": "XGBoost, default params",
+          "cv_score": 0.7935,
+          "notes": "Features: Age, RoomService, FoodCourt, ShoppingMall, Spa, VRDeck, HomePlanet, CryoSleep, Destination, VIP, Deck, Side. Imputation used."
+        }
+      ],
+      "submitted": true,
+      "holdout_score": 0.8131,
+      "tool_calls": 10,
+      "seconds": 32.4,
+      "error": null,
+      "final_summary": "The task was to predict 'Transported' status for the spaceship passengers. \n\n1.  **Preprocessing & Feature Engineering**: Created new features 'Deck' and 'Side' from 'Cabin'. Imputed missing numeric values with the median and categorical values with the mode.\n2.  **Model Comparison**: Evaluated RandomForest and XGBoost using a 5-fold cross-validation pipeline.\n    *   **RandomForest**: CV Score = 0.7860\n    *   **XGBoost**: CV Score = 0.7935\n3.  **Final Model**: XGBoost was chosen as the best performing model.\n4.  **Prediction**: Trained the XGBoost model on the entire training set and predicted for the test set, ensuring output was formatted as Boolean values.\n\n**Key Features**: Age, RoomService, FoodCourt, ShoppingMall, Spa, VRDeck, HomePlanet, CryoSleep, Destination, VIP, Deck, and Side.",
+      "llm_calls": 11,
+      "input_tokens": 30735,
+      "output_tokens": 2147,
+      "est_cost_usd": 0.0109
+    }
+  ]
+}
