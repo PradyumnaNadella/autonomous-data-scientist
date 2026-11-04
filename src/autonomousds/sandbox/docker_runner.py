@@ -64,6 +64,7 @@ class DockerSandbox:
         cmd = [
             "docker", "run", "--rm", "--name", container,
             "--network", "none",
+            "-e", "PYTHONWARNINGS=ignore",  # hide library warnings, keep errors            
             "--memory", self.memory,
             "--cpus", self.cpus,
             "--pids-limit", "256",
