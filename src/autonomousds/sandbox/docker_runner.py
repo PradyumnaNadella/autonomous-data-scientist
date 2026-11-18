@@ -34,15 +34,29 @@ def _trim(text: str) -> str:
     half = MAX_OUTPUT_CHARS // 2
     return text[:half] + "\n...[output trimmed]...\n" + text[-half:]
 
+def check_docker() -> None:
+    """Fail early if Docker or the sandbox image is not available.
+
+    Raises:
+        RuntimeError: Explains what to fix (start Docker Desktop, build the image).
+    """
+    try:
+        r = subprocess.run(["docker", "image", "inspect", IMAGE],
+                           capture_output=True, text=True, timeout=30)
+    except FileNotFoundError:
+        raise RuntimeError("Docker is not installed or not on PATH.")
+    if r.returncode != 0:
+        raise RuntimeError("Sandbox unavailable. Is Docker Desktop running, and is the "
+                           f"image built? Details: {(r.stderr or r.stdout).strip()[:200]}")
 
 class DockerSandbox:
     def __init__(self, run_id: str | None = None, timeout_seconds: int = 120,
-                 memory: str = "2g", cpus: str = "2"):
+                 memory: str = "2g", cpus: str = "2", base_dir: Path | None = None):
         self.run_id = run_id or uuid.uuid4().hex[:8]
         self.timeout = timeout_seconds
         self.memory = memory
         self.cpus = cpus
-        self.workdir = RUNS_DIR / self.run_id
+        self.workdir = (base_dir or RUNS_DIR) / self.run_id
         self.workdir.mkdir(parents=True, exist_ok=True)
 
     def add_file(self, src: str | Path, name: str | None = None) -> str:
@@ -64,6 +78,9 @@ class DockerSandbox:
         cmd = [
             "docker", "run", "--rm", "--name", container,
             "--network", "none",
+            "-e", "PYTHONWARNINGS=ignore",                # hide library warnings, keep errors
+            "-e", f"LOKY_MAX_CPU_COUNT={self.cpus}",      # scikit-learn n_jobs=-1 uses 2 cores
+            "-e", f"OMP_NUM_THREADS={self.cpus}",         # LightGBM, XGBoost, numpy use 2 cores
             "--memory", self.memory,
             "--cpus", self.cpus,
             "--pids-limit", "256",

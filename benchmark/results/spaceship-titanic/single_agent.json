@@ -1,0 +1,220 @@
+{
+  "task": "spaceship-titanic",
+  "system": "single_agent",
+  "metric": "accuracy",
+  "runs": [
+    {
+      "run_id": "single-spaceship-titanic-20261116-180242",
+      "max_steps": 15,
+      "submitted": true,
+      "holdout_score": 0.8056,
+      "experiments": [
+        {
+          "model": "RandomForest, default params",
+          "cv_score": 0.7856,
+          "notes": "Imputed numerical with median, categorical with constant/onehot. Cabin split."
+        },
+        {
+          "model": "GradientBoosting, default params",
+          "cv_score": 0.8001,
+          "notes": "Imputed numerical with median, categorical with constant/onehot. Cabin split."
+        }
+      ],
+      "tool_calls": 8,
+      "failed_executions": 1,
+      "seconds": 27.1,
+      "final_summary": "The task was to predict passenger transportation on a spaceship. I performed feature engineering by splitting the `Cabin` column into `Deck`, `Num`, and `Side`, and handled missing values using median imputation for numerical features and constant imputation for categorical ones.\n\nI evaluated two model families:\n1. **RandomForestClassifier**: CV Accuracy = 0.7856\n2. **GradientBoostingClassifier**: CV Accuracy = 0.8001\n\nThe **GradientBoostingClassifier** was chosen as the final model and trained on the full training dataset. \n\n**Summary:**\n* **Final Model:** GradientBoostingClassifier\n* **CV Score:** 0.8001\n* **Key Features:** Cabin components (Deck, Side), spending features (RoomService, Spa, etc.), and CryoSleep status.",
+      "llm_calls": 9,
+      "input_tokens": 30939,
+      "output_tokens": 2124,
+      "est_cost_usd": 0.0109
+    },
+    {
+      "run_id": "single-spaceship-titanic-20261116-181313",
+      "max_steps": 15,
+      "submitted": true,
+      "holdout_score": 0.8062,
+      "experiments": [
+        {
+          "model": "Random Forest, default params",
+          "cv_score": 0.7846,
+          "notes": "Standard preprocessing, Cabin features extracted."
+        },
+        {
+          "model": "LightGBM, default params",
+          "cv_score": 0.7964,
+          "notes": "Standard preprocessing, Cabin features extracted."
+        }
+      ],
+      "tool_calls": 8,
+      "failed_executions": 0,
+      "seconds": 21.9,
+      "final_summary": "The task was to predict whether passengers were transported in the Spaceship Titanic dataset. \n\n1.  **Exploration**: Data contained missing values in most features. The target distribution was balanced.\n2.  **Preprocessing**: Created a preprocessing pipeline using `ColumnTransformer` that imputed missing numeric values with the median, categorical values with the mode, standardized numeric features, and one-hot encoded categorical ones. Engineered new features from the 'Cabin' column ('Deck' and 'Side').\n3.  **Modeling**: Evaluated two models using 5-fold cross-validation:\n    *   Random Forest: 0.7846 CV accuracy.\n    *   LightGBM: 0.7964 CV accuracy (chosen model).\n4.  **Final Submission**: The LightGBM model was trained on the full training set and used to generate predictions for the test set.\n\n**Final Result**: LightGBM achieved an accuracy of ~0.796, which was submitted for the final evaluation.",
+      "llm_calls": 9,
+      "input_tokens": 20332,
+      "output_tokens": 1549,
+      "est_cost_usd": 0.0074
+    },
+    {
+      "run_id": "single-spaceship-titanic-20261116-181344",
+      "max_steps": 15,
+      "submitted": true,
+      "holdout_score": 0.8056,
+      "experiments": [
+        {
+          "model": "RandomForest, default params",
+          "cv_score": 0.7859,
+          "notes": "With simple feature engineering on Cabin and imputation."
+        },
+        {
+          "model": "GradientBoosting, default params",
+          "cv_score": 0.8001,
+          "notes": "With simple feature engineering on Cabin and imputation."
+        }
+      ],
+      "tool_calls": 9,
+      "failed_executions": 1,
+      "seconds": 30.6,
+      "final_summary": "The task was solved by applying a Gradient Boosting model to the dataset after simple feature engineering (splitting the `Cabin` column into `Deck`, `Num`, and `Side`) and standard imputation and encoding via a scikit-learn `Pipeline`.\n\n*   **Final model:** `GradientBoostingClassifier`\n*   **CV score:** 0.8001\n*   **Key features:** Cabin (split into Deck, Num, Side), Age, HomePlanet, CryoSleep, Destination, VIP, and expenditure columns (RoomService, FoodCourt, ShoppingMall, Spa, VRDeck).",
+      "llm_calls": 10,
+      "input_tokens": 36847,
+      "output_tokens": 2084,
+      "est_cost_usd": 0.0123
+    },
+    {
+      "run_id": "single-spaceship-titanic-20261116-181422",
+      "max_steps": 15,
+      "submitted": true,
+      "holdout_score": 0.8102,
+      "experiments": [
+        {
+          "model": "RandomForestClassifier, default params",
+          "cv_score": 0.7856,
+          "notes": "Features: Age, RoomService, FoodCourt, ShoppingMall, Spa, VRDeck, HomePlanet, CryoSleep, Destination, VIP, Deck, Side. Median imputation for num, constant 'missing' for cat."
+        },
+        {
+          "model": "XGBClassifier, default params",
+          "cv_score": 0.7909,
+          "notes": "Features: Age, RoomService, FoodCourt, ShoppingMall, Spa, VRDeck, HomePlanet, CryoSleep, Destination, VIP, Deck, Side. Median imputation for num, constant 'missing' for cat."
+        }
+      ],
+      "tool_calls": 10,
+      "failed_executions": 1,
+      "seconds": 36.6,
+      "final_summary": "The task of predicting whether a passenger was 'Transported' was addressed by comparing a Random Forest classifier and an XGBoost classifier. The data was preprocessed to handle missing values (median for numerical, 'missing' constant for categorical) and to extract features from the 'Cabin' column ('Deck', 'Side').\n\n- **Final Model:** XGBClassifier\n- **CV Score:** 0.7909\n- **Key Features:** 'Age', 'RoomService', 'FoodCourt', 'ShoppingMall', 'Spa', 'VRDeck', 'HomePlanet', 'CryoSleep', 'Destination', 'VIP', 'Deck', 'Side'.\n\nThe preprocessing and model were encapsulated in a scikit-learn Pipeline to ensure no leakage from the test set.",
+      "llm_calls": 11,
+      "input_tokens": 45186,
+      "output_tokens": 2457,
+      "est_cost_usd": 0.015
+    },
+    {
+      "run_id": "single-spaceship-titanic-20261116-181509",
+      "max_steps": 15,
+      "submitted": true,
+      "holdout_score": 0.8085,
+      "experiments": [
+        {
+          "model": "LogisticRegression, default params",
+          "cv_score": 0.7892,
+          "notes": "Features: Age, RoomService, FoodCourt, ShoppingMall, Spa, VRDeck, HomePlanet, CryoSleep, Destination, VIP, Deck, Side. Simple imputation."
+        },
+        {
+          "model": "RandomForest, default params",
+          "cv_score": 0.7846,
+          "notes": "Features: Age, RoomService, FoodCourt, ShoppingMall, Spa, VRDeck, HomePlanet, CryoSleep, Destination, VIP, Deck, Side. Simple imputation."
+        },
+        {
+          "model": "GradientBoosting, default params",
+          "cv_score": 0.7972,
+          "notes": "Features: Age, RoomService, FoodCourt, ShoppingMall, Spa, VRDeck, HomePlanet, CryoSleep, Destination, VIP, Deck, Side. Simple imputation."
+        }
+      ],
+      "tool_calls": 10,
+      "failed_executions": 1,
+      "seconds": 103.8,
+      "final_summary": "The final model is a Gradient Boosting Classifier, which achieved a cross-validation accuracy of 0.7972. Key features used in the model include passenger demographics (Age), spending patterns (RoomService, FoodCourt, ShoppingMall, Spa, VRDeck), and travel details (HomePlanet, CryoSleep, Destination, VIP status, and split Cabin information into Deck and Side). Preprocessing was consistently applied using `scikit-learn` Pipelines to handle missing values and encode categorical variables.",
+      "llm_calls": 11,
+      "input_tokens": 28119,
+      "output_tokens": 1885,
+      "est_cost_usd": 0.0099
+    },
+    {
+      "run_id": "single-spaceship-titanic-20261116-181734",
+      "max_steps": 45,
+      "submitted": true,
+      "holdout_score": 0.7464,
+      "experiments": [
+        {
+          "model": "RandomForestClassifier, default params",
+          "cv_score": 0.7437451447899912,
+          "notes": "Preprocessed features, imputed, total spend added."
+        },
+        {
+          "model": "XGBClassifier, default params",
+          "cv_score": 0.7300835277141335,
+          "notes": "Preprocessed features, imputed, total spend added."
+        }
+      ],
+      "tool_calls": 9,
+      "failed_executions": 2,
+      "seconds": 65.7,
+      "final_summary": "The task was to predict whether passengers were 'Transported' in the Spaceship Titanic dataset. \n\n1.  **Exploration**: The dataset had 6,954 training and 1,739 testing instances. Features included a mix of categorical and numerical variables, with some missing values.\n2.  **Feature Engineering**: Added `TotalSpend` (sum of service costs), `Deck`, `Side` (parsed from `Cabin`), and `Group` (parsed from `PassengerId`). All categorical variables were treated as strings to ensure consistent imputation and encoding.\n3.  **Model Comparison**:\n    *   **RandomForestClassifier**: 0.7437 accuracy (CV)\n    *   **XGBClassifier**: 0.7301 accuracy (CV)\n4.  **Final Model**: A `RandomForestClassifier` was trained on the entire training set using a preprocessing pipeline (median imputation for numerical, constant imputation and one-hot encoding for categorical features).\n\n**Final Model**: Random Forest (Pipeline)\n**CV Score**: 0.7437\n**Key Features**: `TotalSpend`, `Deck`, `Side`, `Group`, `Age`",
+      "llm_calls": 10,
+      "input_tokens": 37747,
+      "output_tokens": 2635,
+      "est_cost_usd": 0.0134
+    },
+    {
+      "run_id": "single-spaceship-titanic-20261116-181853",
+      "max_steps": 45,
+      "submitted": true,
+      "holdout_score": 0.8091,
+      "experiments": [
+        {
+          "model": "RandomForestClassifier",
+          "cv_score": 0.7846,
+          "notes": "Standard preprocessing, imputed missing, one-hot encoded, no feature selection."
+        },
+        {
+          "model": "GradientBoostingClassifier",
+          "cv_score": 0.7972,
+          "notes": "Standard preprocessing, imputed missing, one-hot encoded, no feature selection."
+        }
+      ],
+      "tool_calls": 7,
+      "failed_executions": 0,
+      "seconds": 27.2,
+      "final_summary": "The task was to predict whether passengers were transported based on various personal and travel information.\n\n**Approach Summary:**\n- **Data Preprocessing:** Handled missing values using median imputation for numerical features and most frequent imputation for categorical features. Cabin information was parsed into 'Deck', 'Num', and 'Side' to create more descriptive features. Categorical data was one-hot encoded, and numerical features were standardized.\n- **Model Comparison:** Evaluated RandomForestClassifier and GradientBoostingClassifier using 5-fold cross-validation.\n- **Final Model:** GradientBoostingClassifier (n_estimators=200, learning_rate=0.1, max_depth=5).\n- **Cross-Validation Accuracy:** 0.7972 (GradientBoosting).\n\n**Final Results:**\n- **Final Model:** GradientBoostingClassifier\n- **CV Score:** 0.7972 (GradientBoosting, default parameters)\n- **Key Features:** 'RoomService', 'Spa', 'VRDeck', 'CryoSleep', and the parsed 'Deck' and 'Side' components of the 'Cabin' feature were highly influential in determining the transport status.",
+      "llm_calls": 8,
+      "input_tokens": 14938,
+      "output_tokens": 1531,
+      "est_cost_usd": 0.006
+    },
+    {
+      "run_id": "single-spaceship-titanic-20261116-182002",
+      "max_steps": 45,
+      "submitted": true,
+      "holdout_score": 0.8102,
+      "experiments": [
+        {
+          "model": "Random Forest, default params",
+          "cv_score": 0.7858792132361687,
+          "notes": "Preprocessed Cabin, Age, Expenses. Imputed missing values."
+        },
+        {
+          "model": "XGBoost, default params",
+          "cv_score": 0.7909123915820614,
+          "notes": "Preprocessed Cabin, Age, Expenses. Imputed missing values."
+        }
+      ],
+      "tool_calls": 9,
+      "failed_executions": 1,
+      "seconds": 31.2,
+      "final_summary": "The final model is XGBoost, which achieved a 5-fold cross-validation accuracy of 0.7909. \n\nKey preprocessing steps included:\n- **Feature Engineering:** Extracted `Deck`, `Num`, and `Side` from the `Cabin` column and removed the `Name` and `PassengerId` columns.\n- **Imputation:** Median imputation for numeric features (`Age`, `RoomService`, `FoodCourt`, `ShoppingMall`, `Spa`, `VRDeck`) and constant imputation for categorical features (`HomePlanet`, `CryoSleep`, `Destination`, `VIP`, `Deck`, `Side`).\n- **Encoding:** One-Hot Encoding for categorical features.\n- **Scaling:** Standard Scaling for numeric features.",
+      "llm_calls": 10,
+      "input_tokens": 39917,
+      "output_tokens": 2324,
+      "est_cost_usd": 0.0135
+    }
+  ]
+}
