@@ -6,17 +6,19 @@ import json
 from langchain_core.tools import tool
 
 from autonomousds.benchmark.tasks import Task
-from autonomousds.sandbox.docker_runner import DockerSandbox
+from autonomousds.sandbox.docker_runner import RUNS_DIR, DockerSandbox, check_docker
 
 MAX_READ_CHARS = 3000
-HIDDEN_FILES = ("step_", "sandbox_log")     # sandbox bookkeeping, not for the agent
+HIDDEN_FILES = ("step_", "sandbox_log", "__pycache__")     # sandbox bookkeeping, not for the agent
 MIN_EXPERIMENTS = 2
 
 
 def setup_run(task: Task, run_id: str | None = None,
-              timeout_seconds: int = 120) -> DockerSandbox:
+              timeout_seconds: int = 300) -> DockerSandbox:
     """Create a sandbox run folder containing only the data agents may see."""
-    sb = DockerSandbox(run_id=run_id, timeout_seconds=timeout_seconds)
+    check_docker()
+    sb = DockerSandbox(run_id=run_id, timeout_seconds=timeout_seconds,
+                       base_dir=RUNS_DIR / task.name)
     sb.add_file(task.agent_dir / "train.csv")
     sb.add_file(task.agent_dir / "test.csv")
     return sb
@@ -70,6 +72,9 @@ def make_tools(sb: DockerSandbox, task: Task):
 
         Call this once for every model you evaluate, using the same CV setup.
 
+        This is a tool call, not a Python function: it is not available inside
+        run_python code.
+
         Args:
             model: Short model description, e.g. "LightGBM, default params".
             cv_score: Mean cross-validation score on train.csv.
@@ -121,6 +126,10 @@ def make_tools(sb: DockerSandbox, task: Task):
                 if bad:
                     problems.append(f"invalid values {sorted(map(str, bad))[:5]}; "
                                     f"allowed: {sorted(map(str, allowed))}")
+            if task.task_type == "regression":
+                values = pd.to_numeric(preds[tgt], errors="coerce")
+                if values.isna().any() or values.isin([float("inf"), float("-inf")]).any():
+                    problems.append(f"'{tgt}' must contain only finite numbers")                                    
         if problems:
             return "Not accepted: " + "; ".join(problems)
         state["submitted"] = filename

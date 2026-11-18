@@ -15,25 +15,38 @@ ROOT = Path(__file__).resolve().parents[3]
 TASKS_DIR = ROOT / "benchmark" / "tasks"
 DATA_DIR = ROOT / "data"
 
-# metric name -> (function, higher_is_better)
+# metric name -> (function, higher_is_better). ROC AUC is not supported yet:
+# it needs probability predictions, and agents currently submit labels.
 METRICS = {
     "accuracy": (metrics.accuracy_score, True),
-    "roc_auc": (metrics.roc_auc_score, True),
     "rmse": (metrics.root_mean_squared_error, False),
+    "mae": (metrics.mean_absolute_error, False),
 }
 
 
 @dataclass
 class Task:
+    """One benchmark task, loaded from benchmark/tasks/<name>.yaml."""
     name: str
     competition: str
     train_file: str
     target: str
-    id_column: str
     task_type: str            # "classification" or "regression"
     metric: str
+    id_column: str | None = None
     holdout_fraction: float = 0.2
     seed: int = 42
+
+    def __post_init__(self):
+        if self.task_type not in ("classification", "regression"):
+            raise ValueError(f"task_type must be classification or regression, "
+                             f"got '{self.task_type}'")
+        if self.metric not in METRICS:
+            raise ValueError(f"Unsupported metric '{self.metric}'. "
+                             f"Supported: {sorted(METRICS)}")
+        self.auto_id = self.id_column is None      # dataset has no ID column
+        if self.auto_id:
+            self.id_column = "row_id"
 
     @property
     def dir(self) -> Path:
@@ -57,23 +70,60 @@ def load_task(name: str) -> Task:
     return Task(**cfg)
 
 
+def find_train_file(task: Task) -> Path:
+    """Locate the training CSV anywhere inside data/<task>/raw.
+
+    Args:
+        task: The benchmark task.
+
+    Returns:
+        Path to the training file.
+
+    Raises:
+        FileNotFoundError: If the file is not in the download.
+    """
+    matches = sorted((task.dir / "raw").rglob(task.train_file))
+    if not matches:
+        raise FileNotFoundError(f"'{task.train_file}' not found in {task.dir / 'raw'}")
+    return matches[0]
+
+
 def download(task: Task) -> None:
+    """Download and unzip the competition data, unless it is already there.
+
+    Args:
+        task: The benchmark task.
+    """
     raw = task.dir / "raw"
-    if (raw / task.train_file).exists():
-        return                        # already downloaded
+    if raw.exists() and any(raw.rglob(task.train_file)):
+        return
     raw.mkdir(parents=True, exist_ok=True)
     subprocess.run(["kaggle", "competitions", "download",
                     "-c", task.competition, "-p", str(raw)], check=True)
-    for z in raw.glob("*.zip"):
+    for z in raw.rglob("*.zip"):
         with zipfile.ZipFile(z) as f:
-            f.extractall(raw)
+            f.extractall(z.parent)
         z.unlink()
 
 
 def prepare(task: Task) -> tuple[pd.DataFrame, pd.DataFrame]:
-    """Split Kaggle's train.csv into agent data and a hidden test set."""
+    """Split the training file into agent-visible data and a hidden test set.
+
+    Args:
+        task: The benchmark task.
+
+    Returns:
+        The agent training rows and the hidden test rows (with labels).
+    """
     download(task)
-    df = pd.read_csv(task.dir / "raw" / task.train_file)
+    df = pd.read_csv(find_train_file(task))
+    if task.target not in df.columns:
+        raise ValueError(f"Target '{task.target}' not in {task.train_file}")
+    if task.auto_id:
+        df.insert(0, task.id_column, range(len(df)))
+    elif task.id_column not in df.columns:
+        raise ValueError(f"ID column '{task.id_column}' not in {task.train_file}; "
+                         "remove id_column from the YAML to create one automatically")
     stratify = df[task.target] if task.task_type == "classification" else None
     train, hold = train_test_split(df, test_size=task.holdout_fraction,
                                    random_state=task.seed, stratify=stratify)

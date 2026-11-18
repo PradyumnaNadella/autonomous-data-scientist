@@ -66,11 +66,14 @@ class CostLogger(BaseCallbackHandler):
         self._start = time.time()
 
     def on_llm_end(self, response, **kwargs):
-        usage = {}
+        usage, finish = {}, None
         for gens in response.generations:
             for g in gens:
                 msg = getattr(g, "message", None)
                 usage = getattr(msg, "usage_metadata", None) or usage
+                info = getattr(g, "generation_info", None) or {}
+                meta = getattr(msg, "response_metadata", None) or {}
+                finish = info.get("finish_reason") or meta.get("finish_reason") or finish
         in_tok = usage.get("input_tokens", 0)
         out_tok = usage.get("output_tokens", 0)
 
@@ -79,6 +82,10 @@ class CostLogger(BaseCallbackHandler):
                 if price else 0.0)
         if self.paid:
             self.run_cost += cost
+
+        truncated = "MAX_TOKENS" in str(finish).upper()
+        if truncated:
+            print(f"  WARNING [{self.agent}]: response cut off at the output limit")
 
         LOG_PATH.parent.mkdir(exist_ok=True)
         with LOG_PATH.open("a") as f:
@@ -91,6 +98,8 @@ class CostLogger(BaseCallbackHandler):
                 "output_tokens": out_tok,
                 "est_cost_usd": round(cost, 6),
                 "paid": self.paid,
+                "finish_reason": str(finish),
+                "truncated": truncated,
                 "seconds": round(time.time() - self._start, 2),
             }) + "\n")
 

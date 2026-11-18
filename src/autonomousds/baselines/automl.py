@@ -10,7 +10,7 @@ from autogluon.tabular import TabularPredictor
 from autonomousds.benchmark.tasks import ROOT, Task, score
 
 RESULTS_DIR = ROOT / "benchmark" / "results"
-MODELS_DIR = ROOT / "runs" / "automl"      # big model files, not in Git
+MODELS_DIR = ROOT / "runs"                  # big model files, not in Git
 
 # our metric name -> AutoGluon's metric name
 AG_METRIC = {"accuracy": "accuracy", "roc_auc": "roc_auc",
@@ -26,7 +26,7 @@ def run_automl(task: Task, time_limit: int = 300) -> dict:
     predictor = TabularPredictor(
         label=task.target,
         eval_metric=AG_METRIC[task.metric],
-        path=str(MODELS_DIR / task.name),
+        path=str(MODELS_DIR / task.name / "automl"),
         verbosity=1,
     ).fit(train, time_limit=time_limit, presets="best_quality")
     secs = time.time() - start

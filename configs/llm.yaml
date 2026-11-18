@@ -4,7 +4,7 @@ default_model: google_genai:gemini-3.1-flash-lite
 
 allow_paid: true          # paid calls refused unless true (and ALLOW_PAID=true in .env)
 max_retries: 0             # no automatic retries
-max_output_tokens: 1000    # cap every response
+max_output_tokens: 10000    # cap every response
 max_input_tokens: 20000    # refuse oversized prompts
 timeout_seconds: 60
 
