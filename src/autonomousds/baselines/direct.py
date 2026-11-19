@@ -17,6 +17,7 @@ from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import OneHotEncoder, StandardScaler
 
 from autonomousds.benchmark.tasks import ROOT, Task, score
+from autonomousds.benchmark.metrics import baseline_predictions_path
 
 RESULTS_DIR = ROOT / "benchmark" / "results"
 MAX_CATEGORIES = 50          # drop text columns with more unique values
@@ -116,6 +117,7 @@ def run_direct(task: Task) -> list[dict]:
     print(f"Task: {task.name} | metric: {task.metric} | dropped columns: {dropped}")
 
     results = []
+    all_preds = {}
     for name, model in models_for(task).items():
         pipe = make_pipeline(preprocessor(), model)
         start = time.time()
@@ -124,6 +126,7 @@ def run_direct(task: Task) -> list[dict]:
         pipe.fit(X, y)
         preds = pd.DataFrame({task.id_column: test[task.id_column],
                               task.target: pipe.predict(X_test)})
+        all_preds[name] = preds                              
         holdout = score(task, preds)
         secs = time.time() - start
         print(f"  {name:20s} cv={cv_mean:.4f}  hidden_test={holdout:.4f}  ({secs:.1f}s)")
@@ -135,6 +138,9 @@ def run_direct(task: Task) -> list[dict]:
     out_dir.mkdir(parents=True, exist_ok=True)
     pick = min if task.metric == "rmse" else max
     best = pick(results, key=lambda r: r["cv_score"])   # choose by validation only
+    path = baseline_predictions_path(task, "direct")
+    path.parent.mkdir(parents=True, exist_ok=True)
+    all_preds[best["model"]].to_csv(path, index=False)    
     print(f"  CHOSEN by CV: {best['model']}  hidden_test={best['holdout_score']:.4f}")
     out = {"task": task.name, "system": "direct", "metric": task.metric,
            "best_model": best["model"], "holdout_score": best["holdout_score"],

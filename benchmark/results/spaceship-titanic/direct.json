@@ -13,25 +13,25 @@
       "model": "logistic_regression",
       "cv_score": 0.7849,
       "holdout_score": 0.7832,
-      "seconds": 0.4
+      "seconds": 0.3
     },
     {
       "model": "random_forest",
       "cv_score": 0.7834,
       "holdout_score": 0.7861,
-      "seconds": 2.5
+      "seconds": 2.3
     },
     {
       "model": "lightgbm",
       "cv_score": 0.7895,
       "holdout_score": 0.8039,
-      "seconds": 0.6
+      "seconds": 0.7
     },
     {
       "model": "mlp",
       "cv_score": 0.7932,
       "holdout_score": 0.7907,
-      "seconds": 29.7
+      "seconds": 30.3
     }
   ]
 }
