@@ -8,6 +8,7 @@ import pandas as pd
 from autogluon.tabular import TabularPredictor
 
 from autonomousds.benchmark.tasks import ROOT, Task, score
+from autonomousds.benchmark.metrics import baseline_predictions_path
 
 RESULTS_DIR = ROOT / "benchmark" / "results"
 MODELS_DIR = ROOT / "runs"                  # big model files, not in Git
@@ -36,6 +37,9 @@ def run_automl(task: Task, time_limit: int = 300) -> dict:
         task.target: predictor.predict(test.drop(columns=[task.id_column])),
     })
     holdout = score(task, preds)
+    path = baseline_predictions_path(task, "automl")
+    path.parent.mkdir(parents=True, exist_ok=True)
+    preds.to_csv(path, index=False)    
 
     # Score every model on the hidden test (evaluation only, never training)
     labels = pd.read_csv(task.hidden_dir / "test_labels.csv")

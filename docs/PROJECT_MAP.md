@@ -20,6 +20,7 @@ dataset's files stay separate and new datasets need no code changes.
 | LLM | `llm/models.py` | `get_chat_model()`: every LLM call goes through it. Applies the limits in `configs/llm.yaml` and logs tokens, cost and truncation. |
 | Sandbox | `sandbox/docker_runner.py` | Runs agent-written code in an isolated Docker container (no internet, limited CPU, memory and time). Saves every script and its output. |
 | Tasks | `benchmark/tasks.py` | Loads a task file, downloads its data, creates the hidden test split, scores predictions. |
+| Metrics | `benchmark/metrics.py` | Full model metrics per run (classification: accuracy, balanced accuracy, precision, recall, F1; regression: RMSE, MAE, R²), process metrics for agent runs, and per-system summaries. |
 | Baselines | `baselines/direct.py` | Default ML models with generic preprocessing. No LLM. |
 | | `baselines/automl.py` | AutoGluon with a time limit. No LLM. |
 | Agent tools | `tools/agent_tools.py` | What agents can call: run code, list and read files, log experiments, submit predictions (with format checks). |
@@ -58,6 +59,7 @@ seed: 42                      # makes the split reproducible
 | `python scripts/run_automl.py --task <task> --time-limit <seconds>` | Run AutoGluon. |
 | `python scripts/run_single_agent.py --task <task> [--max-steps N]` | One single-agent run (added to results). |
 | `python scripts/run_pipeline.py --task <task>` | One pipeline run (added to results). |
+| `python scripts/build_report.py` | Recompute all metrics for every task and system, write `benchmark/summary/`, and update the results section of `README.md`. Run after any new runs. |
 | `python scripts/smoke_*.py` | Quick checks: LLM, sandbox, task loading, tools. |
 
 If `--task` is omitted, each script uses its built-in default task.
@@ -71,7 +73,10 @@ If `--task` is omitted, each script uses its built-in default task.
 | `data/<task>/hidden/` | `test_labels.csv`: answers, used only for scoring | No |
 | `benchmark/results/<task>/<system>.json` | Scores and metrics for every run of a system | **Yes** |
 | `runs/<task>/<run_id>/` | Everything from one agent run (see below) | No |
+| `benchmark/summary/<task>.json` | Summary metrics per system for a task (generated) | **Yes** |
+| `benchmark/summary/RESULTS.md` | Results tables for all tasks (generated; also copied into `README.md`) | **Yes** |
 | `runs/<task>/automl/` | AutoGluon's trained models | No |
+| `runs/<task>/baselines/<system>/predictions.csv` | Predictions of each baseline's chosen model | No |
 | `logs/llm_calls.jsonl` | Every LLM call across all tasks: run, agent, tokens, cost, finish reason | No |
 | `benchmark/notes.md` | Manual notes, e.g. runs stopped by hand | Yes |
 

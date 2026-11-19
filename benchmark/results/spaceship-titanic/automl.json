@@ -5,74 +5,74 @@
   "time_limit_seconds": 300,
   "preset": "best_quality",
   "best_model": "WeightedEnsemble_L2",
-  "holdout_score": 0.801,
-  "seconds": 319.2,
+  "holdout_score": 0.7993,
+  "seconds": 310.0,
   "results": [
     {
       "model": "XGBoost_BAG_L1",
       "cv_score": 0.8003,
       "holdout_score": 0.8056,
-      "fit_seconds": 10.8
+      "fit_seconds": 7.6
     },
     {
       "model": "WeightedEnsemble_L2",
-      "cv_score": 0.8033,
-      "holdout_score": 0.801,
-      "fit_seconds": 103.7
+      "cv_score": 0.8062,
+      "holdout_score": 0.7993,
+      "fit_seconds": 163.9
     },
     {
       "model": "LightGBMXT_BAG_L1",
       "cv_score": 0.8024,
       "holdout_score": 0.7982,
-      "fit_seconds": 4.6
+      "fit_seconds": 2.8
     },
     {
       "model": "CatBoost_BAG_L1",
       "cv_score": 0.8017,
       "holdout_score": 0.7964,
-      "fit_seconds": 43.5
+      "fit_seconds": 43.3
     },
     {
       "model": "LightGBM_BAG_L1",
       "cv_score": 0.8,
       "holdout_score": 0.7959,
-      "fit_seconds": 5.5
+      "fit_seconds": 2.9
     },
     {
       "model": "RandomForestGini_BAG_L1",
       "cv_score": 0.7794,
       "holdout_score": 0.7936,
-      "fit_seconds": 2.4
+      "fit_seconds": 1.4
     },
     {
       "model": "RandomForestEntr_BAG_L1",
       "cv_score": 0.7788,
       "holdout_score": 0.789,
-      "fit_seconds": 2.2
+      "fit_seconds": 1.5
     },
     {
       "model": "NeuralNetFastAI_BAG_L1",
       "cv_score": 0.7935,
       "holdout_score": 0.7867,
-      "fit_seconds": 54.6
+      "fit_seconds": 43.1
     },
     {
       "model": "ExtraTreesGini_BAG_L1",
       "cv_score": 0.7827,
       "holdout_score": 0.7861,
-      "fit_seconds": 3.7
+      "fit_seconds": 1.4
+    },
+    {
+      "model": "NeuralNetTorch_BAG_L1",
+      "cv_score": 0.7939,
+      "holdout_score": 0.7849,
+      "fit_seconds": 65.2
     },
     {
       "model": "ExtraTreesEntr_BAG_L1",
       "cv_score": 0.7837,
       "holdout_score": 0.7809,
-      "fit_seconds": 1.9
-    },
-    {
-      "model": "NeuralNetTorch_BAG_L1",
-      "cv_score": 0.7575,
-      "holdout_score": 0.7619,
-      "fit_seconds": 28.5
+      "fit_seconds": 1.5
     }
   ]
 }
