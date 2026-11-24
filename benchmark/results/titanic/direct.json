@@ -1,0 +1,38 @@
+{
+  "task": "titanic",
+  "system": "direct",
+  "metric": "accuracy",
+  "best_model": "mlp",
+  "holdout_score": 0.7989,
+  "dropped_columns": [
+    "Name",
+    "Ticket",
+    "Cabin"
+  ],
+  "results": [
+    {
+      "model": "logistic_regression",
+      "cv_score": 0.7964,
+      "holdout_score": 0.8045,
+      "seconds": 0.3
+    },
+    {
+      "model": "random_forest",
+      "cv_score": 0.7894,
+      "holdout_score": 0.7989,
+      "seconds": 2.0
+    },
+    {
+      "model": "lightgbm",
+      "cv_score": 0.8133,
+      "holdout_score": 0.7933,
+      "seconds": 0.3
+    },
+    {
+      "model": "mlp",
+      "cv_score": 0.816,
+      "holdout_score": 0.7989,
+      "seconds": 8.2
+    }
+  ]
+}

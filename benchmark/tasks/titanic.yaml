@@ -1,0 +1,10 @@
+name: titanic
+target: Survived
+task_type: classification
+metric: accuracy
+source: csv
+url: https://raw.githubusercontent.com/datasciencedojo/datasets/master/titanic.csv
+train_file: train.csv
+id_column: PassengerId
+holdout_fraction: 0.2
+seed: 42

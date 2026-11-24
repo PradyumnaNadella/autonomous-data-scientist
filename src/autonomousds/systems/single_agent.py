@@ -15,7 +15,8 @@ from autonomousds.tools.agent_tools import make_tools, setup_run
 MAX_STEPS = 15
 
 
-def run_single_agent(task: Task, max_steps: int = MAX_STEPS) -> dict:
+def run_single_agent(task: Task, max_steps: int = MAX_STEPS,
+                     run_id: str | None = None) -> dict:
     """Run one LLM agent end to end on a task and score its predictions.
 
     The agent gets a fresh sandbox with train.csv and test.csv and the agent
@@ -26,11 +27,12 @@ def run_single_agent(task: Task, max_steps: int = MAX_STEPS) -> dict:
     Args:
         task: The benchmark task to solve.
         max_steps: Tool-call budget for the agent.
+        run_id: Run id to use; a new one is created when None.
 
     Returns:
         The result record: score, steps, time, tokens and cost.
     """
-    run_id = new_run_id("single", task)
+    run_id = run_id or new_run_id("single", task)
     sb = setup_run(task, run_id=run_id)
     tools, state = make_tools(sb, task)
     transcript: list = []

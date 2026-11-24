@@ -1,0 +1,33 @@
+{
+  "task": "tips",
+  "system": "single_agent",
+  "metric": "mae",
+  "runs": [
+    {
+      "run_id": "single-tips-20261123-191521",
+      "max_steps": 15,
+      "submitted": true,
+      "holdout_score": 0.667,
+      "experiments": [
+        {
+          "model": "Ridge Regressor",
+          "cv_score": 0.8160326872485555,
+          "notes": "StandardScaler + OneHotEncoder"
+        },
+        {
+          "model": "RandomForestRegressor",
+          "cv_score": 0.858615897435897,
+          "notes": "StandardScaler + OneHotEncoder, default params"
+        }
+      ],
+      "tool_calls": 8,
+      "failed_executions": 1,
+      "seconds": 22.9,
+      "final_summary": "The task was to predict the tip amount using the provided restaurant dataset. After exploring the data, I compared two model families: **Ridge Regression** and **Random Forest Regressor**, both using a preprocessing pipeline that included `StandardScaler` for numeric features and `OneHotEncoder` for categorical variables.\n\n1.  **Ridge Regression (Mean CV MAE: 0.816)**\n2.  **Random Forest Regressor (Mean CV MAE: 0.859)**\n\nThe Ridge model performed better on the cross-validation set. Consequently, I used the Ridge model trained on the entire training set to generate the final predictions.\n\n*   **Final Model:** Ridge Regression\n*   **CV Score:** 0.816 (MAE)\n*   **Key Features:** total_bill, size, sex, smoker, day, time.",
+      "llm_calls": 9,
+      "input_tokens": 20138,
+      "output_tokens": 1489,
+      "est_cost_usd": 0.0073
+    }
+  ]
+}

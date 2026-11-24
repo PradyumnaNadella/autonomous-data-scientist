@@ -1,0 +1,31 @@
+[
+  {
+    "system": "single_agent",
+    "runs": 1,
+    "successful_runs": 1,
+    "success_rate": 1.0,
+    "score_mean": 0.667,
+    "score_std": 0.0,
+    "score_worst": 0.667,
+    "score_best": 0.667,
+    "model_metrics_mean": {
+      "rmse": 0.8376,
+      "mae": 0.667,
+      "r2": 0.4387
+    },
+    "cv_mean": 0.816,
+    "cv_optimism_mean": -0.149,
+    "seconds_median": 22.9,
+    "cost_mean_usd": 0.0073,
+    "cost_per_success_usd": 0.0073,
+    "llm_calls_mean": 9.0,
+    "tokens_mean": 21627.0,
+    "failed_executions_mean": 1.0,
+    "recovery_rate": 1.0,
+    "timeouts_total": 0,
+    "truncated_total": 0,
+    "approval_rate": null,
+    "revisions_mean": null,
+    "checks_fired_total": 0
+  }
+]
