@@ -1,0 +1,33 @@
+[
+  {
+    "system": "direct",
+    "runs": 1,
+    "successful_runs": 1,
+    "success_rate": 1.0,
+    "score_mean": 0.7989,
+    "score_std": 0.0,
+    "score_worst": 0.7989,
+    "score_best": 0.7989,
+    "model_metrics_mean": {
+      "accuracy": 0.7989,
+      "balanced_accuracy": 0.7688,
+      "precision": 0.7992,
+      "recall": 0.7688,
+      "f1": 0.7779
+    },
+    "cv_mean": 0.816,
+    "cv_optimism_mean": 0.0171,
+    "seconds_median": 10.799999999999999,
+    "cost_mean_usd": null,
+    "cost_per_success_usd": null,
+    "llm_calls_mean": null,
+    "tokens_mean": null,
+    "failed_executions_mean": null,
+    "recovery_rate": null,
+    "timeouts_total": null,
+    "truncated_total": null,
+    "approval_rate": null,
+    "revisions_mean": null,
+    "checks_fired_total": null
+  }
+]

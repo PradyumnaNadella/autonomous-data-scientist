@@ -1,0 +1,9 @@
+name: tips
+target: tip
+task_type: regression
+metric: mae
+source: csv
+url: https://raw.githubusercontent.com/mwaskom/seaborn-data/master/tips.csv
+train_file: train.csv
+holdout_fraction: 0.2
+seed: 42
