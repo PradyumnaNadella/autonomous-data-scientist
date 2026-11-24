@@ -48,17 +48,19 @@ def parse_verdict(text: str) -> str:
     return "APPROVE"
 
 
-def run_pipeline(task: Task, max_revisions: int = MAX_REVISIONS) -> dict:
+def run_pipeline(task: Task, max_revisions: int = MAX_REVISIONS,
+                 run_id: str | None = None) -> dict:
     """Run the pipeline team end to end on a task and score its predictions.
 
     Args:
         task: The benchmark task to solve.
         max_revisions: How many times the critic may send work back.
+        run_id: Run id to use; a new one is created when None.
 
     Returns:
         The result record: score, verdicts, revisions, time, tokens and cost.
     """
-    run_id = new_run_id("pipeline", task)
+    run_id = run_id or new_run_id("pipeline", task)
     sb = setup_run(task, run_id=run_id)
     tools, tool_state = make_tools(sb, task)
     T = {t.name: t for t in tools}
