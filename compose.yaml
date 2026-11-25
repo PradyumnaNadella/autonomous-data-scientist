@@ -1,0 +1,25 @@
+# Local one-command run: the API in a container, using this machine's Docker
+# for agent sandboxes.
+# Start from the repo root:
+#   DOCKER_GID=$(stat -c %g /var/run/docker.sock) docker compose up --build
+services:
+  api:
+    build:
+      context: .
+      dockerfile: docker/api.Dockerfile
+    image: autonomousds-api:latest
+    ports:
+      - "8000:8000"
+    env_file: .env
+    environment:
+      PYTHONPATH: ${PWD}/src            # use the live code from your folder
+    working_dir: ${PWD}
+    volumes:
+      # Same path inside and outside: sandbox mounts are resolved by the host's
+      # Docker, so runs/<task>/<run_id> must mean the same folder on both sides.
+      - ${PWD}:${PWD}
+      - /var/run/docker.sock:/var/run/docker.sock
+    # Run as you, so files written to runs/ and benchmark/ stay yours (not root's)
+    user: "${HOST_UID:-1000}:${HOST_GID:-1000}"
+    group_add:
+      - "${DOCKER_GID:?Set DOCKER_GID to the group id of /var/run/docker.sock}"
