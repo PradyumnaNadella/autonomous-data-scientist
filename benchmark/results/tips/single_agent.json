@@ -28,6 +28,63 @@
       "input_tokens": 20138,
       "output_tokens": 1489,
       "est_cost_usd": 0.0073
+    },
+    {
+      "run_id": "single-tips-20261124-160801",
+      "max_steps": 15,
+      "submitted": true,
+      "holdout_score": 0.667,
+      "experiments": [
+        {
+          "model": "Ridge, default params",
+          "cv_score": 0.816,
+          "notes": "StandardScaler + OneHotEncoder"
+        },
+        {
+          "model": "RandomForestRegressor, default params",
+          "cv_score": 0.8586,
+          "notes": "StandardScaler + OneHotEncoder"
+        }
+      ],
+      "tool_calls": 8,
+      "failed_executions": 0,
+      "seconds": 29.5,
+      "final_summary": "The final model chosen was a Ridge regression pipeline including `StandardScaler` for numeric features ('total_bill', 'size') and `OneHotEncoder` for categorical features ('sex', 'smoker', 'day', 'time'). The model achieved a 5-fold CV MAE of approximately 0.816.",
+      "llm_calls": 9,
+      "input_tokens": 20195,
+      "output_tokens": 1086,
+      "est_cost_usd": 0.0067
+    },
+    {
+      "run_id": "single-tips-20261125-011503",
+      "max_steps": 15,
+      "submitted": true,
+      "holdout_score": 0.667,
+      "experiments": [
+        {
+          "model": "RandomForestRegressor, default params",
+          "cv_score": 0.8204,
+          "notes": "StandardScaler for num, OneHotEncoder for cat."
+        },
+        {
+          "model": "Ridge, default params",
+          "cv_score": 0.8019,
+          "notes": "StandardScaler for num, OneHotEncoder for cat."
+        },
+        {
+          "model": "GradientBoostingRegressor, default params",
+          "cv_score": 0.8372,
+          "notes": "StandardScaler for num, OneHotEncoder for cat."
+        }
+      ],
+      "tool_calls": 10,
+      "failed_executions": 1,
+      "seconds": 32.1,
+      "final_summary": "The final model used was a Ridge regressor with preprocessing via `ColumnTransformer` (StandardScaler for numerical features, OneHotEncoder for categorical features). The model achieved a cross-validation MAE of approximately 0.8019 on the training data. Key features used include 'total_bill', 'size', 'sex', 'smoker', 'day', and 'time'.",
+      "llm_calls": 11,
+      "input_tokens": 27015,
+      "output_tokens": 1368,
+      "est_cost_usd": 0.0088
     }
   ]
 }
