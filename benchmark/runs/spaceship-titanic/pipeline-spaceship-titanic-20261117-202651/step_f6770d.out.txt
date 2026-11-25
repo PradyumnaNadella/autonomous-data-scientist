@@ -1,0 +1,30 @@
+exit_code: 0  timed_out: False  seconds: 1.0
+
+--- STDOUT ---
+0    3868_04
+1    1336_01
+2    9193_01
+3    5422_01
+4    5076_01
+Name: PassengerId, dtype: str
+PassengerId         str
+HomePlanet          str
+CryoSleep        object
+Destination         str
+Age             float64
+VIP              object
+RoomService     float64
+FoodCourt       float64
+ShoppingMall    float64
+Spa             float64
+VRDeck          float64
+Deck                str
+Num                 str
+Side                str
+Group               str
+TotalSpend      float64
+dtype: object
+
+
+--- STDERR ---
+

@@ -1,0 +1,3 @@
+{"model": "LogisticRegression, default params", "cv_score": 0.7892, "notes": "Features: Age, RoomService, FoodCourt, ShoppingMall, Spa, VRDeck, HomePlanet, CryoSleep, Destination, VIP, Deck, Side. Simple imputation."}
+{"model": "RandomForest, default params", "cv_score": 0.7846, "notes": "Features: Age, RoomService, FoodCourt, ShoppingMall, Spa, VRDeck, HomePlanet, CryoSleep, Destination, VIP, Deck, Side. Simple imputation."}
+{"model": "GradientBoosting, default params", "cv_score": 0.7972, "notes": "Features: Age, RoomService, FoodCourt, ShoppingMall, Spa, VRDeck, HomePlanet, CryoSleep, Destination, VIP, Deck, Side. Simple imputation."}

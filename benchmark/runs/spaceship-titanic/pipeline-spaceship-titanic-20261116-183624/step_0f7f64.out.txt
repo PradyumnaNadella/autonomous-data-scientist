@@ -1,0 +1,12 @@
+exit_code: 1  timed_out: False  seconds: 4.4
+
+--- STDOUT ---
+
+
+--- STDERR ---
+Traceback (most recent call last):
+  File "/workspace/step_0f7f64.py", line 3, in <module>
+    rf_clf = Pipeline([('preprocessor', preprocessor), 
+             ^^^^^^^^
+NameError: name 'Pipeline' is not defined
+

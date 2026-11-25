@@ -1,0 +1,55 @@
+exit_code: 0  timed_out: False  seconds: 3.4
+
+--- STDOUT ---
+Types in X_train:
+PassengerId         str
+HomePlanet          str
+CryoSleep        object
+Destination         str
+Age             float64
+VIP              object
+RoomService     float64
+FoodCourt       float64
+ShoppingMall    float64
+Spa             float64
+VRDeck          float64
+Group               str
+Deck                str
+Num                 str
+Side                str
+Surname          object
+dtype: object
+Col: PassengerId, Unique: <ArrowStringArray>
+['3868_04', '1336_01', '9193_01', '5422_01', '5076_01']
+Length: 5, dtype: str
+Col: HomePlanet, Unique: <ArrowStringArray>
+['Earth', 'Europa', 'Mars', nan]
+Length: 4, dtype: str
+Col: CryoSleep, Unique: [False True nan]
+Col: Destination, Unique: <ArrowStringArray>
+['TRAPPIST-1e', 'PSO J318.5-22', '55 Cancri e', nan]
+Length: 4, dtype: str
+Col: Age, Unique: [ 0. 17. 35. 26. 13.]
+Col: VIP, Unique: [False True nan]
+Col: RoomService, Unique: [   0.  631.   16. 1227.  803.]
+Col: FoodCourt, Unique: [   0.  217.  641.   nan 1739.]
+Col: ShoppingMall, Unique: [  0.  60.   9. 805.  62.]
+Col: Spa, Unique: [ 0. nan  1. 77.  2.]
+Col: VRDeck, Unique: [   0. 5147.  510.    8. 1119.]
+Col: Group, Unique: <ArrowStringArray>
+['3868', '1336', '9193', '5422', '5076']
+Length: 5, dtype: str
+Col: Deck, Unique: <ArrowStringArray>
+['G', 'D', 'F', 'E', 'B']
+Length: 5, dtype: str
+Col: Num, Unique: <ArrowStringArray>
+['630', '201', '1483', '164', '818']
+Length: 5, dtype: str
+Col: Side, Unique: <ArrowStringArray>
+['S', 'P', nan]
+Length: 3, dtype: str
+Col: Surname, Unique: ['Braymon' nan 'Howence' 'Sperap' 'Wolferguson']
+
+
+--- STDERR ---
+

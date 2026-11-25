@@ -1,0 +1,24 @@
+exit_code: 0  timed_out: False  seconds: 0.9
+
+--- STDOUT ---
+Transported
+False    399.659656
+True      63.453830
+Name: RoomService, dtype: float64
+Transported
+False    373.074173
+True     531.403103
+Name: FoodCourt, dtype: float64
+Transported
+False    526.759539
+True      69.761446
+Name: VRDeck, dtype: float64
+Transported
+False    561.866982
+True      58.680210
+Name: Spa, dtype: float64
+No TotalSpent yet
+
+
+--- STDERR ---
+

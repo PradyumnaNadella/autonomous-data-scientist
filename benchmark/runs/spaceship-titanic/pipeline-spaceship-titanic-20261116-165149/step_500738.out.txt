@@ -1,0 +1,8 @@
+exit_code: 0  timed_out: False  seconds: 5.4
+
+--- STDOUT ---
+Results: {'XGB': np.float64(0.7935005611614232), 'LGBM': np.float64(0.7972388789184325)}
+
+
+--- STDERR ---
+

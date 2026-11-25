@@ -1,0 +1,2 @@
+{"model": "Random Forest, default params", "cv_score": 0.7858792132361687, "notes": "Preprocessed Cabin, Age, Expenses. Imputed missing values."}
+{"model": "XGBoost, default params", "cv_score": 0.7909123915820614, "notes": "Preprocessed Cabin, Age, Expenses. Imputed missing values."}

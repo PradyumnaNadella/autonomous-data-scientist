@@ -1,0 +1,9 @@
+exit_code: 0  timed_out: False  seconds: 86.6
+
+--- STDOUT ---
+Best Parameters: {'clf__learning_rate': 0.05, 'clf__max_depth': 5, 'clf__n_estimators': 100}
+Best CV Score: 0.8003
+
+
+--- STDERR ---
+

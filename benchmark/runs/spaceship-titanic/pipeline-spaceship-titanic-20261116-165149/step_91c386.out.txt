@@ -1,0 +1,15 @@
+exit_code: 0  timed_out: False  seconds: 1.1
+
+--- STDOUT ---
+{"model": "LightGBM, default params", "cv_score": 0.7971, "notes": ""}
+{"model": "XGBoost, default params", "cv_score": 0.7962, "notes": ""}
+{"model": "LightGBM, tuned params", "cv_score": 0.8004, "notes": "learning_rate: 0.05, n_estimators: 100, num_leaves: 31"}
+{"model": "XGBoost, default params", "cv_score": 0.7883, "notes": "Features: HomePlanet, CryoSleep, Destination, VIP, Deck, Side, Age, RoomService, FoodCourt, ShoppingMall, Spa, VRDeck, GroupSize. Median/Mode Impute, OHE."}
+{"model": "LightGBM, default params", "cv_score": 0.7987, "notes": "Features: HomePlanet, CryoSleep, Destination, VIP, Deck, Side, Age, RoomService, FoodCourt, ShoppingMall, Spa, VRDeck, GroupSize. Median/Mode Impute, OHE."}
+{"model": "LightGBM, tuned params (n_estimators=200, lr=0.05)", "cv_score": 0.8011, "notes": "Features: HomePlanet, CryoSleep, Destination, VIP, Deck, Side, Age, RoomService, FoodCourt, ShoppingMall, Spa, VRDeck, GroupSize. Median/Mode Impute, OHE."}
+Train shape: (6954, 14)
+Test shape: (1739, 13)
+
+
+--- STDERR ---
+

@@ -1,0 +1,11 @@
+exit_code: 0  timed_out: False  seconds: 1.1
+
+--- STDOUT ---
+CryoSleep unique values:
+[False True nan]
+CryoSleep type:
+object
+
+
+--- STDERR ---
+

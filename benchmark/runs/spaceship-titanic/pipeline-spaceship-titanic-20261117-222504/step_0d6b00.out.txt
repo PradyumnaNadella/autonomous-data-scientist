@@ -1,0 +1,15 @@
+exit_code: 0  timed_out: False  seconds: 0.9
+
+--- STDOUT ---
+Columns diff: {'Transported'}
+
+Cabin format: <ArrowStringArray>
+['G/630/S', 'G/201/S', 'G/1483/S']
+Length: 3, dtype: str
+PassengerId format: <ArrowStringArray>
+['3868_04', '1336_01', '9193_01']
+Length: 3, dtype: str
+
+
+--- STDERR ---
+

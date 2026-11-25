@@ -1,0 +1,13 @@
+exit_code: 1  timed_out: False  seconds: 12.7
+
+--- STDOUT ---
+LogisticRegression: 0.7869
+
+
+--- STDERR ---
+Traceback (most recent call last):
+  File "/workspace/step_27d669.py", line 37, in <module>
+    pipeline_rf = Pipeline([('pre', preprocessor), ('model', RandomForestClassifier(n_estimators=50, random_state=42))])
+                                                             ^^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'RandomForestClassifier' is not defined
+

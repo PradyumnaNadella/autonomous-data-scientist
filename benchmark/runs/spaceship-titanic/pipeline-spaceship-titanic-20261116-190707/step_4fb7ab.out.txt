@@ -1,0 +1,8 @@
+exit_code: 0  timed_out: False  seconds: 1.7
+
+--- STDOUT ---
+Leakage check: Pipeline fitted on train only? Yes.
+
+
+--- STDERR ---
+

@@ -1,0 +1,19 @@
+exit_code: 0  timed_out: False  seconds: 0.9
+
+--- STDOUT ---
+{"model": "RandomForest (Default)", "cv_score": 0.7903, "notes": "Default hyperparameters, 5-fold CV."}
+{"model": "LightGBM (Default)", "cv_score": 0.7991, "notes": "Default hyperparameters, 5-fold CV."}
+{"model": "LightGBM (Tuned)", "cv_score": 0.8018, "notes": "LR=0.05, max_depth=5, n_estimators=200, 5-fold CV."}
+Train columns: ['PassengerId', 'HomePlanet', 'CryoSleep', 'Cabin', 'Destination', 'Age', 'VIP', 'RoomService', 'FoodCourt', 'ShoppingMall', 'Spa', 'VRDeck', 'Name', 'Transported']
+Test columns: ['PassengerId', 'HomePlanet', 'CryoSleep', 'Cabin', 'Destination', 'Age', 'VIP', 'RoomService', 'FoodCourt', 'ShoppingMall', 'Spa', 'VRDeck', 'Name']
+Predictions shape: (1739, 2)
+Predictions sample:   PassengerId  Transported
+0     3857_01         True
+1     7650_05         True
+2     9139_01        False
+3     6894_03         True
+4     8471_01        False
+
+
+--- STDERR ---
+

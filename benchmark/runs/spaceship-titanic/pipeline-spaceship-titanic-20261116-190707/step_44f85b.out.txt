@@ -1,0 +1,9 @@
+exit_code: 0  timed_out: False  seconds: 27.0
+
+--- STDOUT ---
+Best Score: 0.8008
+Best Params: {'classifier__n_estimators': 200, 'classifier__max_depth': 7, 'classifier__learning_rate': 0.05}
+
+
+--- STDERR ---
+

@@ -1,0 +1,18 @@
+exit_code: 0  timed_out: False  seconds: 1.0
+
+--- STDOUT ---
+Train columns: Index(['PassengerId', 'HomePlanet', 'CryoSleep', 'Cabin', 'Destination', 'Age',
+       'VIP', 'RoomService', 'FoodCourt', 'ShoppingMall', 'Spa', 'VRDeck',
+       'Name', 'Transported'],
+      dtype='str')
+Test columns: Index(['PassengerId', 'HomePlanet', 'CryoSleep', 'Cabin', 'Destination', 'Age',
+       'VIP', 'RoomService', 'FoodCourt', 'ShoppingMall', 'Spa', 'VRDeck',
+       'Name'],
+      dtype='str')
+Num of columns train_f: 20
+Num of columns test_f: 19
+Missing in test_f: 610
+
+
+--- STDERR ---
+

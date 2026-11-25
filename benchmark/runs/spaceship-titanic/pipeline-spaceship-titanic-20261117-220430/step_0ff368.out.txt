@@ -1,0 +1,10 @@
+exit_code: 0  timed_out: False  seconds: 0.9
+
+--- STDOUT ---
+Train columns: ['PassengerId', 'HomePlanet', 'CryoSleep', 'Destination', 'Age', 'VIP', 'RoomService', 'FoodCourt', 'ShoppingMall', 'Spa', 'VRDeck', 'Transported', 'Group', 'MemberID', 'Deck', 'Side', 'CabinNum']
+
+Test columns: ['PassengerId', 'HomePlanet', 'CryoSleep', 'Destination', 'Age', 'VIP', 'RoomService', 'FoodCourt', 'ShoppingMall', 'Spa', 'VRDeck', 'Group', 'MemberID', 'Deck', 'Side', 'CabinNum']
+
+
+--- STDERR ---
+

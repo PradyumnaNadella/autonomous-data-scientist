@@ -1,0 +1,2 @@
+{"model": "RandomForest, default params", "cv_score": 0.7879, "notes": "Feature engineering: Group, Deck, Side. SimpleImputer median."}
+{"model": "GradientBoosting, default params", "cv_score": 0.7942, "notes": "Feature engineering: Group, Deck, Side. SimpleImputer median."}

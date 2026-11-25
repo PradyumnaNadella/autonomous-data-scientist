@@ -1,0 +1,16 @@
+exit_code: 0  timed_out: False  seconds: 2.3
+
+--- STDOUT ---
+Train shape: (6954, 14)
+Numeric columns missing/imputed: Age             139
+RoomService     145
+FoodCourt       154
+ShoppingMall    169
+Spa             150
+VRDeck          144
+dtype: int64
+Uses features.py: True
+
+
+--- STDERR ---
+

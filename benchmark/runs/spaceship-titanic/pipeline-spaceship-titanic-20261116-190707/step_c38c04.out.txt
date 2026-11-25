@@ -1,0 +1,21 @@
+exit_code: 0  timed_out: False  seconds: 4.0
+
+--- STDOUT ---
+Missing in numerical: Age             139
+RoomService     145
+FoodCourt       154
+ShoppingMall    169
+Spa             150
+VRDeck          144
+dtype: int64
+Missing in categorical: HomePlanet     169
+CryoSleep      168
+Destination    153
+VIP            158
+Deck           161
+Side           161
+dtype: int64
+
+
+--- STDERR ---
+

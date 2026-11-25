@@ -1,0 +1,9 @@
+exit_code: 0  timed_out: False  seconds: 143.9
+
+--- STDOUT ---
+EXPERIMENT: RandomForest, CV Accuracy: 0.7890
+EXPERIMENT: HistGB, CV Accuracy: 0.7967
+
+
+--- STDERR ---
+

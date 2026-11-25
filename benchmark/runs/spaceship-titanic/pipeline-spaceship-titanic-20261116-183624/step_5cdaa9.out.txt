@@ -1,0 +1,12 @@
+exit_code: 1  timed_out: False  seconds: 3.0
+
+--- STDOUT ---
+
+
+--- STDERR ---
+Traceback (most recent call last):
+  File "/workspace/step_5cdaa9.py", line 4, in <module>
+    xgb_model = Pipeline([('preprocessor', preprocessor), 
+                ^^^^^^^^
+NameError: name 'Pipeline' is not defined
+

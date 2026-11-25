@@ -1,0 +1,12 @@
+exit_code: 1  timed_out: False  seconds: 2.3
+
+--- STDOUT ---
+
+
+--- STDERR ---
+Traceback (most recent call last):
+  File "/workspace/step_b512bb.py", line 4, in <module>
+    xgb = get_pipeline(XGBClassifier(random_state=42, use_label_encoder=False, eval_metric='logloss'))
+          ^^^^^^^^^^^^
+NameError: name 'get_pipeline' is not defined
+

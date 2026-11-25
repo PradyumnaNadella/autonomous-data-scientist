@@ -1,0 +1,19 @@
+exit_code: 0  timed_out: False  seconds: 2.4
+
+--- STDOUT ---
+ColumnTransformer(transformers=[('num', SimpleImputer(strategy='median'),
+                                 Index(['Age', 'RoomService', 'FoodCourt', 'ShoppingMall', 'Spa', 'VRDeck'],
+      dtype='str')),
+                                ('cat',
+                                 Pipeline(steps=[('imputer',
+                                                  SimpleImputer(strategy='most_frequent')),
+                                                 ('encoder',
+                                                  OneHotEncoder(handle_unknown='ignore'))]),
+                                 Index(['PassengerId', 'HomePlanet', 'CryoSleep', 'Cabin', 'Destination', 'VIP',
+       'Name', 'Group', 'MemberID', 'Deck', 'Num', 'Side'],
+      dtype='str'))])
+Transformers: ['num', 'cat']
+
+
+--- STDERR ---
+

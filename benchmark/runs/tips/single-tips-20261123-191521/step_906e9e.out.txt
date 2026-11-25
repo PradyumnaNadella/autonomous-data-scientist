@@ -1,0 +1,9 @@
+exit_code: 0  timed_out: False  seconds: 3.1
+
+--- STDOUT ---
+Ridge MAE: 0.8160326872485555
+RF MAE: 0.8586158974358972
+
+
+--- STDERR ---
+

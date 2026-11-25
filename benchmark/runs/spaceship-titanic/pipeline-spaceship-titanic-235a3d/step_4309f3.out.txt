@@ -1,0 +1,12 @@
+exit_code: 1  timed_out: False  seconds: 0.4
+
+--- STDOUT ---
+
+
+--- STDERR ---
+Traceback (most recent call last):
+  File "/workspace/step_4309f3.py", line 14, in <module>
+    df_pred = pd.read_csv('predictions.csv')
+              ^^
+NameError: name 'pd' is not defined. Did you mean: 'id'?
+

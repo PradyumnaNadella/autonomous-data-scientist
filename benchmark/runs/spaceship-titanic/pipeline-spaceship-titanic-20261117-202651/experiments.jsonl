@@ -1,0 +1,5 @@
+{"model": "RandomForestClassifier (default)", "cv_score": 0.7883, "notes": "5-fold CV, all features included, simple imputation."}
+{"model": "LGBMClassifier (tuned)", "cv_score": 0.8017, "notes": "5-fold CV, tuned n_estimators: 100, max_depth: 10, learning_rate: 0.1."}
+{"model": "RandomForestClassifier, default params", "cv_score": 0.79, "notes": ""}
+{"model": "LGBMClassifier, default params", "cv_score": 0.8038, "notes": ""}
+{"model": "LGBMClassifier, tuned (n_estimators=200, learning_rate=0.05)", "cv_score": 0.8043, "notes": ""}

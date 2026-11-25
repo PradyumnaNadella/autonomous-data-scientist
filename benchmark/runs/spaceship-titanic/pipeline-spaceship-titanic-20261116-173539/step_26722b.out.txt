@@ -1,0 +1,8 @@
+exit_code: 0  timed_out: False  seconds: 4.7
+
+--- STDOUT ---
+Model trained and predictions saved.
+
+
+--- STDERR ---
+

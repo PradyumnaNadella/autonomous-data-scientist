@@ -1,0 +1,12 @@
+exit_code: 1  timed_out: False  seconds: 3.9
+
+--- STDOUT ---
+
+
+--- STDERR ---
+Traceback (most recent call last):
+  File "/workspace/step_d7840e.py", line 4, in <module>
+    pipeline = Pipeline([('preprocessor', preprocessor), ('model', LGBMClassifier(random_state=42, verbose=-1))])
+               ^^^^^^^^
+NameError: name 'Pipeline' is not defined
+

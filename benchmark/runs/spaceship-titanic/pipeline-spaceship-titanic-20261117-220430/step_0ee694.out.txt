@@ -1,0 +1,12 @@
+exit_code: 0  timed_out: False  seconds: 0.9
+
+--- STDOUT ---
+CryoSleep
+False    4350
+True     2436
+NaN       168
+Name: count, dtype: int64
+
+
+--- STDERR ---
+

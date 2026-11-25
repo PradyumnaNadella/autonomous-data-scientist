@@ -1,0 +1,15 @@
+exit_code: 0  timed_out: False  seconds: 22.7
+
+--- STDOUT ---
+Best score: 0.8073
+Best params: {'model__n_estimators': 100, 'model__max_depth': 5, 'model__learning_rate': 0.05}
+Top 5 features:
+Num: 335
+FoodCourt: 294
+Spa: 258
+VRDeck: 250
+Age: 240
+
+
+--- STDERR ---
+

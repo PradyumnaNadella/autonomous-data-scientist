@@ -1,0 +1,9 @@
+exit_code: 0  timed_out: False  seconds: 25.0
+
+--- STDOUT ---
+RandomForest CV Accuracy: 0.7965
+HistGBM CV Accuracy: 0.8051
+
+
+--- STDERR ---
+

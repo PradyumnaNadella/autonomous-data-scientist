@@ -1,0 +1,12 @@
+exit_code: 1  timed_out: False  seconds: 1.1
+
+--- STDOUT ---
+
+
+--- STDERR ---
+Traceback (most recent call last):
+  File "/workspace/step_ee5a83.py", line 1, in <module>
+    test = pd.read_csv('test.csv')
+           ^^
+NameError: name 'pd' is not defined. Did you mean: 'id'?
+

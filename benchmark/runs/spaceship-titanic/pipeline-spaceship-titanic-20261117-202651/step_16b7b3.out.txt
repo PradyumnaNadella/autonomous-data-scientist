@@ -1,0 +1,13 @@
+exit_code: 0  timed_out: False  seconds: 1.1
+
+--- STDOUT ---
+Categorical features in training: ['CryoSleep', 'VIP']
+Group unique values (train): 5227
+Index(['PassengerId', 'HomePlanet', 'CryoSleep', 'Destination', 'Age', 'VIP',
+       'RoomService', 'FoodCourt', 'ShoppingMall', 'Spa', 'VRDeck', 'Name',
+       'Transported', 'Deck', 'Num', 'Side', 'Group', 'TotalSpend'],
+      dtype='str')
+
+
+--- STDERR ---
+

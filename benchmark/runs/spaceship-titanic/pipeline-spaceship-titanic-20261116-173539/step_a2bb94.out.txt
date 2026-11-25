@@ -1,0 +1,16 @@
+exit_code: 0  timed_out: False  seconds: 1.6
+
+--- STDOUT ---
+Target in training set: True
+Train columns: Index(['PassengerId', 'HomePlanet', 'CryoSleep', 'Destination', 'Age', 'VIP',
+       'RoomService', 'FoodCourt', 'ShoppingMall', 'Spa', 'VRDeck',
+       'Transported', 'Group', 'Deck', 'Num', 'Side'],
+      dtype='str')
+Test columns: Index(['PassengerId', 'HomePlanet', 'CryoSleep', 'Destination', 'Age', 'VIP',
+       'RoomService', 'FoodCourt', 'ShoppingMall', 'Spa', 'VRDeck', 'Group',
+       'Deck', 'Num', 'Side'],
+      dtype='str')
+
+
+--- STDERR ---
+

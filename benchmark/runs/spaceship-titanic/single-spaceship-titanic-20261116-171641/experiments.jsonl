@@ -1,0 +1,2 @@
+{"model": "RandomForestClassifier, default params", "cv_score": 0.7862, "notes": "Features: Age, RoomService, FoodCourt, ShoppingMall, Spa, VRDeck, HomePlanet, CryoSleep, Destination, VIP, Deck, Side. Simple imputer used."}
+{"model": "GradientBoostingClassifier, default params", "cv_score": 0.7975, "notes": "Features: Age, RoomService, FoodCourt, ShoppingMall, Spa, VRDeck, HomePlanet, CryoSleep, Destination, VIP, Deck, Side. Simple imputer used."}

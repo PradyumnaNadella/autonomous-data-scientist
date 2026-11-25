@@ -1,0 +1,9 @@
+exit_code: 0  timed_out: False  seconds: 21.9
+
+--- STDOUT ---
+Best CV Accuracy: 0.8004
+Best Params: {'model__learning_rate': 0.05, 'model__n_estimators': 100, 'model__num_leaves': 31}
+
+
+--- STDERR ---
+

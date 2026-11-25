@@ -1,0 +1,10 @@
+exit_code: 0  timed_out: False  seconds: 0.4
+
+--- STDOUT ---
+{"model": "RandomForest, default params", "cv_score": 0.7924, "notes": "5-fold stratified CV, standard features"}
+{"model": "XGBoost, default params", "cv_score": 0.7923, "notes": "5-fold stratified CV, standard features"}
+{"model": "XGBoost, tuned", "cv_score": 0.7982, "notes": "5-fold stratified CV, tuned hyperparameters: n_estimators=200, max_depth=3, learning_rate=0.1"}
+
+
+--- STDERR ---
+

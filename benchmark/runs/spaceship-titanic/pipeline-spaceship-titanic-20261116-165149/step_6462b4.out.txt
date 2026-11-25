@@ -1,0 +1,19 @@
+exit_code: 0  timed_out: False  seconds: 1.5
+
+--- STDOUT ---
+Index(['PassengerId', 'HomePlanet', 'CryoSleep', 'Cabin', 'Destination', 'Age',
+       'VIP', 'RoomService', 'FoodCourt', 'ShoppingMall', 'Spa', 'VRDeck',
+       'Name', 'Transported'],
+      dtype='str')
+  PassengerId HomePlanet  ...                Name  Transported
+0     3868_04      Earth  ...      Harrie Braymon         True
+1     1336_01      Earth  ...                 NaN         True
+2     9193_01      Earth  ...      Camily Howence        False
+3     5422_01     Europa  ...       Pleion Sperap         True
+4     5076_01      Earth  ...  Alicey Wolferguson        False
+
+[5 rows x 14 columns]
+
+
+--- STDERR ---
+

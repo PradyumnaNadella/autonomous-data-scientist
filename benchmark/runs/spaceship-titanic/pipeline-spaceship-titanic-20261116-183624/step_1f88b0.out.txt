@@ -1,0 +1,10 @@
+exit_code: 0  timed_out: False  seconds: 0.7
+
+--- STDOUT ---
+EXPERIMENT: RandomForest, default | Score: 0.7811 | Notes: Standard pipeline
+EXPERIMENT: XGBoost, default | Score: 0.7941 | Notes: Standard pipeline
+EXPERIMENT: XGBoost, tuned | Score: 0.7998 | Notes: n_estimators=200, max_depth=3, learning_rate=0.1
+
+
+--- STDERR ---
+

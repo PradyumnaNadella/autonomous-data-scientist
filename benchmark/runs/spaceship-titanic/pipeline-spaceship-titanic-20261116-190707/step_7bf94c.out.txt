@@ -1,0 +1,17 @@
+exit_code: 0  timed_out: False  seconds: 1.1
+
+--- STDOUT ---
+Col CryoSleep is object
+Col Age is numeric
+Col VIP is object
+Col RoomService is numeric
+Col FoodCourt is numeric
+Col ShoppingMall is numeric
+Col Spa is numeric
+Col VRDeck is numeric
+Col Surname is object
+CryoSleep type: object
+
+
+--- STDERR ---
+

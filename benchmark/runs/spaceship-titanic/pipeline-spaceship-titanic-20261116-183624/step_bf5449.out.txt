@@ -1,0 +1,11 @@
+exit_code: 0  timed_out: False  seconds: 54.6
+
+--- STDOUT ---
+Numerical: ['Age', 'RoomService', 'FoodCourt', 'ShoppingMall', 'Spa', 'VRDeck']
+Categorical: ['PassengerId', 'HomePlanet', 'CryoSleep', 'Destination', 'VIP', 'Group', 'IdInGroup', 'Deck', 'Num', 'Side']
+RandomForest: 0.7829
+XGBoost: 0.7896
+
+
+--- STDERR ---
+

@@ -1,0 +1,17 @@
+exit_code: 0  timed_out: False  seconds: 1.2
+
+--- STDOUT ---
+Train columns: Index(['PassengerId', 'HomePlanet', 'CryoSleep', 'Cabin', 'Destination', 'Age',
+       'VIP', 'RoomService', 'FoodCourt', 'ShoppingMall', 'Spa', 'VRDeck',
+       'Name', 'Transported'],
+      dtype='str')
+Test columns: Index(['PassengerId', 'HomePlanet', 'CryoSleep', 'Cabin', 'Destination', 'Age',
+       'VIP', 'RoomService', 'FoodCourt', 'ShoppingMall', 'Spa', 'VRDeck',
+       'Name'],
+      dtype='str')
+Num unique PassengerId: 1739 / 1739
+Are there any PassengerId in test also in train? 0
+
+
+--- STDERR ---
+

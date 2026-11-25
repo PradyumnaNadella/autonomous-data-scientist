@@ -1,0 +1,45 @@
+exit_code: 0  timed_out: False  seconds: 0.9
+
+--- STDOUT ---
+Train dtypes:
+PassengerId         str
+HomePlanet          str
+CryoSleep        object
+Destination         str
+Age             float64
+VIP              object
+RoomService     float64
+FoodCourt       float64
+ShoppingMall    float64
+Spa             float64
+VRDeck          float64
+Transported        bool
+Deck                str
+Num                 str
+Side                str
+Group               str
+TotalSpend      float64
+dtype: object
+
+Test dtypes:
+PassengerId         str
+HomePlanet          str
+CryoSleep        object
+Destination         str
+Age             float64
+VIP              object
+RoomService     float64
+FoodCourt       float64
+ShoppingMall    float64
+Spa             float64
+VRDeck          float64
+Deck                str
+Num                 str
+Side                str
+Group               str
+TotalSpend      float64
+dtype: object
+
+
+--- STDERR ---
+

@@ -1,0 +1,9 @@
+exit_code: 0  timed_out: False  seconds: 16.0
+
+--- STDOUT ---
+CV Scores: [0.77857656 0.78648454 0.78720345 0.79870597 0.8       ]
+Mean: 0.7901941049604602
+
+
+--- STDERR ---
+

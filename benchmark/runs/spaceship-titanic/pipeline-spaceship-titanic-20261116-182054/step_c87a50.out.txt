@@ -1,0 +1,35 @@
+exit_code: 0  timed_out: False  seconds: 1.7
+
+--- STDOUT ---
+Types:
+PassengerId         str
+HomePlanet          str
+CryoSleep        object
+Destination         str
+Age             float64
+VIP              object
+RoomService     float64
+FoodCourt       float64
+ShoppingMall    float64
+Spa             float64
+VRDeck          float64
+Deck                str
+Num                 str
+Side                str
+Group               str
+Index               str
+dtype: object
+
+Sample values:
+  PassengerId HomePlanet CryoSleep    Destination  ...   Num Side Group Index
+0     3868_04      Earth     False    TRAPPIST-1e  ...   630    S  3868    04
+1     1336_01      Earth      True    TRAPPIST-1e  ...   201    S  1336    01
+2     9193_01      Earth       NaN  PSO J318.5-22  ...  1483    S  9193    01
+3     5422_01     Europa      True    55 Cancri e  ...   164    S  5422    01
+4     5076_01      Earth     False    TRAPPIST-1e  ...   818    P  5076    01
+
+[5 rows x 16 columns]
+
+
+--- STDERR ---
+

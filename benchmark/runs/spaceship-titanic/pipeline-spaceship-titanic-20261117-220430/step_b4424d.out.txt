@@ -1,0 +1,13 @@
+exit_code: 0  timed_out: False  seconds: 2.2
+
+--- STDOUT ---
+Model type: <class 'sklearn.pipeline.Pipeline'>
+Pipeline steps: dict_keys(['preprocessor', 'classifier'])
+Preprocessor type: <class 'sklearn.compose._column_transformer.ColumnTransformer'>
+Predictions columns: Index(['PassengerId', 'Transported'], dtype='str')
+Predictions shape: (1739, 2)
+Test shape: (1739, 13)
+
+
+--- STDERR ---
+

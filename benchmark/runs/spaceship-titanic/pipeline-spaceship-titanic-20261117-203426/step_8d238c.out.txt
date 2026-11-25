@@ -1,0 +1,9 @@
+exit_code: 0  timed_out: False  seconds: 190.3
+
+--- STDOUT ---
+RandomForest CV Score: 0.7816
+HistGradientBoosting CV Score: 0.7991
+
+
+--- STDERR ---
+

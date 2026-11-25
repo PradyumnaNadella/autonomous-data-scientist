@@ -1,0 +1,12 @@
+exit_code: 1  timed_out: False  seconds: 0.9
+
+--- STDOUT ---
+
+
+--- STDERR ---
+Traceback (most recent call last):
+  File "/workspace/step_c9515e.py", line 3, in <module>
+    def build_features(df: pandas.DataFrame) -> pandas.DataFrame:
+                           ^^^^^^
+NameError: name 'pandas' is not defined
+

@@ -1,0 +1,47 @@
+exit_code: 0  timed_out: False  seconds: 2.0
+
+--- STDOUT ---
+
+import pandas as pd
+from features import build_features
+from sklearn.ensemble import HistGradientBoostingClassifier
+from sklearn.pipeline import Pipeline
+from sklearn.compose import ColumnTransformer
+from sklearn.preprocessing import StandardScaler, OneHotEncoder
+from sklearn.impute import SimpleImputer
+
+train_df = pd.read_csv('train.csv')
+test_df = pd.read_csv('test.csv')
+target = 'Transported'
+
+def prep(df):
+    if 'Name' in df.columns: df = df.drop(columns=['Name'])
+    pid = df['PassengerId']
+    df = df.drop(columns=['PassengerId'])
+    numeric_cols = ['Age', 'RoomService', 'FoodCourt', 'ShoppingMall', 'Spa', 'VRDeck']
+    for col in df.columns:
+        if col != target and col not in numeric_cols:
+            df[col] = df[col].astype(str)
+    return df, pid
+
+train, _ = prep(train_df)
+test, test_pid = prep(test_df)
+X = train.drop(columns=[target])
+y = train[target].astype(int)
+numeric_cols = ['Age', 'RoomService', 'FoodCourt', 'ShoppingMall', 'Spa', 'VRDeck']
+categorical_features = [c for c in X.columns if c not in numeric_cols]
+
+preprocessor = ColumnTransformer(
+    transformers=[
+        ('num', Pipeline([('imputer', SimpleImputer(strategy='median')), ('scaler', StandardScaler())]), numeric_cols),
+        ('cat', Pipeline([('imputer', SimpleImputer(strategy='constant', fill_value='missing')), ('onehot', OneHotEncoder(handle_unknown='ignore', sparse_output=False))]), categorical_features)])
+
+clf = Pipeline(steps=[('preprocessor', preprocessor), ('classifier', HistGradientBoostingClassifier(random_state=42))])
+clf.fit(X, y)
+preds = clf.predict(test)
+pd.DataFrame({'PassengerId': test_pid, 'Transported': preds.astype(bool)}).to_csv('predictions.csv', index=False)
+
+
+
+--- STDERR ---
+

@@ -1,0 +1,5 @@
+{"model": "RandomForestClassifier (n_estimators=50)", "cv_score": 0.7816, "notes": "Standard preprocessing with imputer, scaler, onehotencoder. 3-fold CV."}
+{"model": "HistGradientBoostingClassifier", "cv_score": 0.7991, "notes": "Standard preprocessing with imputer, scaler, onehotencoder. 3-fold CV."}
+{"model": "HistGradientBoosting (numeric only)", "cv_score": 0.75, "notes": "Only numeric features used to avoid OHE errors."}
+{"model": "RandomForestClassifier (with OneHotEncoder, max_categories=20)", "cv_score": 0.7965, "notes": "Using engineered features."}
+{"model": "HistGradientBoostingClassifier (with OneHotEncoder, max_categories=20)", "cv_score": 0.8051, "notes": "Using engineered features."}

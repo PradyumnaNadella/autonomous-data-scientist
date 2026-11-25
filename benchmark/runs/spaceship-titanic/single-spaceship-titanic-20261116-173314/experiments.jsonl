@@ -1,0 +1,2 @@
+{"model": "LogisticRegression, preprocessor: StandardScaled/OneHotEncoded", "cv_score": 0.7885, "notes": "Handled missing values with median/most_frequent, feature engineered 'Cabin' (Deck/Side)"}
+{"model": "RandomForestClassifier, default params", "cv_score": 0.7846, "notes": "Handled missing values with median/most_frequent, feature engineered 'Cabin' (Deck/Side)"}

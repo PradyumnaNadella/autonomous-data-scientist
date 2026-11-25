@@ -1,0 +1,17 @@
+exit_code: 0  timed_out: False  seconds: 1.1
+
+--- STDOUT ---
+X_train shape: (6954, 17)
+X_test shape: (1739, 17)
+X_train columns: Index(['PassengerId', 'HomePlanet', 'CryoSleep', 'Destination', 'Age', 'VIP',
+       'RoomService', 'FoodCourt', 'ShoppingMall', 'Spa', 'VRDeck', 'Group',
+       'Member', 'Deck', 'Num', 'Side', 'Surname'],
+      dtype='str')
+X_test columns: Index(['PassengerId', 'HomePlanet', 'CryoSleep', 'Destination', 'Age', 'VIP',
+       'RoomService', 'FoodCourt', 'ShoppingMall', 'Spa', 'VRDeck', 'Group',
+       'Member', 'Deck', 'Num', 'Side', 'Surname'],
+      dtype='str')
+
+
+--- STDERR ---
+

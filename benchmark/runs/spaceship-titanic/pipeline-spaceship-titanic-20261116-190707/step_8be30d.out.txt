@@ -1,0 +1,18 @@
+exit_code: 0  timed_out: False  seconds: 1.9
+
+--- STDOUT ---
+                            model  ...                                              notes
+0    RandomForest, default params  ...                                                NaN
+1         XGBoost, default params  ...                                                NaN
+2        LightGBM, default params  ...                                                NaN
+3  LightGBM, tuned (200, 7, 0.05)  ...                                                NaN
+4                    RandomForest  ...                       With all features, 5-fold CV
+5                         XGBoost  ...                       With all features, 5-fold CV
+6                        LightGBM  ...                       With all features, 5-fold CV
+7                  LightGBM Tuned  ...  Params: {'model__n_estimators': 100, 'model__m...
+
+[8 rows x 3 columns]
+
+
+--- STDERR ---
+

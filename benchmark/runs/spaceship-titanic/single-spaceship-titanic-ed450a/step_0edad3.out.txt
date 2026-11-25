@@ -1,0 +1,14 @@
+exit_code: 0  timed_out: False  seconds: 9.1
+
+--- STDOUT ---
+CV Accuracy: 0.7955
+
+
+--- STDERR ---
+/workspace/step_0edad3.py:14: Pandas4Warning: The inplace keyword in DataFrame.drop is deprecated and will be removed in a future version (PDEP-8).
+See https://pandas.pydata.org/docs/dev/whatsnew/v3.1.0.html#deprecation-inplace for more details.
+  df.drop(columns=['Name', 'Num', 'Cabin'], inplace=True)
+/workspace/step_0edad3.py:39: Pandas4Warning: For backward compatibility, 'str' dtypes are included by select_dtypes when 'object' dtype is specified. This behavior is deprecated and will be removed in a future version. Explicitly pass 'str' to `include` to select them, or to `exclude` to remove them and silence this warning.
+See https://pandas.pydata.org/docs/dev/user_guide/migration.html#string-migration-select-dtypes for details on how to write code that works with pandas 2 and 3.
+  categorical_cols = X.select_dtypes(include=['object']).columns
+

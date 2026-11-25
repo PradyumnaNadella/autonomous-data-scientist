@@ -1,0 +1,22 @@
+exit_code: 0  timed_out: False  seconds: 3.4
+
+--- STDOUT ---
+<class 'sklearn.pipeline.Pipeline'>
+[('pre', ColumnTransformer(transformers=[('num',
+                                 Pipeline(steps=[('imputer',
+                                                  SimpleImputer(strategy='median')),
+                                                 ('scaler', StandardScaler())]),
+                                 ['Age', 'RoomService', 'FoodCourt',
+                                  'ShoppingMall', 'Spa', 'VRDeck', 'Num']),
+                                ('cat',
+                                 Pipeline(steps=[('imputer',
+                                                  SimpleImputer(fill_value='missing',
+                                                                strategy='constant')),
+                                                 ('encoder',
+                                                  OneHotEncoder(handle_unknown='ignore'))]),
+                                 ['HomePlanet', 'CryoSleep', 'Destination',
+                                  'VIP', 'Group', 'Deck', 'Side', 'Surname'])])), ('model', LGBMClassifier(learning_rate=0.05, max_depth=5, random_state=42, verbose=-1))]
+
+
+--- STDERR ---
+

@@ -1,0 +1,12 @@
+exit_code: 1  timed_out: False  seconds: 3.2
+
+--- STDOUT ---
+
+
+--- STDERR ---
+Traceback (most recent call last):
+  File "/workspace/step_1d9d89.py", line 4, in <module>
+    xgb_pipe = Pipeline([('prep', preprocessor), ('clf', XGBClassifier(use_label_encoder=False, eval_metric='logloss', random_state=42))])
+               ^^^^^^^^
+NameError: name 'Pipeline' is not defined
+

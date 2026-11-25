@@ -1,0 +1,9 @@
+exit_code: 0  timed_out: False  seconds: 7.1
+
+--- STDOUT ---
+RF CV Score: 0.7856
+XGB CV Score: 0.7909
+
+
+--- STDERR ---
+

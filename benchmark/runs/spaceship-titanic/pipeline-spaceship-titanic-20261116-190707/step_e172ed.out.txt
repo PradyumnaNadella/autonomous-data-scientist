@@ -1,0 +1,10 @@
+exit_code: 0  timed_out: False  seconds: 1.1
+
+--- STDOUT ---
+PassengerId     str
+Transported    bool
+dtype: object
+
+
+--- STDERR ---
+

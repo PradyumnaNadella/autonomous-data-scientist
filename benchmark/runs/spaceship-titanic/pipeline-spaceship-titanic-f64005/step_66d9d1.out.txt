@@ -1,0 +1,13 @@
+exit_code: 0  timed_out: False  seconds: 3.4
+
+--- STDOUT ---
+num__Age            290
+num__FoodCourt      275
+num__VRDeck         257
+num__Spa            223
+num__RoomService    151
+dtype: int32
+
+
+--- STDERR ---
+

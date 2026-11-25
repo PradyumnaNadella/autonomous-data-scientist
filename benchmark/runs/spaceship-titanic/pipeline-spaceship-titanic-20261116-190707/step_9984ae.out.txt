@@ -1,0 +1,23 @@
+exit_code: 0  timed_out: False  seconds: 2.0
+
+--- STDOUT ---
+Types:
+HomePlanet        str
+CryoSleep      object
+Destination       str
+VIP            object
+Deck              str
+Side              str
+dtype: object
+Updated Types:
+HomePlanet     str
+CryoSleep      str
+Destination    str
+VIP            str
+Deck           str
+Side           str
+dtype: object
+
+
+--- STDERR ---
+

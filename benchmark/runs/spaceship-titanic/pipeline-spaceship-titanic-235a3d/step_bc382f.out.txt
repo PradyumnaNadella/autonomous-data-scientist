@@ -1,0 +1,12 @@
+exit_code: 1  timed_out: False  seconds: 0.6
+
+--- STDOUT ---
+
+
+--- STDERR ---
+Traceback (most recent call last):
+  File "/workspace/step_bc382f.py", line 2, in <module>
+    print("Unique PassengerId head:", train['PassengerId'].head().tolist())
+                                      ^^^^^
+NameError: name 'train' is not defined
+

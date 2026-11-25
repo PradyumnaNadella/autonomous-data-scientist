@@ -1,0 +1,26 @@
+exit_code: 0  timed_out: False  seconds: 1.5
+
+--- STDOUT ---
+Feature columns: ['PassengerId', 'HomePlanet', 'CryoSleep', 'Destination', 'Age', 'VIP', 'RoomService', 'FoodCourt', 'ShoppingMall', 'Spa', 'VRDeck', 'Group', 'Deck', 'Num', 'Side', 'Surname']
+Missing values in features:
+ PassengerId       0
+HomePlanet      169
+CryoSleep       168
+Destination     153
+Age             139
+VIP             158
+RoomService     145
+FoodCourt       154
+ShoppingMall    169
+Spa             150
+VRDeck          144
+Group             0
+Deck            161
+Num             161
+Side            161
+Surname         159
+dtype: int64
+
+
+--- STDERR ---
+

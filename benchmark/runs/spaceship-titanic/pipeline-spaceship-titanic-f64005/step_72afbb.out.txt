@@ -1,0 +1,9 @@
+exit_code: 0  timed_out: False  seconds: 14.8
+
+--- STDOUT ---
+LGBM n_estimators=100: 0.7985
+LGBM n_estimators=200: 0.7929
+
+
+--- STDERR ---
+

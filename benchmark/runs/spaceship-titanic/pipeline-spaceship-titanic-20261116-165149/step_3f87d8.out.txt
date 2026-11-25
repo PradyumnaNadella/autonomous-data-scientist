@@ -1,0 +1,8 @@
+exit_code: 0  timed_out: False  seconds: 2.4
+
+--- STDOUT ---
+Finished comparing models.
+
+
+--- STDERR ---
+

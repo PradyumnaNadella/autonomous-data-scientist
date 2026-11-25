@@ -1,0 +1,8 @@
+exit_code: 0  timed_out: False  seconds: 104.9
+
+--- STDOUT ---
+HGB CV Accuracy: 0.8011
+
+
+--- STDERR ---
+

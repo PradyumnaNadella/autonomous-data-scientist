@@ -1,0 +1,10 @@
+exit_code: 0  timed_out: False  seconds: 1.3
+
+--- STDOUT ---
+Feature engineering successful on train and test.
+Train features columns: ['PassengerId', 'HomePlanet', 'CryoSleep', 'Destination', 'Age', 'VIP', 'RoomService', 'FoodCourt', 'ShoppingMall', 'Spa', 'VRDeck', 'Transported', 'GroupId', 'MemberId', 'Deck', 'CabinNum', 'Side']
+Test features columns: ['PassengerId', 'HomePlanet', 'CryoSleep', 'Destination', 'Age', 'VIP', 'RoomService', 'FoodCourt', 'ShoppingMall', 'Spa', 'VRDeck', 'GroupId', 'MemberId', 'Deck', 'CabinNum', 'Side']
+
+
+--- STDERR ---
+

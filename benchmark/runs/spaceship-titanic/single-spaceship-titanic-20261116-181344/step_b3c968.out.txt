@@ -1,0 +1,56 @@
+exit_code: 0  timed_out: False  seconds: 1.4
+
+--- STDOUT ---
+Train shape: (6954, 14)
+Test shape: (1739, 13)
+
+Missing values (Train):
+ PassengerId       0
+HomePlanet      169
+CryoSleep       168
+Cabin           161
+Destination     153
+Age             139
+VIP             158
+RoomService     145
+FoodCourt       154
+ShoppingMall    169
+Spa             150
+VRDeck          144
+Name            159
+Transported       0
+dtype: int64
+
+Target distribution:
+ Transported
+True     0.503595
+False    0.496405
+Name: proportion, dtype: float64
+<class 'pandas.DataFrame'>
+RangeIndex: 6954 entries, 0 to 6953
+Data columns (total 14 columns):
+ #   Column        Non-Null Count  Dtype  
+---  ------        --------------  -----  
+ 0   PassengerId   6954 non-null   str    
+ 1   HomePlanet    6785 non-null   str    
+ 2   CryoSleep     6786 non-null   object 
+ 3   Cabin         6793 non-null   str    
+ 4   Destination   6801 non-null   str    
+ 5   Age           6815 non-null   float64
+ 6   VIP           6796 non-null   object 
+ 7   RoomService   6809 non-null   float64
+ 8   FoodCourt     6800 non-null   float64
+ 9   ShoppingMall  6785 non-null   float64
+ 10  Spa           6804 non-null   float64
+ 11  VRDeck        6810 non-null   float64
+ 12  Name          6795 non-null   str    
+ 13  Transported   6954 non-null   bool   
+dtypes: bool(1), float64(6), object(2), str(5)
+memory usage: 1010.5+ KB
+
+Info:
+ None
+
+
+--- STDERR ---
+

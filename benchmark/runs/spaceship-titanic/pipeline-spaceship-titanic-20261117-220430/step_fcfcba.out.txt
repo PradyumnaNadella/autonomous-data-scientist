@@ -1,0 +1,13 @@
+exit_code: 0  timed_out: False  seconds: 3.4
+
+--- STDOUT ---
+CryoSleep_False      0.422548
+HomePlanet_Earth     0.084609
+Deck_G               0.042785
+HomePlanet_Europa    0.032195
+Deck_E               0.024969
+dtype: float32
+
+
+--- STDERR ---
+

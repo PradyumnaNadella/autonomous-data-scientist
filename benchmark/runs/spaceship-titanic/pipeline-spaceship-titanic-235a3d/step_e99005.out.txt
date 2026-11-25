@@ -1,0 +1,13 @@
+exit_code: 0  timed_out: False  seconds: 1.5
+
+--- STDOUT ---
+Unique PassengerId head: ['3868_04', '1336_01', '9193_01', '5422_01', '5076_01']
+Unique Cabin head: ['G/630/S', 'G/201/S', 'G/1483/S', 'D/164/S', 'G/818/P']
+
+Train columns: {'Destination', 'CryoSleep', 'Name', 'ShoppingMall', 'VRDeck', 'PassengerId', 'FoodCourt', 'Spa', 'HomePlanet', 'Cabin', 'Transported', 'Age', 'VIP', 'RoomService'}
+Test columns: {'Destination', 'CryoSleep', 'Name', 'ShoppingMall', 'VRDeck', 'PassengerId', 'FoodCourt', 'Spa', 'HomePlanet', 'Cabin', 'Age', 'VIP', 'RoomService'}
+Missing in test: {'Transported'}
+
+
+--- STDERR ---
+

@@ -1,0 +1,12 @@
+exit_code: 1  timed_out: False  seconds: 0.4
+
+--- STDOUT ---
+
+
+--- STDERR ---
+Traceback (most recent call last):
+  File "/workspace/step_0dc768.py", line 2, in <module>
+    train = pd.read_csv('train.csv')
+            ^^
+NameError: name 'pd' is not defined. Did you mean: 'id'?
+

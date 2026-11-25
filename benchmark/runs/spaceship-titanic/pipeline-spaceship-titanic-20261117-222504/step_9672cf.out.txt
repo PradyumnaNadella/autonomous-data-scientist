@@ -1,0 +1,12 @@
+exit_code: 1  timed_out: False  seconds: 0.3
+
+--- STDOUT ---
+
+
+--- STDERR ---
+Traceback (most recent call last):
+  File "/workspace/step_9672cf.py", line 2, in <module>
+    train_cols = set(train.columns)
+                     ^^^^^
+NameError: name 'train' is not defined
+

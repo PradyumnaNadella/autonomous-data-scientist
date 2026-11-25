@@ -1,0 +1,10 @@
+exit_code: 0  timed_out: False  seconds: 221.5
+
+--- STDOUT ---
+RandomForest CV Accuracy: 0.7452
+HistGradientBoosting CV Accuracy: 0.7991
+Predictions saved to predictions.csv
+
+
+--- STDERR ---
+

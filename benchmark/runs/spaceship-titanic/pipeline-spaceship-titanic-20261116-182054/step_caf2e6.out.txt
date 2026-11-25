@@ -1,0 +1,43 @@
+exit_code: 0  timed_out: False  seconds: 1.1
+
+--- STDOUT ---
+Train shape: (6954, 14), Test shape: (1739, 13)
+
+Missing values (Train):
+ HomePlanet      169
+CryoSleep       168
+Cabin           161
+Destination     153
+Age             139
+VIP             158
+RoomService     145
+FoodCourt       154
+ShoppingMall    169
+Spa             150
+VRDeck          144
+Name            159
+dtype: int64
+
+Target distribution:
+ Transported
+True     0.503595
+False    0.496405
+Name: proportion, dtype: float64
+
+Column types:
+ float64    6
+str        5
+object     2
+bool       1
+Name: count, dtype: int64
+
+Sample rows:
+   PassengerId HomePlanet CryoSleep  ...  VRDeck            Name  Transported
+0     3868_04      Earth     False  ...     0.0  Harrie Braymon         True
+1     1336_01      Earth      True  ...     0.0             NaN         True
+
+[2 rows x 14 columns]
+
+
+--- STDERR ---
+

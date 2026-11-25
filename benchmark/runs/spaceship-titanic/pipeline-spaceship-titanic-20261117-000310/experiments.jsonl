@@ -1,0 +1,3 @@
+{"model": "Random Forest, default params", "cv_score": 0.79278, "notes": ""}
+{"model": "LightGBM, default params", "cv_score": 0.79738, "notes": ""}
+{"model": "LightGBM, tuned", "cv_score": 0.80026, "notes": "learning_rate=0.05, max_depth=10, n_estimators=100"}

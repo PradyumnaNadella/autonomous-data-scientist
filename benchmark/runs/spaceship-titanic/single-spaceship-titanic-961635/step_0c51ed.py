@@ -1,0 +1,45 @@
+import pandas as pd
+import numpy as np
+from sklearn.model_selection import cross_val_score, StratifiedKFold
+from sklearn.compose import ColumnTransformer
+from sklearn.pipeline import Pipeline
+from sklearn.impute import SimpleImputer
+from sklearn.preprocessing import StandardScaler, OneHotEncoder
+from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
+
+train = pd.read_csv('train.csv')
+X = train.drop('Transported', axis=1)
+y = train['Transported'].astype(int)
+
+# Feature engineering: split Cabin, create new features
+for df in [X]:
+    df[['Deck', 'Num', 'Side']] = df['Cabin'].str.split('/', expand=True)
+    df.drop(['Cabin', 'Name', 'PassengerId'], axis=1, inplace=True)
+
+numeric_features = ['Age', 'RoomService', 'FoodCourt', 'ShoppingMall', 'Spa', 'VRDeck']
+categorical_features = ['HomePlanet', 'CryoSleep', 'Destination', 'VIP', 'Deck', 'Side']
+
+preprocessor = ColumnTransformer(
+    transformers=[
+        ('num', SimpleImputer(strategy='median'), numeric_features),
+        ('cat', Pipeline(steps=[
+            ('imputer', SimpleImputer(strategy='most_frequent')),
+            ('encoder', OneHotEncoder(handle_unknown='ignore'))
+        ]), categorical_features)
+    ])
+
+# Model 1: RandomForest
+rf_pipeline = Pipeline(steps=[('preprocessor', preprocessor),
+                              ('classifier', RandomForestClassifier(n_estimators=100, random_state=42))])
+
+cv = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
+rf_score = cross_val_score(rf_pipeline, X, y, cv=cv, scoring='accuracy').mean()
+
+# Model 2: GradientBoosting
+gb_pipeline = Pipeline(steps=[('preprocessor', preprocessor),
+                              ('classifier', GradientBoostingClassifier(random_state=42))])
+
+gb_score = cross_val_score(gb_pipeline, X, y, cv=cv, scoring='accuracy').mean()
+
+print(f"RandomForest CV Score: {rf_score}")
+print(f"GradientBoosting CV Score: {gb_score}")

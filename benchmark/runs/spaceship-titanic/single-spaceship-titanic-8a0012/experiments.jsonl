@@ -1,0 +1,2 @@
+{"model": "RandomForest, default params", "cv_score": 0.786, "notes": "Features: Age, RoomService, FoodCourt, ShoppingMall, Spa, VRDeck, HomePlanet, CryoSleep, Destination, VIP, Deck, Side. Imputation used."}
+{"model": "XGBoost, default params", "cv_score": 0.7935, "notes": "Features: Age, RoomService, FoodCourt, ShoppingMall, Spa, VRDeck, HomePlanet, CryoSleep, Destination, VIP, Deck, Side. Imputation used."}

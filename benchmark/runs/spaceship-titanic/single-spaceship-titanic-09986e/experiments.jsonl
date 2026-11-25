@@ -1,0 +1,2 @@
+{"model": "RandomForestClassifier, default params", "cv_score": 0.784586, "notes": "Standard preprocessing: median imputation, scaling, one-hot encoding, feature engineering on Cabin."}
+{"model": "GradientBoostingClassifier, default params", "cv_score": 0.79724, "notes": "Standard preprocessing: median imputation, scaling, one-hot encoding, feature engineering on Cabin."}

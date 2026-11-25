@@ -1,0 +1,2 @@
+{"model": "RandomForestClassifier", "cv_score": 0.7846, "notes": "Standard preprocessing, imputed missing, one-hot encoded, no feature selection."}
+{"model": "GradientBoostingClassifier", "cv_score": 0.7972, "notes": "Standard preprocessing, imputed missing, one-hot encoded, no feature selection."}

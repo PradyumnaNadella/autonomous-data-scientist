@@ -1,0 +1,9 @@
+exit_code: 0  timed_out: False  seconds: 4.0
+
+--- STDOUT ---
+XGBoost: 0.7883
+LightGBM: 0.7987
+
+
+--- STDERR ---
+

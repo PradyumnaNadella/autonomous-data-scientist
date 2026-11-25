@@ -1,0 +1,9 @@
+exit_code: 0  timed_out: False  seconds: 80.7
+
+--- STDOUT ---
+Random Forest CV Score: 0.7715
+XGBoost CV Score: 0.7924
+
+
+--- STDERR ---
+

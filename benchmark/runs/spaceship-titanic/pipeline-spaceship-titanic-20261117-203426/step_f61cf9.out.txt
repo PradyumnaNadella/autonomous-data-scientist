@@ -1,0 +1,13 @@
+exit_code: 0  timed_out: False  seconds: 3.1
+
+--- STDOUT ---
+Top 5 features by importance (using a trained model):
+1. CryoSleep
+2. Spa
+3. RoomService
+4. VRDeck
+5. FoodCourt
+
+
+--- STDERR ---
+

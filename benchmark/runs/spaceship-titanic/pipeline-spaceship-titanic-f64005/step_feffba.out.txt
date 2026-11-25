@@ -1,0 +1,33 @@
+exit_code: 0  timed_out: False  seconds: 2.9
+
+--- STDOUT ---
+PassengerId         str
+HomePlanet          str
+CryoSleep        object
+Destination         str
+Age             float64
+VIP              object
+RoomService     float64
+FoodCourt       float64
+ShoppingMall    float64
+Spa             float64
+VRDeck          float64
+Transported        bool
+GroupId             str
+MemberId            str
+Deck                str
+CabinNum            str
+Side                str
+dtype: object
+  PassengerId HomePlanet CryoSleep  ... Deck CabinNum Side
+0     3868_04      Earth     False  ...    G      630    S
+1     1336_01      Earth      True  ...    G      201    S
+2     9193_01      Earth       NaN  ...    G     1483    S
+3     5422_01     Europa      True  ...    D      164    S
+4     5076_01      Earth     False  ...    G      818    P
+
+[5 rows x 17 columns]
+
+
+--- STDERR ---
+

@@ -1,0 +1,13 @@
+exit_code: 0  timed_out: False  seconds: 8.9
+
+--- STDOUT ---
+        feature  importance
+0           Age         486
+5        VRDeck         394
+2     FoodCourt         368
+4           Spa         334
+3  ShoppingMall         286
+
+
+--- STDERR ---
+

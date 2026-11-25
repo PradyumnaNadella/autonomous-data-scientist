@@ -1,0 +1,9 @@
+exit_code: 0  timed_out: False  seconds: 1.1
+
+--- STDOUT ---
+Num column unique values: 1745
+Num column dtype: str
+
+
+--- STDERR ---
+

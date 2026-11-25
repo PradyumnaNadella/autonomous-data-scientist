@@ -1,0 +1,9 @@
+exit_code: 0  timed_out: False  seconds: 16.9
+
+--- STDOUT ---
+RF CV: 0.7840078821198972
+XGB CV: 0.7896179447527528
+
+
+--- STDERR ---
+

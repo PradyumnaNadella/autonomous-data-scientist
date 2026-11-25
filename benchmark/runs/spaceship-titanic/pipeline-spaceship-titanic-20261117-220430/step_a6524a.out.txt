@@ -1,0 +1,12 @@
+exit_code: 1  timed_out: False  seconds: 3.6
+
+--- STDOUT ---
+
+
+--- STDERR ---
+Traceback (most recent call last):
+  File "/workspace/step_a6524a.py", line 3, in <module>
+    print(f"Group column in train: {'Group' in build_features(train_df).columns}")
+                                               ^^^^^^^^^^^^^^
+NameError: name 'build_features' is not defined
+

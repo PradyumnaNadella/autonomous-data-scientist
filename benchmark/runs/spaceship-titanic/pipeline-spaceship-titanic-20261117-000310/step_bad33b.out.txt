@@ -1,0 +1,12 @@
+exit_code: 1  timed_out: False  seconds: 5.4
+
+--- STDOUT ---
+
+
+--- STDERR ---
+Traceback (most recent call last):
+  File "/workspace/step_bad33b.py", line 2, in <module>
+    model_gb = Pipeline([
+               ^^^^^^^^
+NameError: name 'Pipeline' is not defined
+

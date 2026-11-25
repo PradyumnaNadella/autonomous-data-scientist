@@ -1,0 +1,52 @@
+exit_code: 0  timed_out: False  seconds: 4.0
+
+--- STDOUT ---
+Train shape: (6954, 14), Test shape: (1739, 13)
+Target distribution:
+Transported
+True     0.503595
+False    0.496405
+Name: proportion, dtype: float64
+
+Missing values (Train):
+HomePlanet      169
+CryoSleep       168
+Cabin           161
+Destination     153
+Age             139
+VIP             158
+RoomService     145
+FoodCourt       154
+ShoppingMall    169
+Spa             150
+VRDeck          144
+Name            159
+dtype: int64
+
+Missing values (Test):
+HomePlanet      32
+CryoSleep       49
+Cabin           38
+Destination     29
+Age             40
+VIP             45
+RoomService     36
+FoodCourt       29
+ShoppingMall    39
+Spa             33
+VRDeck          44
+Name            41
+dtype: int64
+
+Sample of 'PassengerId': 0    3868_04
+1    1336_01
+2    9193_01
+Name: PassengerId, dtype: str
+Sample of 'Cabin': 0     G/630/S
+1     G/201/S
+2    G/1483/S
+Name: Cabin, dtype: str
+
+
+--- STDERR ---
+

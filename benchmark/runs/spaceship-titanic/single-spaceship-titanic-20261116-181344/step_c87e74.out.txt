@@ -1,0 +1,9 @@
+exit_code: 0  timed_out: False  seconds: 2.8
+
+--- STDOUT ---
+RandomForest 0.7859
+GradientBoosting 0.8001
+
+
+--- STDERR ---
+

@@ -1,0 +1,12 @@
+exit_code: 1  timed_out: False  seconds: 3.3
+
+--- STDOUT ---
+
+
+--- STDERR ---
+Traceback (most recent call last):
+  File "/workspace/step_949122.py", line 10, in <module>
+    X = train.drop(['row_id', 'tip'], axis=1)
+        ^^^^^
+NameError: name 'train' is not defined
+

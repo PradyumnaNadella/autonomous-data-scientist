@@ -1,0 +1,9 @@
+exit_code: 0  timed_out: False  seconds: 10.3
+
+--- STDOUT ---
+Best CV Score: 0.8018418507465774
+Best Params: {'classifier__max_depth': 3, 'classifier__n_estimators': 100}
+
+
+--- STDERR ---
+

@@ -1,0 +1,11 @@
+exit_code: 0  timed_out: False  seconds: 119.3
+
+--- STDOUT ---
+Logged: RandomForest with score 0.7830 ()
+Logged: XGBoost with score 0.7967 ()
+Logged: LightGBM with score 0.7985 ()
+Logged: LightGBM, tuned with score 0.7961 (n_estimators=300, learning_rate=0.05)
+
+
+--- STDERR ---
+

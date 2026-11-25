@@ -1,0 +1,8 @@
+exit_code: 0  timed_out: False  seconds: 6.5
+
+--- STDOUT ---
+CV Accuracy: 0.8033
+
+
+--- STDERR ---
+

@@ -1,0 +1,2 @@
+{"model": "LogisticRegression", "cv_score": 0.7881794061515703, "notes": "Default settings, pipeline with OHE and scaling."}
+{"model": "RandomForestClassifier", "cv_score": 0.786167707099597, "notes": "Default settings, pipeline with OHE and scaling."}

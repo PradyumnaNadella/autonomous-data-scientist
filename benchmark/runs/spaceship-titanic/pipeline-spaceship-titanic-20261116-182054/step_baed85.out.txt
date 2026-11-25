@@ -1,0 +1,10 @@
+exit_code: 0  timed_out: False  seconds: 8.1
+
+--- STDOUT ---
+Log experiment LR: 0.7882
+Log experiment RF: 0.7862
+Predictions saved to predictions.csv
+
+
+--- STDERR ---
+

@@ -1,0 +1,8 @@
+exit_code: 0  timed_out: False  seconds: 2.5
+
+--- STDOUT ---
+Pipeline structure seems fine for features present.
+
+
+--- STDERR ---
+

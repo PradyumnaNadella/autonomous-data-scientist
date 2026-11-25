@@ -1,0 +1,9 @@
+exit_code: 0  timed_out: False  seconds: 9.0
+
+--- STDOUT ---
+RandomForest CV Accuracy: 0.7859
+GradientBoosting CV Accuracy: 0.8001
+
+
+--- STDERR ---
+

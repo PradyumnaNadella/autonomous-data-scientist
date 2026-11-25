@@ -1,0 +1,45 @@
+exit_code: 0  timed_out: False  seconds: 2.1
+
+--- STDOUT ---
+Train dtypes:
+ PassengerId         str
+HomePlanet          str
+CryoSleep        object
+Destination         str
+Age             float64
+VIP              object
+RoomService     float64
+FoodCourt       float64
+ShoppingMall    float64
+Spa             float64
+VRDeck          float64
+Transported        bool
+Group            object
+Deck                str
+CabinNum            str
+Side                str
+dtype: object
+
+Test dtypes:
+ PassengerId         str
+HomePlanet          str
+CryoSleep        object
+Destination         str
+Age             float64
+VIP              object
+RoomService     float64
+FoodCourt       float64
+ShoppingMall    float64
+Spa             float64
+VRDeck          float64
+Group            object
+Deck                str
+CabinNum            str
+Side                str
+dtype: object
+
+Train columns: ['PassengerId', 'HomePlanet', 'CryoSleep', 'Destination', 'Age', 'VIP', 'RoomService', 'FoodCourt', 'ShoppingMall', 'Spa', 'VRDeck', 'Transported', 'Group', 'Deck', 'CabinNum', 'Side']
+
+
+--- STDERR ---
+

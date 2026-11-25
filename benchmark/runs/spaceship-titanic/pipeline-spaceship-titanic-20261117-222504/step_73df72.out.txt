@@ -1,0 +1,13 @@
+exit_code: 0  timed_out: False  seconds: 2.4
+
+--- STDOUT ---
+CabinNum     642
+Age          512
+VRDeck       457
+FoodCourt    456
+Spa          387
+dtype: int32
+
+
+--- STDERR ---
+

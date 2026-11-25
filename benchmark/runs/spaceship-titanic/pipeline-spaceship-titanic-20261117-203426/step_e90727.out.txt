@@ -1,0 +1,8 @@
+exit_code: 0  timed_out: False  seconds: 77.6
+
+--- STDOUT ---
+Top features inferred: Expenditure variables (Spa, VRDeck, etc.), CryoSleep status, Deck.
+
+
+--- STDERR ---
+

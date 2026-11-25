@@ -1,0 +1,2 @@
+{"model": "RandomForestClassifier, default params", "cv_score": 0.7885, "notes": "Simple imputation and OHE for categorical features."}
+{"model": "GradientBoostingClassifier, default params", "cv_score": 0.7945, "notes": "Simple imputation and OHE for categorical features."}
