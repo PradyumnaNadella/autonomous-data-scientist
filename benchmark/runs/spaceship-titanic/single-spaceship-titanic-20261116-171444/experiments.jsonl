@@ -1,0 +1,2 @@
+{"model": "Random Forest, default params", "cv_score": 0.786, "notes": "Features: Age, HomePlanet, CryoSleep, Cabin(split), Destination, VIP, expenses, Deck, Side. Simple imputer median/most_frequent."}
+{"model": "Gradient Boosting, default params", "cv_score": 0.7975, "notes": "Features: Age, HomePlanet, CryoSleep, Cabin(split), Destination, VIP, expenses, Deck, Side. Simple imputer median/most_frequent."}

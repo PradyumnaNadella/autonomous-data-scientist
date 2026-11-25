@@ -1,0 +1,9 @@
+exit_code: 0  timed_out: False  seconds: 0.4
+
+--- STDOUT ---
+Log experiment RandomForest: 0.7903
+Log experiment XGBoost: 0.7967
+
+
+--- STDERR ---
+

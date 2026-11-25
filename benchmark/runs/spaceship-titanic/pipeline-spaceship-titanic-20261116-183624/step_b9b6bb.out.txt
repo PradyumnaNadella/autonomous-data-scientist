@@ -1,0 +1,12 @@
+exit_code: 1  timed_out: False  seconds: 3.6
+
+--- STDOUT ---
+
+
+--- STDERR ---
+Traceback (most recent call last):
+  File "/workspace/step_b9b6bb.py", line 8, in <module>
+    model = joblib.load('model.joblib') # Oops, I didn't save model.
+            ^^^^^^
+NameError: name 'joblib' is not defined
+

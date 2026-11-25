@@ -1,0 +1,12 @@
+exit_code: 1  timed_out: False  seconds: 1.4
+
+--- STDOUT ---
+
+
+--- STDERR ---
+Traceback (most recent call last):
+  File "/workspace/step_c6c28e.py", line 5, in <module>
+    X_train = train.drop(columns=['Transported'])
+              ^^^^^
+NameError: name 'train' is not defined
+

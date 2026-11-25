@@ -1,0 +1,15 @@
+exit_code: 0  timed_out: False  seconds: 5.9
+
+--- STDOUT ---
+Saved predictions.csv
+Top 5 features:
+Spa         2.344153
+VRDeck      2.040234
+Num_187     1.482214
+Num_1123    1.414713
+Num_245     1.369419
+dtype: float64
+
+
+--- STDERR ---
+

@@ -1,0 +1,14 @@
+exit_code: 0  timed_out: False  seconds: 3.9
+
+--- STDOUT ---
+Top 5 Feature Importances:
+CryoSleep_False    0.202043
+CryoSleep_True     0.192653
+Spa                0.107805
+VRDeck             0.102549
+FoodCourt          0.085950
+dtype: float64
+
+
+--- STDERR ---
+

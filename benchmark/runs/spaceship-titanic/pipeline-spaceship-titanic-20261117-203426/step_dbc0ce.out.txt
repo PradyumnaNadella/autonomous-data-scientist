@@ -1,0 +1,13 @@
+exit_code: 0  timed_out: False  seconds: 0.5
+
+--- STDOUT ---
+{"model": "RandomForestClassifier (n_estimators=50)", "cv_score": 0.7816, "notes": "Standard preprocessing with imputer, scaler, onehotencoder. 3-fold CV."}
+
+{"model": "HistGradientBoostingClassifier", "cv_score": 0.7991, "notes": "Standard preprocessing with imputer, scaler, onehotencoder. 3-fold CV."}
+
+{"model": "HistGradientBoosting (numeric only)", "cv_score": 0.75, "notes": "Only numeric features used to avoid OHE errors."}
+
+
+
+--- STDERR ---
+

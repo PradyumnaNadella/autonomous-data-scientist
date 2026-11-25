@@ -1,0 +1,24 @@
+[
+  {
+    "type": "human",
+    "text": "Solve the task. Start now.",
+    "tool_calls": null
+  },
+  {
+    "type": "ai",
+    "text": "",
+    "tool_calls": [
+      {
+        "name": "list_files",
+        "args": {},
+        "id": "call_407651",
+        "type": "tool_call"
+      }
+    ]
+  },
+  {
+    "type": "tool",
+    "text": "test.csv\ntrain.csv",
+    "tool_calls": null
+  }
+]

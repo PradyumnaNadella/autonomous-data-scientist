@@ -1,0 +1,29 @@
+exit_code: 0  timed_out: False  seconds: 1.8
+
+--- STDOUT ---
+  PassengerId  Transported
+0     3857_01         True
+1     7650_05         True
+2     9139_01        False
+3     6894_03         True
+4     8471_01        False
+(1739, 2)
+     PassengerId HomePlanet CryoSleep  ...     Spa  VRDeck               Name
+0        3857_01     Europa      True  ...     0.0     0.0  Eltard Dreamspric
+1        7650_05      Earth      True  ...     0.0     0.0        Tera Palmes
+2        9139_01       Mars     False  ...  1239.0    10.0       Poselk Paste
+3        6894_03       Mars     False  ...     0.0     0.0        Risps Hacle
+4        8471_01     Europa     False  ...  1873.0    45.0   Bosonon Metiveal
+...          ...        ...       ...  ...     ...     ...                ...
+1734     4008_01       Mars      True  ...     0.0     0.0         Anamse Cha
+1735     1733_01      Earth     False  ...     0.0     0.0      Stevey Chanan
+1736     6158_01      Earth      True  ...     0.0     0.0  Dawne Jacobbinson
+1737     6102_01      Earth     False  ...   280.0   216.0      Jilley Figuez
+1738     4411_01      Earth     False  ...     0.0     0.0    Alendy Parsoney
+
+[1739 rows x 13 columns]
+True
+
+
+--- STDERR ---
+

@@ -1,0 +1,12 @@
+exit_code: 1  timed_out: False  seconds: 0.5
+
+--- STDOUT ---
+
+
+--- STDERR ---
+Traceback (most recent call last):
+  File "/workspace/step_7c5f58.py", line 2, in <module>
+    print(f"Cabin unique sample: {train['Cabin'].dropna().unique()[:5]}")
+                                  ^^^^^
+NameError: name 'train' is not defined
+

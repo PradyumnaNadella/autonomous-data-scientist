@@ -1,0 +1,14 @@
+exit_code: 0  timed_out: False  seconds: 2.9
+
+--- STDOUT ---
+Saved predictions.csv
+        feature  importance
+0           Age         931
+5        VRDeck         814
+2     FoodCourt         760
+4           Spa         697
+3  ShoppingMall         586
+
+
+--- STDERR ---
+

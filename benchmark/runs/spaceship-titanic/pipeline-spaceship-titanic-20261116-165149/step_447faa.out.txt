@@ -1,0 +1,13 @@
+exit_code: 0  timed_out: False  seconds: 4.0
+
+--- STDOUT ---
+             feature  importance
+5        num__VRDeck         431
+2     num__FoodCourt         382
+4           num__Spa         382
+0           num__Age         380
+3  num__ShoppingMall         254
+
+
+--- STDERR ---
+

@@ -1,0 +1,15 @@
+exit_code: 0  timed_out: False  seconds: 1.0
+
+--- STDOUT ---
+PassengerId example: 3868_04
+Cabin example: G/630/S
+
+Unique count in PassengerId: 6954
+Unique count in Cabin: 5435
+
+Any overlap in PassengerId between train and test?
+0
+
+
+--- STDERR ---
+

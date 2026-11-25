@@ -1,0 +1,12 @@
+exit_code: 1  timed_out: False  seconds: 2.5
+
+--- STDOUT ---
+
+
+--- STDERR ---
+Traceback (most recent call last):
+  File "/workspace/step_fc78bc.py", line 7, in <module>
+    log_experiment(model="RandomForest", cv_score=0.7860, notes="Basic features + imputed")
+    ^^^^^^^^^^^^^^
+NameError: name 'log_experiment' is not defined
+

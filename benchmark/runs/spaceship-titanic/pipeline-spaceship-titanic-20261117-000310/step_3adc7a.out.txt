@@ -1,0 +1,11 @@
+exit_code: 0  timed_out: False  seconds: 2.6
+
+--- STDOUT ---
+Train columns: ['PassengerId', 'HomePlanet', 'CryoSleep', 'Cabin', 'Destination', 'Age', 'VIP', 'RoomService', 'FoodCourt', 'ShoppingMall', 'Spa', 'VRDeck', 'Name', 'Transported']
+Test columns: ['PassengerId', 'HomePlanet', 'CryoSleep', 'Cabin', 'Destination', 'Age', 'VIP', 'RoomService', 'FoodCourt', 'ShoppingMall', 'Spa', 'VRDeck', 'Name']
+Intersection: {'PassengerId', 'CryoSleep', 'Age', 'RoomService', 'Destination', 'Cabin', 'Spa', 'HomePlanet', 'FoodCourt', 'VRDeck', 'VIP', 'Name', 'ShoppingMall'}
+Test size: 1739
+
+
+--- STDERR ---
+

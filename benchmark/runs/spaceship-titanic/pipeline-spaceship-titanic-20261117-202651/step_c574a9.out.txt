@@ -1,0 +1,9 @@
+exit_code: 0  timed_out: False  seconds: 41.9
+
+--- STDOUT ---
+RF CV: 0.7827174694464414
+LGBM Tuned CV: 0.8021287930116008
+
+
+--- STDERR ---
+

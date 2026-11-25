@@ -1,0 +1,9 @@
+exit_code: 0  timed_out: False  seconds: 1.9
+
+--- STDOUT ---
+Number of groups: 5227
+Max group ID: 9280
+
+
+--- STDERR ---
+

@@ -1,0 +1,54 @@
+exit_code: 0  timed_out: False  seconds: 1.0
+
+--- STDOUT ---
+Train Shape: (6954, 14), Test Shape: (1739, 13)
+
+Target distribution:
+Transported
+True     0.503595
+False    0.496405
+Name: proportion, dtype: float64
+
+Missing values (Train):
+HomePlanet      169
+CryoSleep       168
+Cabin           161
+Destination     153
+Age             139
+VIP             158
+RoomService     145
+FoodCourt       154
+ShoppingMall    169
+Spa             150
+VRDeck          144
+Name            159
+dtype: int64
+
+Column types:
+PassengerId         str
+HomePlanet          str
+CryoSleep        object
+Cabin               str
+Destination         str
+Age             float64
+VIP              object
+RoomService     float64
+FoodCourt       float64
+ShoppingMall    float64
+Spa             float64
+VRDeck          float64
+Name                str
+Transported        bool
+dtype: object
+
+Sample values for potential combined columns:
+  PassengerId     Cabin                Name
+0     3868_04   G/630/S      Harrie Braymon
+1     1336_01   G/201/S                 NaN
+2     9193_01  G/1483/S      Camily Howence
+3     5422_01   D/164/S       Pleion Sperap
+4     5076_01   G/818/P  Alicey Wolferguson
+
+
+--- STDERR ---
+

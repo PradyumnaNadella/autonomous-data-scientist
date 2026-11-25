@@ -1,0 +1,16 @@
+exit_code: 0  timed_out: False  seconds: 0.9
+
+--- STDOUT ---
+Train columns: Index(['PassengerId', 'HomePlanet', 'CryoSleep', 'Cabin', 'Destination', 'Age',
+       'VIP', 'RoomService', 'FoodCourt', 'ShoppingMall', 'Spa', 'VRDeck',
+       'Name', 'Transported'],
+      dtype='str')
+Test columns: Index(['PassengerId', 'HomePlanet', 'CryoSleep', 'Cabin', 'Destination', 'Age',
+       'VIP', 'RoomService', 'FoodCourt', 'ShoppingMall', 'Spa', 'VRDeck',
+       'Name'],
+      dtype='str')
+Any overlap in PassengerId? set()
+
+
+--- STDERR ---
+

@@ -1,0 +1,15 @@
+exit_code: 0  timed_out: False  seconds: 1.1
+
+--- STDOUT ---
+Features created:
+Index(['PassengerId', 'HomePlanet', 'CryoSleep', 'Destination', 'Age', 'VIP',
+       'RoomService', 'FoodCourt', 'ShoppingMall', 'Spa', 'VRDeck', 'Group',
+       'Deck', 'Num', 'Side', 'Surname'],
+      dtype='str')
+Numeric columns in X:
+Index(['Age', 'RoomService', 'FoodCourt', 'ShoppingMall', 'Spa', 'VRDeck'],
+      dtype='str')
+
+
+--- STDERR ---
+

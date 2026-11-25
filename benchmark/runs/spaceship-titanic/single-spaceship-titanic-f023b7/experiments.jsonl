@@ -1,0 +1,2 @@
+{"model": "RandomForestClassifier, default params", "cv_score": 0.7864543390449394, "notes": "Features: Age, RoomService, FoodCourt, ShoppingMall, Spa, VRDeck, HomePlanet, CryoSleep, Destination, VIP. Simple imputation."}
+{"model": "LogisticRegression, default params", "cv_score": 0.786024029087298, "notes": "Features: Age, RoomService, FoodCourt, ShoppingMall, Spa, VRDeck, HomePlanet, CryoSleep, Destination, VIP. Simple imputation."}

@@ -228,7 +228,7 @@ def summarize_system(task: Task, name: str, runs: list[dict]) -> dict:
         "llm_calls_mean": mean("llm_calls"),
         "tokens_mean": mean("total_tokens"),
         "failed_executions_mean": mean("failed_executions"),
-        "recovery_rate": round(recovered / failed, 3) if failed else None,
+        "recovery_rate": round(recovered / failed, 3) if failed and recovered is not None else None,
         "timeouts_total": total("timeouts"),
         "truncated_total": total("truncated_responses"),
         "approval_rate": mean("approved"),

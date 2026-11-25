@@ -1,0 +1,9 @@
+exit_code: 0  timed_out: False  seconds: 208.8
+
+--- STDOUT ---
+EXPERIMENT LOG: RandomForest - Accuracy: 0.7846
+EXPERIMENT LOG: XGBoost - Accuracy: 0.7913
+
+
+--- STDERR ---
+

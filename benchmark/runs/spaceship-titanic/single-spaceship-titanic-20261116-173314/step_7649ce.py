@@ -1,0 +1,12 @@
+import pandas as pd
+train = pd.read_csv('train.csv')
+test = pd.read_csv('test.csv')
+print("Train shape:", train.shape)
+print("Test shape:", test.shape)
+print(train.info())
+print("-" * 20)
+print(train.head())
+print("-" * 20)
+print("Target distribution:\n", train['Transported'].value_counts(normalize=True))
+print("-" * 20)
+print("Missing values in train:\n", train.isnull().sum())

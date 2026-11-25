@@ -1,0 +1,33 @@
+exit_code: 0  timed_out: False  seconds: 1.0
+
+--- STDOUT ---
+PassengerId         str
+HomePlanet          str
+CryoSleep        object
+Destination         str
+Age             float64
+VIP              object
+RoomService     float64
+FoodCourt       float64
+ShoppingMall    float64
+Spa             float64
+VRDeck          float64
+Transported        bool
+Deck                str
+Num                 str
+Side                str
+Group               str
+TotalSpend      float64
+dtype: object
+  PassengerId HomePlanet CryoSleep  ... Side Group  TotalSpend
+0     3868_04      Earth     False  ...    S  3868         0.0
+1     1336_01      Earth      True  ...    S  1336         0.0
+2     9193_01      Earth       NaN  ...    S  9193         0.0
+3     5422_01     Europa      True  ...    S  5422         0.0
+4     5076_01      Earth     False  ...    P  5076      5208.0
+
+[5 rows x 17 columns]
+
+
+--- STDERR ---
+

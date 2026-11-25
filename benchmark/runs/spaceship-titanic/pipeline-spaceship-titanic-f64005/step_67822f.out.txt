@@ -1,0 +1,11 @@
+exit_code: 0  timed_out: False  seconds: 2.7
+
+--- STDOUT ---
+Train columns: ['PassengerId', 'HomePlanet', 'CryoSleep', 'Cabin', 'Destination', 'Age', 'VIP', 'RoomService', 'FoodCourt', 'ShoppingMall', 'Spa', 'VRDeck', 'Name', 'Transported']
+Test columns: ['PassengerId', 'HomePlanet', 'CryoSleep', 'Cabin', 'Destination', 'Age', 'VIP', 'RoomService', 'FoodCourt', 'ShoppingMall', 'Spa', 'VRDeck', 'Name']
+Train shape: (6954, 14)
+Test shape: (1739, 13)
+
+
+--- STDERR ---
+

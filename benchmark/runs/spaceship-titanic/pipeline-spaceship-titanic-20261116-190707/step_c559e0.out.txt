@@ -1,0 +1,39 @@
+exit_code: 0  timed_out: False  seconds: 1.1
+
+--- STDOUT ---
+  PassengerId HomePlanet CryoSleep  ...   Num Side      Surname
+0     3868_04      Earth     False  ...   630    S      Braymon
+1     1336_01      Earth      True  ...   201    S          NaN
+2     9193_01      Earth       NaN  ...  1483    S      Howence
+3     5422_01     Europa      True  ...   164    S       Sperap
+4     5076_01      Earth     False  ...   818    P  Wolferguson
+
+[5 rows x 16 columns]
+<class 'pandas.DataFrame'>
+RangeIndex: 6954 entries, 0 to 6953
+Data columns (total 16 columns):
+ #   Column        Non-Null Count  Dtype  
+---  ------        --------------  -----  
+ 0   PassengerId   6954 non-null   str    
+ 1   HomePlanet    6785 non-null   str    
+ 2   CryoSleep     6786 non-null   object 
+ 3   Destination   6801 non-null   str    
+ 4   Age           6815 non-null   float64
+ 5   VIP           6796 non-null   object 
+ 6   RoomService   6809 non-null   float64
+ 7   FoodCourt     6800 non-null   float64
+ 8   ShoppingMall  6785 non-null   float64
+ 9   Spa           6804 non-null   float64
+ 10  VRDeck        6810 non-null   float64
+ 11  Group         6954 non-null   str    
+ 12  Deck          6793 non-null   str    
+ 13  Num           6793 non-null   str    
+ 14  Side          6793 non-null   str    
+ 15  Surname       6795 non-null   object 
+dtypes: float64(6), object(3), str(7)
+memory usage: 1.1+ MB
+None
+
+
+--- STDERR ---
+

@@ -1,0 +1,16 @@
+exit_code: 0  timed_out: False  seconds: 1.1
+
+--- STDOUT ---
+Total rows: 6954
+Unique Surnames: 2123
+Top 5 Surnames by count: Surname
+Casonston    15
+Domington    14
+Briggston    13
+Litthews     13
+Cartez       12
+Name: count, dtype: int64
+
+
+--- STDERR ---
+

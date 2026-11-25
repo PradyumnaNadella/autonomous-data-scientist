@@ -1,0 +1,10 @@
+exit_code: 0  timed_out: False  seconds: 55.1
+
+--- STDOUT ---
+RandomForest: 0.7903
+XGBoost: 0.7970
+LightGBM: 0.8063
+
+
+--- STDERR ---
+

@@ -1,0 +1,29 @@
+---
+config:
+  flowchart:
+    curve: linear
+---
+graph TD;
+	__start__([<p>__start__</p>]):::first
+	eda(eda)
+	planner(planner)
+	features(features)
+	modeling(modeling)
+	critic(critic)
+	submit(submit)
+	reporter(reporter)
+	__end__([<p>__end__</p>]):::last
+	__start__ --> eda;
+	critic -.-> features;
+	critic -.-> modeling;
+	critic -.-> submit;
+	eda --> planner;
+	features --> modeling;
+	modeling --> critic;
+	planner --> features;
+	submit -.-> modeling;
+	submit -.-> reporter;
+	reporter --> __end__;
+	classDef default fill:#f2f0ff,line-height:1.2
+	classDef first fill-opacity:0
+	classDef last fill:#bfb6fc

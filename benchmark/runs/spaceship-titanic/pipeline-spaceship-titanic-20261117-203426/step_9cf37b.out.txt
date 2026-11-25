@@ -1,0 +1,9 @@
+exit_code: 0  timed_out: False  seconds: 104.6
+
+--- STDOUT ---
+Fit successful!
+Saved predictions.csv
+
+
+--- STDERR ---
+

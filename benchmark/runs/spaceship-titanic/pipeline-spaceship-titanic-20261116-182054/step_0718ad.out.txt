@@ -1,0 +1,12 @@
+exit_code: 0  timed_out: False  seconds: 1.2
+
+--- STDOUT ---
+Transported
+True     3502
+False    3452
+Name: count, dtype: int64
+bool
+
+
+--- STDERR ---
+

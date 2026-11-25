@@ -1,0 +1,12 @@
+exit_code: 1  timed_out: False  seconds: 0.5
+
+--- STDOUT ---
+
+
+--- STDERR ---
+Traceback (most recent call last):
+  File "/workspace/step_f9c3b2.py", line 2, in <module>
+    model_lgbm_tuned = Pipeline(steps=[('preprocessor', preprocessor), ('classifier', LGBMClassifier(n_estimators=200, max_depth=5, learning_rate=0.05, random_state=42, verbose=-1))])
+                       ^^^^^^^^
+NameError: name 'Pipeline' is not defined
+

@@ -1,0 +1,9 @@
+exit_code: 0  timed_out: False  seconds: 8.3
+
+--- STDOUT ---
+RF Score: 0.7860225809287869
+XGB Score: 0.7935005611614232
+
+
+--- STDERR ---
+

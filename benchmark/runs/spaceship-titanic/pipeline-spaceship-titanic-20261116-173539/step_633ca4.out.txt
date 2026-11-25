@@ -1,0 +1,23 @@
+exit_code: 0  timed_out: False  seconds: 1.1
+
+--- STDOUT ---
+Train columns: ['PassengerId', 'HomePlanet', 'CryoSleep', 'Cabin', 'Destination', 'Age', 'VIP', 'RoomService', 'FoodCourt', 'ShoppingMall', 'Spa', 'VRDeck', 'Name', 'Transported']
+Processed columns: ['PassengerId', 'HomePlanet', 'CryoSleep', 'Destination', 'Age', 'VIP', 'RoomService', 'FoodCourt', 'ShoppingMall', 'Spa', 'VRDeck', 'Transported', 'Group', 'Deck', 'Num', 'Side']
+Num column type: str
+PassengerId in train? True
+0        630.0
+1        201.0
+2       1483.0
+3        164.0
+4        818.0
+         ...  
+6949     168.0
+6950     951.0
+6951    1229.0
+6952      65.0
+6953    1629.0
+Name: Num, Length: 6954, dtype: float64
+
+
+--- STDERR ---
+

@@ -1,0 +1,10 @@
+import pandas as pd
+train = pd.read_csv('train.csv')
+test = pd.read_csv('test.csv')
+
+print("Train shape:", train.shape)
+print("Test shape:", test.shape)
+print("\nMissing values:\n", train.isnull().sum())
+print("\nTarget distribution:\n", train['Transported'].value_counts(normalize=True))
+print("\nData Types:\n", train.dtypes)
+print("\nSample:\n", train.head())

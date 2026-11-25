@@ -1,0 +1,8 @@
+exit_code: 0  timed_out: False  seconds: 3.7
+
+--- STDOUT ---
+Tuned LightGBM: 0.8011
+
+
+--- STDERR ---
+

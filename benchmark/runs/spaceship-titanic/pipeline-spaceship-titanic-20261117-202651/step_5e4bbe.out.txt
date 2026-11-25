@@ -1,0 +1,8 @@
+exit_code: 0  timed_out: False  seconds: 6.2
+
+--- STDOUT ---
+Tuned LGBM: 0.8062
+
+
+--- STDERR ---
+

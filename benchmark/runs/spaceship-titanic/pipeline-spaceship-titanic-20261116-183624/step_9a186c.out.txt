@@ -1,0 +1,26 @@
+exit_code: 0  timed_out: False  seconds: 4.1
+
+--- STDOUT ---
+Column Types:
+PassengerId         str
+HomePlanet          str
+CryoSleep        object
+Cabin               str
+Destination         str
+Age             float64
+VIP              object
+RoomService     float64
+FoodCourt       float64
+ShoppingMall    float64
+Spa             float64
+VRDeck          float64
+Name                str
+Transported        bool
+dtype: object
+
+Cabin example: G/630/S
+PassengerId example: 3868_04
+
+
+--- STDERR ---
+

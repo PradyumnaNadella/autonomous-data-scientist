@@ -1,0 +1,14 @@
+exit_code: 0  timed_out: False  seconds: 3.2
+
+--- STDOUT ---
+Top 5 Features:
+num__VRDeck         461
+num__Age            395
+num__FoodCourt      388
+num__Spa            381
+num__RoomService    239
+dtype: int32
+
+
+--- STDERR ---
+

@@ -1,0 +1,40 @@
+exit_code: 0  timed_out: False  seconds: 1.8
+
+--- STDOUT ---
+Train shape: (195, 8)
+Test shape: (49, 7)
+<class 'pandas.DataFrame'>
+RangeIndex: 195 entries, 0 to 194
+Data columns (total 8 columns):
+ #   Column      Non-Null Count  Dtype  
+---  ------      --------------  -----  
+ 0   row_id      195 non-null    int64  
+ 1   total_bill  195 non-null    float64
+ 2   tip         195 non-null    float64
+ 3   sex         195 non-null    str    
+ 4   smoker      195 non-null    str    
+ 5   day         195 non-null    str    
+ 6   time        195 non-null    str    
+ 7   size        195 non-null    int64  
+dtypes: float64(2), int64(2), str(4)
+memory usage: 15.4 KB
+None
+   row_id  total_bill   tip   sex smoker   day    time  size
+0     228       13.28  2.72  Male     No   Sat  Dinner     2
+1     208       24.27  2.03  Male    Yes   Sat  Dinner     2
+2      96       27.28  4.00  Male    Yes   Fri  Dinner     2
+3     167       31.71  4.50  Male     No   Sun  Dinner     4
+4      84       15.98  2.03  Male     No  Thur   Lunch     2
+           row_id  total_bill         tip        size
+count  195.000000  195.000000  195.000000  195.000000
+mean   123.656410   20.217692    3.087795    2.574359
+std     70.615774    8.770505    1.429049    0.940695
+min      0.000000    5.750000    1.000000    1.000000
+25%     62.500000   13.660000    2.000000    2.000000
+50%    125.000000   17.920000    3.000000    2.000000
+75%    183.500000   24.855000    3.695000    3.000000
+max    243.000000   50.810000   10.000000    6.000000
+
+
+--- STDERR ---
+

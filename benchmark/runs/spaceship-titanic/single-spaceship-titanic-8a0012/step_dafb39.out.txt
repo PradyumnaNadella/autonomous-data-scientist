@@ -1,0 +1,8 @@
+exit_code: 0  timed_out: False  seconds: 7.2
+
+--- STDOUT ---
+RF: 0.7860225809287869, XGB: 0.7935005611614232
+
+
+--- STDERR ---
+

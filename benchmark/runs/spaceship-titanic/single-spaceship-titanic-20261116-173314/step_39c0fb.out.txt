@@ -1,0 +1,9 @@
+exit_code: 0  timed_out: False  seconds: 6.5
+
+--- STDOUT ---
+LR CV Score: 0.7885
+RF CV Score: 0.7846
+
+
+--- STDERR ---
+

@@ -1,0 +1,12 @@
+exit_code: 1  timed_out: False  seconds: 0.4
+
+--- STDOUT ---
+
+
+--- STDERR ---
+Traceback (most recent call last):
+  File "/workspace/step_3ef17a.py", line 2, in <module>
+    best_model = grid.best_estimator_
+                 ^^^^
+NameError: name 'grid' is not defined
+

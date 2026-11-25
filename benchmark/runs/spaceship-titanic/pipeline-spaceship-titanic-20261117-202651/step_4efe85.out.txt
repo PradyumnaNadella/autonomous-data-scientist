@@ -1,0 +1,14 @@
+exit_code: 0  timed_out: False  seconds: 1.8
+
+--- STDOUT ---
+0     True
+1     True
+2    False
+3     True
+4    False
+Name: Transported, dtype: bool
+bool
+
+
+--- STDERR ---
+

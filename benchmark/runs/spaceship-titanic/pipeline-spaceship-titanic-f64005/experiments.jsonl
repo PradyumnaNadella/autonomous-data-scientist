@@ -1,0 +1,4 @@
+{"model": "RandomForest, default params", "cv_score": 0.783, "notes": "Standard scaling and median imputation."}
+{"model": "XGBoost, default params", "cv_score": 0.7967, "notes": "Standard scaling and median imputation."}
+{"model": "LightGBM, default params", "cv_score": 0.7985, "notes": "Standard scaling and median imputation."}
+{"model": "LightGBM, tuned params", "cv_score": 0.7998, "notes": "Tuned n_estimators, learning_rate, max_depth."}

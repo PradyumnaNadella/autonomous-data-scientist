@@ -1,0 +1,16 @@
+exit_code: 0  timed_out: False  seconds: 120.2
+
+--- STDOUT ---
+Best CV Score: 0.8008
+Best Params: {'classifier__learning_rate': 0.05, 'classifier__max_depth': 5, 'classifier__n_estimators': 100}
+Top 5 Features:
+CryoSleep_False      0.510163
+HomePlanet_Earth     0.081578
+Deck_G               0.047283
+RoomService          0.034156
+HomePlanet_Europa    0.032512
+dtype: float32
+
+
+--- STDERR ---
+

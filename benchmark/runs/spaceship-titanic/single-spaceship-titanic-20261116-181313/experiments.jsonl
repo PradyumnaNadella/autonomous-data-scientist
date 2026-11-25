@@ -1,0 +1,2 @@
+{"model": "Random Forest, default params", "cv_score": 0.7846, "notes": "Standard preprocessing, Cabin features extracted."}
+{"model": "LightGBM, default params", "cv_score": 0.7964, "notes": "Standard preprocessing, Cabin features extracted."}

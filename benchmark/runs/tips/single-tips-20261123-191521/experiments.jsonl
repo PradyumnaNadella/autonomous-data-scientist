@@ -1,0 +1,2 @@
+{"model": "Ridge Regressor", "cv_score": 0.8160326872485555, "notes": "StandardScaler + OneHotEncoder"}
+{"model": "RandomForestRegressor", "cv_score": 0.858615897435897, "notes": "StandardScaler + OneHotEncoder, default params"}

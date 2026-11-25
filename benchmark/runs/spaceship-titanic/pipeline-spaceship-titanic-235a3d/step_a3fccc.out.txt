@@ -1,0 +1,9 @@
+exit_code: 0  timed_out: False  seconds: 10.1
+
+--- STDOUT ---
+Best score: 0.7974
+Best params: {'model__learning_rate': 0.05, 'model__n_estimators': 100}
+
+
+--- STDERR ---
+

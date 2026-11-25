@@ -1,0 +1,9 @@
+exit_code: 0  timed_out: False  seconds: 30.5
+
+--- STDOUT ---
+RF CV Accuracy: 0.7949
+XGB CV Accuracy: 0.7977
+
+
+--- STDERR ---
+

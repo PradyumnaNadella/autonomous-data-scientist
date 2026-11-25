@@ -1,0 +1,10 @@
+exit_code: 0  timed_out: False  seconds: 1.1
+
+--- STDOUT ---
+Features: ['PassengerId', 'HomePlanet', 'CryoSleep', 'Destination', 'Age', 'VIP', 'RoomService', 'FoodCourt', 'ShoppingMall', 'Spa', 'VRDeck', 'Transported', 'Group', 'Deck', 'Num', 'Side']
+Cat: ['PassengerId', 'HomePlanet', 'CryoSleep', 'Destination', 'VIP', 'Transported', 'Group', 'Deck', 'Num', 'Side']
+Num: ['Age', 'RoomService', 'FoodCourt', 'ShoppingMall', 'Spa', 'VRDeck']
+
+
+--- STDERR ---
+

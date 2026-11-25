@@ -1,0 +1,34 @@
+exit_code: 0  timed_out: False  seconds: 0.9
+
+--- STDOUT ---
+Features engineered successfully.
+PassengerId         str
+HomePlanet          str
+CryoSleep        object
+Destination         str
+Age             float64
+VIP              object
+RoomService     float64
+FoodCourt       float64
+ShoppingMall    float64
+Spa             float64
+VRDeck          float64
+Transported        bool
+Group               str
+Deck                str
+Num                 str
+Side                str
+Surname             str
+dtype: object
+  PassengerId HomePlanet CryoSleep  ...   Num Side      Surname
+0     3868_04      Earth     False  ...   630    S      Braymon
+1     1336_01      Earth      True  ...   201    S      Unknown
+2     9193_01      Earth       NaN  ...  1483    S      Howence
+3     5422_01     Europa      True  ...   164    S       Sperap
+4     5076_01      Earth     False  ...   818    P  Wolferguson
+
+[5 rows x 17 columns]
+
+
+--- STDERR ---
+

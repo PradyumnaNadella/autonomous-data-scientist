@@ -1,0 +1,14 @@
+exit_code: 0  timed_out: False  seconds: 15.6
+
+--- STDOUT ---
+Top 5 Features:
+CryoSleep_True       0.488723
+CryoSleep_False      0.130512
+HomePlanet_Earth     0.071715
+HomePlanet_Europa    0.037684
+RoomService          0.025966
+dtype: float32
+
+
+--- STDERR ---
+

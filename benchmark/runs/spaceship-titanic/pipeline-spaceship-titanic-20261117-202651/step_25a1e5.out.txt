@@ -1,0 +1,10 @@
+exit_code: 0  timed_out: False  seconds: 0.3
+
+--- STDOUT ---
+{"model": "RandomForest, default params", "cv_score": 0.7965}
+{"model": "LGBM, default params", "cv_score": 0.8057}
+{"model": "LGBM, n_estimators=200, learning_rate=0.05", "cv_score": 0.8062}
+
+
+--- STDERR ---
+

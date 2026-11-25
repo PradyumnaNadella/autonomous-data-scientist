@@ -1,0 +1,9 @@
+exit_code: 0  timed_out: False  seconds: 0.9
+
+--- STDOUT ---
+[False True nan]
+[False True nan]
+
+
+--- STDERR ---
+

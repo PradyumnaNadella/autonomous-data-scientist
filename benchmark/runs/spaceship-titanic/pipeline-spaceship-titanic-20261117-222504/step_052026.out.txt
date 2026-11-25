@@ -1,0 +1,11 @@
+exit_code: 0  timed_out: False  seconds: 0.9
+
+--- STDOUT ---
+Transported
+True     0.503595
+False    0.496405
+Name: proportion, dtype: float64
+
+
+--- STDERR ---
+

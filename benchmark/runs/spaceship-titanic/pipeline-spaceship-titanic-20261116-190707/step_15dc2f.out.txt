@@ -1,0 +1,18 @@
+exit_code: 0  timed_out: False  seconds: 1.7
+
+--- STDOUT ---
+Train shape: (6954, 14)
+Test shape: (1739, 13)
+Predictions shape: (1739, 2)
+Columns in predictions: ['PassengerId', 'Transported']
+Head of predictions:
+  PassengerId  Transported
+0     3857_01         True
+1     7650_05         True
+2     9139_01        False
+3     6894_03         True
+4     8471_01        False
+
+
+--- STDERR ---
+

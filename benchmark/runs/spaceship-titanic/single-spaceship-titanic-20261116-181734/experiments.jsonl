@@ -1,0 +1,2 @@
+{"model": "RandomForestClassifier, default params", "cv_score": 0.7437451447899912, "notes": "Preprocessed features, imputed, total spend added."}
+{"model": "XGBClassifier, default params", "cv_score": 0.7300835277141335, "notes": "Preprocessed features, imputed, total spend added."}

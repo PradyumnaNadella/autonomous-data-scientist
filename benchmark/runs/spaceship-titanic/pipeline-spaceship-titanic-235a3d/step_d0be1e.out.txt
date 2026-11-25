@@ -1,0 +1,10 @@
+exit_code: 0  timed_out: False  seconds: 37.2
+
+--- STDOUT ---
+RF: 0.7869
+XGB: 0.7929
+LGBM: 0.7954
+
+
+--- STDERR ---
+

@@ -1,0 +1,10 @@
+exit_code: 0  timed_out: False  seconds: 28.7
+
+--- STDOUT ---
+RF CV Score: 0.7900498063087992
+LGBM CV Score: 0.8038542738778066
+Tuned LGBM CV Score: 0.8042870663928957
+
+
+--- STDERR ---
+

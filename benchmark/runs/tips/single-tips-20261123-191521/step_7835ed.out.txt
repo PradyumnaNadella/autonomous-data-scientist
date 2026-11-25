@@ -1,0 +1,13 @@
+exit_code: 0  timed_out: False  seconds: 2.4
+
+--- STDOUT ---
+   row_id       tip
+0      24  2.912933
+1       6  2.008299
+2     153  3.963045
+3     211  3.768526
+4     198  2.155267
+
+
+--- STDERR ---
+

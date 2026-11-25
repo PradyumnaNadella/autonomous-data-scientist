@@ -1,0 +1,17 @@
+exit_code: 0  timed_out: False  seconds: 1.2
+
+--- STDOUT ---
+Train columns: Index(['PassengerId', 'HomePlanet', 'CryoSleep', 'Destination', 'Age', 'VIP',
+       'RoomService', 'FoodCourt', 'ShoppingMall', 'Spa', 'VRDeck',
+       'Transported', 'Group', 'Deck', 'CabinNum', 'Side', 'Surname'],
+      dtype='str')
+Test columns: Index(['PassengerId', 'HomePlanet', 'CryoSleep', 'Destination', 'Age', 'VIP',
+       'RoomService', 'FoodCourt', 'ShoppingMall', 'Spa', 'VRDeck', 'Group',
+       'Deck', 'CabinNum', 'Side', 'Surname'],
+      dtype='str')
+Train surnames: 2123
+Test surnames: 1156
+
+
+--- STDERR ---
+

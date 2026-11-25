@@ -1,0 +1,2 @@
+{"model": "RandomForest, default params", "cv_score": 0.7859, "notes": "With simple feature engineering on Cabin and imputation."}
+{"model": "GradientBoosting, default params", "cv_score": 0.8001, "notes": "With simple feature engineering on Cabin and imputation."}

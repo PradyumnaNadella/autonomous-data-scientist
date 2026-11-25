@@ -1,0 +1,12 @@
+exit_code: 1  timed_out: False  seconds: 0.4
+
+--- STDOUT ---
+
+
+--- STDERR ---
+Traceback (most recent call last):
+  File "/workspace/step_20e157.py", line 2, in <module>
+    print("PassengerId example:", train['PassengerId'].iloc[0])
+                                  ^^^^^
+NameError: name 'train' is not defined
+

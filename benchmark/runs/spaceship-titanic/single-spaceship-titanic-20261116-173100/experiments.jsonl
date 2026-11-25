@@ -1,0 +1,2 @@
+{"model": "RandomForest, 100 trees", "cv_score": 0.7925, "notes": "Using engineered GroupId, Deck, Side. Simple imputer + standard scaler + OHE."}
+{"model": "LogisticRegression, max_iter 1000", "cv_score": 0.7936, "notes": "Using engineered GroupId, Deck, Side. Simple imputer + standard scaler + OHE."}

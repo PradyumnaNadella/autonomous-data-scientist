@@ -1,0 +1,14 @@
+exit_code: 0  timed_out: False  seconds: 2.7
+
+--- STDOUT ---
+Top 5 Feature Importances:
+Num           1062
+Age            654
+TotalSpend     611
+VRDeck         587
+Spa            536
+dtype: int32
+
+
+--- STDERR ---
+

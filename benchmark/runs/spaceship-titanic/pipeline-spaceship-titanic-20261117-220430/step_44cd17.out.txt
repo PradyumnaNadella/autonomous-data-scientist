@@ -1,0 +1,13 @@
+exit_code: 0  timed_out: False  seconds: 3.8
+
+--- STDOUT ---
+CryoSleep_False    0.205423
+CryoSleep_True     0.168445
+Spa                0.123727
+VRDeck             0.102571
+RoomService        0.099218
+dtype: float64
+
+
+--- STDERR ---
+

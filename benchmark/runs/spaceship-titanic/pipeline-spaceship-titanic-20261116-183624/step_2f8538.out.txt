@@ -1,0 +1,9 @@
+exit_code: 0  timed_out: False  seconds: 46.9
+
+--- STDOUT ---
+Best parameters: {'model__learning_rate': 0.1, 'model__max_depth': 3, 'model__n_estimators': 200}
+Best CV score: 0.7998
+
+
+--- STDERR ---
+

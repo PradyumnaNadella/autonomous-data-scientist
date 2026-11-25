@@ -1,0 +1,13 @@
+exit_code: 0  timed_out: False  seconds: 2.6
+
+--- STDOUT ---
+Top 5 features:
+1. Age: 424
+2. TotalSpend: 387
+3. VRDeck: 365
+4. Spa: 351
+5. FoodCourt: 289
+
+
+--- STDERR ---
+

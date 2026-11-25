@@ -1,0 +1,12 @@
+exit_code: 1  timed_out: False  seconds: 3.4
+
+--- STDOUT ---
+
+
+--- STDERR ---
+Traceback (most recent call last):
+  File "/workspace/step_8e86df.py", line 4, in <module>
+    gbr = Pipeline([('preprocessor', preprocessor), ('regressor', GradientBoostingRegressor(random_state=42))])
+          ^^^^^^^^
+NameError: name 'Pipeline' is not defined
+

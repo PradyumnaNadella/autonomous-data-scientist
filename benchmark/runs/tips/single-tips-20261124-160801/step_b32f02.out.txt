@@ -1,0 +1,11 @@
+exit_code: 0  timed_out: False  seconds: 4.0
+
+--- STDOUT ---
+Ridge CV MAE: 0.8160
+RandomForest CV MAE: 0.8586
+Log: Ridge, CV: 0.8160326872485555
+Log: RandomForest, CV: 0.8586158974358972
+
+
+--- STDERR ---
+

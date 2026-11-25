@@ -1,0 +1,13 @@
+exit_code: 0  timed_out: False  seconds: 2.4
+
+--- STDOUT ---
+Age           669
+FoodCourt     568
+VRDeck        483
+Spa           415
+TotalSpent    385
+dtype: int32
+
+
+--- STDERR ---
+

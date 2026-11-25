@@ -1,0 +1,12 @@
+exit_code: 1  timed_out: False  seconds: 5.2
+
+--- STDOUT ---
+
+
+--- STDERR ---
+Traceback (most recent call last):
+  File "/workspace/step_65acbe.py", line 15, in <module>
+    clf = Pipeline(steps=[('preprocessor', preprocessor), ('classifier', XGBClassifier(random_state=42, eval_metric='logloss'))])
+          ^^^^^^^^
+NameError: name 'Pipeline' is not defined
+

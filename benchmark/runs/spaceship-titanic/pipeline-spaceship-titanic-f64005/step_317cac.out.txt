@@ -1,0 +1,10 @@
+exit_code: 0  timed_out: False  seconds: 3.0
+
+--- STDOUT ---
+Columns after features: ['PassengerId', 'HomePlanet', 'CryoSleep', 'Destination', 'Age', 'VIP', 'RoomService', 'FoodCourt', 'ShoppingMall', 'Spa', 'VRDeck', 'Transported', 'GroupId', 'MemberId', 'Deck', 'CabinNum', 'Side']
+Train features shape: (6954, 17)
+Test features shape: (1739, 16)
+
+
+--- STDERR ---
+

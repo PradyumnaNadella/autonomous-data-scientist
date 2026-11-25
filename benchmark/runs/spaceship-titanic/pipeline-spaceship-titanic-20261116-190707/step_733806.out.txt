@@ -1,0 +1,13 @@
+exit_code: 0  timed_out: False  seconds: 2.8
+
+--- STDOUT ---
+              feature  importance
+10    CryoSleep_False    0.368218
+11     CryoSleep_True    0.300235
+6    HomePlanet_Earth    0.074222
+7   HomePlanet_Europa    0.040797
+4                 Spa    0.020605
+
+
+--- STDERR ---
+

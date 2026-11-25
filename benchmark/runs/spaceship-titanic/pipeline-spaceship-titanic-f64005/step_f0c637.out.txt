@@ -1,0 +1,8 @@
+exit_code: 0  timed_out: False  seconds: 0.4
+
+--- STDOUT ---
+['step_8045e0.py', 'step_317cac.out.txt', 'step_83863d.py', 'step_f0c637.py', 'step_897399.py', 'predictions.csv', 'step_72afbb.out.txt', 'step_90ae21.py', 'step_534809.py', 'step_66d9d1.py', 'step_feffba.py', 'step_67822f.py', 'step_d3ccf4.out.txt', '__pycache__', 'train.csv', 'step_317cac.py', 'step_feffba.out.txt', 'step_b64250.out.txt', 'step_d72a5c.py', 'step_609010.py', 'step_b64250.py', 'step_207984.out.txt', 'step_83863d.out.txt', 'step_207984.py', 'step_fdf903.out.txt', 'step_67a653.out.txt', 'step_67a653.py', 'step_254706.py', 'step_9b1d9e.py', 'experiments.jsonl', 'step_fdf903.py', 'step_72afbb.py', 'step_191904.out.txt', 'step_534809.out.txt', 'step_66d9d1.out.txt', 'step_d3ccf4.py', 'sandbox_log.jsonl', 'step_53ef27.out.txt', 'step_d72a5c.out.txt', 'step_f6a723.py', 'test.csv', 'step_254706.out.txt', 'step_53ef27.py', 'step_609010.out.txt', 'step_c78769.py', 'step_f6a723.out.txt', 'step_9b1d9e.out.txt', 'features.py', 'step_67822f.out.txt', 'step_897399.out.txt', 'step_90ae21.out.txt', 'step_8045e0.out.txt', 'step_c78769.out.txt', 'step_191904.py']
+
+
+--- STDERR ---
+

@@ -1,0 +1,8 @@
+{"model": "RandomForest, default params", "cv_score": 0.7844}
+{"model": "XGBoost, default params", "cv_score": 0.7896}
+{"model": "LightGBM, default params", "cv_score": 0.798}
+{"model": "LightGBM, tuned (200, 7, 0.05)", "cv_score": 0.8008}
+{"model": "RandomForest", "cv_score": 0.7903, "notes": "With all features, 5-fold CV"}
+{"model": "XGBoost", "cv_score": 0.797, "notes": "With all features, 5-fold CV"}
+{"model": "LightGBM", "cv_score": 0.8063, "notes": "With all features, 5-fold CV"}
+{"model": "LightGBM Tuned", "cv_score": 0.807306373449048, "notes": "Params: {'model__n_estimators': 100, 'model__max_depth': 5, 'model__learning_rate': 0.05}"}

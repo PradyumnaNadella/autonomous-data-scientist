@@ -1,0 +1,8 @@
+exit_code: 0  timed_out: False  seconds: 2.2
+
+--- STDOUT ---
+['step_b4424d.out.txt', 'step_d743b0.out.txt', 'step_d743b0.py', 'step_fcfcba.py', 'step_83ffda.py', 'step_b4424d.py', 'step_46432c.py', 'predictions.csv', 'step_46432c.out.txt', 'step_d55972.out.txt', 'step_c16de3.out.txt', 'train_model.py', 'step_fcfcba.out.txt', 'step_0ee694.out.txt', 'step_cbda16.py', 'step_3b9b6d.py', '__pycache__', 'train.csv', 'step_2c62c9.out.txt', 'step_464dcb.py', 'step_38f83a.out.txt', 'step_abab0e.out.txt', 'step_ec710c.out.txt', 'step_0ee694.py', 'step_1c9892.py', 'step_d55972.py', 'step_2c62c9.py', 'step_83ffda.out.txt', 'step_cc0532.out.txt', 'step_38f83a.py', 'step_17a02f.py', 'graph.mmd', 'step_b61ea0.out.txt', 'experiments.jsonl', 'step_abab0e.py', 'step_464dcb.out.txt', 'model.joblib', 'step_cc0532.py', 'step_b99dad.py', 'sandbox_log.jsonl', 'test.csv', 'step_ec710c.py', 'features.py', 'step_1c9892.out.txt', 'step_cbda16.out.txt', 'step_17a02f.out.txt', 'step_b61ea0.py', 'step_c16de3.py', 'step_b99dad.out.txt', 'graph.png']
+
+
+--- STDERR ---
+

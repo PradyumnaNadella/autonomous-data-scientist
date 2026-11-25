@@ -1,0 +1,9 @@
+exit_code: 0  timed_out: False  seconds: 33.5
+
+--- STDOUT ---
+Best CV: 0.8018425748258331
+Best Params: {'classifier__learning_rate': 0.05, 'classifier__max_depth': 5, 'classifier__n_estimators': 200}
+
+
+--- STDERR ---
+

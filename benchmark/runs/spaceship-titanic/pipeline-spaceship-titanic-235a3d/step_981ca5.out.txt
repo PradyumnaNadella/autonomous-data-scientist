@@ -1,0 +1,17 @@
+exit_code: 0  timed_out: False  seconds: 2.8
+
+--- STDOUT ---
+[LightGBM] [Info] Number of positive: 3502, number of negative: 3452
+[LightGBM] [Info] Auto-choosing row-wise multi-threading, the overhead of testing was 0.000665 seconds.
+You can set `force_row_wise=true` to remove the overhead.
+And if memory is not enough, you can set `force_col_wise=true`.
+[LightGBM] [Info] Total Bins 1393
+[LightGBM] [Info] Number of data points in the train set: 6954, number of used features: 26
+[LightGBM] [Info] [binary:BoostFromScore]: pavg=0.503595 -> initscore=0.014380
+[LightGBM] [Info] Start training from score 0.014380
+[ True  True False  True False]
+<class 'numpy.bool'>
+
+
+--- STDERR ---
+

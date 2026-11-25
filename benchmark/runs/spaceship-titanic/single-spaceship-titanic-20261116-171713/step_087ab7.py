@@ -1,0 +1,43 @@
+from sklearn.model_selection import cross_val_score, StratifiedKFold
+from sklearn.pipeline import Pipeline
+from sklearn.compose import ColumnTransformer
+from sklearn.impute import SimpleImputer
+from sklearn.preprocessing import StandardScaler, OneHotEncoder
+from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
+import pandas as pd
+import numpy as np
+
+train = pd.read_csv('train.csv')
+
+# Preprocessing
+features = ['HomePlanet', 'CryoSleep', 'Destination', 'Age', 'VIP', 'RoomService', 'FoodCourt', 'ShoppingMall', 'Spa', 'VRDeck']
+target = 'Transported'
+
+categorical_features = ['HomePlanet', 'CryoSleep', 'Destination', 'VIP']
+numeric_features = ['Age', 'RoomService', 'FoodCourt', 'ShoppingMall', 'Spa', 'VRDeck']
+
+preprocessor = ColumnTransformer(
+    transformers=[
+        ('num', SimpleImputer(strategy='median'), numeric_features),
+        ('cat', Pipeline(steps=[
+            ('imputer', SimpleImputer(strategy='most_frequent')),
+            ('onehot', OneHotEncoder(handle_unknown='ignore'))
+        ]), categorical_features)
+    ])
+
+# Model 1: RandomForest
+rf_clf = Pipeline(steps=[('preprocessor', preprocessor),
+                      ('classifier', RandomForestClassifier(n_estimators=50, random_state=42))])
+
+# Model 2: GradientBoosting
+gb_clf = Pipeline(steps=[('preprocessor', preprocessor),
+                      ('classifier', GradientBoostingClassifier(n_estimators=50, random_state=42))])
+
+# Cross Validation
+cv = StratifiedKFold(n_splits=3, shuffle=True, random_state=42)
+
+rf_scores = cross_val_score(rf_clf, train[features], train[target], cv=cv, scoring='accuracy')
+gb_scores = cross_val_score(gb_clf, train[features], train[target], cv=cv, scoring='accuracy')
+
+print("RF CV Mean Accuracy:", rf_scores.mean())
+print("GB CV Mean Accuracy:", gb_scores.mean())

@@ -1,0 +1,9 @@
+exit_code: 0  timed_out: False  seconds: 11.8
+
+--- STDOUT ---
+RF CV Mean Accuracy: 0.7831463905665803
+GB CV Mean Accuracy: 0.7854472246189244
+
+
+--- STDERR ---
+

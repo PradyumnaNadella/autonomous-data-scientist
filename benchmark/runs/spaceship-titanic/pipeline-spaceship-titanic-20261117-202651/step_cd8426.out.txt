@@ -1,0 +1,13 @@
+exit_code: 0  timed_out: False  seconds: 1.0
+
+--- STDOUT ---
+0     630
+1     201
+2    1483
+3     164
+4     818
+Name: Num, dtype: str
+
+
+--- STDERR ---
+

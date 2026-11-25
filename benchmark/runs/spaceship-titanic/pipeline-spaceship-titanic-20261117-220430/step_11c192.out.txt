@@ -1,0 +1,12 @@
+exit_code: 1  timed_out: False  seconds: 4.2
+
+--- STDOUT ---
+
+
+--- STDERR ---
+Traceback (most recent call last):
+  File "/workspace/step_11c192.py", line 5, in <module>
+    model = Pipeline([
+            ^^^^^^^^
+NameError: name 'Pipeline' is not defined
+

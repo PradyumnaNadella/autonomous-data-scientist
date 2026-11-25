@@ -1,0 +1,9 @@
+exit_code: 0  timed_out: False  seconds: 10.4
+
+--- STDOUT ---
+RandomForest Score: 0.7861664658208731
+GradientBoosting Score: 0.7975274762217545
+
+
+--- STDERR ---
+

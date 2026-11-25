@@ -1,0 +1,9 @@
+exit_code: 0  timed_out: False  seconds: 2.1
+
+--- STDOUT ---
+Unique train Transported values: [ True False]
+Unique predictions Transported values: [1 0]
+
+
+--- STDERR ---
+

@@ -1,0 +1,89 @@
+exit_code: 1  timed_out: False  seconds: 6.8
+
+--- STDOUT ---
+
+
+--- STDERR ---
+Traceback (most recent call last):
+  File "/workspace/step_a6002e.py", line 35, in <module>
+    grid.fit(X, y)
+  File "/usr/local/lib/python3.12/site-packages/sklearn/base.py", line 1403, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/sklearn/model_selection/_search.py", line 1134, in fit
+    self._run_search(evaluate_candidates, callback_ctx=root_callback_ctx)
+  File "/usr/local/lib/python3.12/site-packages/sklearn/model_selection/_search.py", line 1721, in _run_search
+    evaluate_candidates(ParameterGrid(self.param_grid), callback_ctx=search_ctx)
+  File "/usr/local/lib/python3.12/site-packages/sklearn/model_selection/_search.py", line 1110, in evaluate_candidates
+    _warn_or_raise_about_fit_failures(out, self.error_score)
+  File "/usr/local/lib/python3.12/site-packages/sklearn/model_selection/_validation.py", line 482, in _warn_or_raise_about_fit_failures
+    raise ValueError(all_fits_failed_message)
+ValueError: 
+All the 12 fits failed.
+It is very likely that your model is misconfigured.
+You can try to debug the error by setting error_score='raise'.
+
+Below are more details about the failures:
+--------------------------------------------------------------------------------
+12 fits failed with the following error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/sklearn/model_selection/_validation.py", line 855, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "/usr/local/lib/python3.12/site-packages/sklearn/base.py", line 1403, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/sklearn/pipeline.py", line 632, in fit
+    Xt = self._fit(
+         ^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/sklearn/pipeline.py", line 561, in _fit
+    X, fitted_transformer = fit_transform_one_cached(
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/joblib/memory.py", line 331, in __call__
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/sklearn/pipeline.py", line 1593, in _fit_transform_one_with_callbacks
+    Xt, transformer = _fit_transform_one(
+                      ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/sklearn/pipeline.py", li
+...[output trimmed]...
+ return self.fit(X, y, **fit_params).transform(X)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/sklearn/base.py", line 1403, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/sklearn/impute/_base.py", line 448, in fit
+    X = self._validate_input(X, in_fit=True)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/sklearn/impute/_base.py", line 375, in _validate_input
+    raise ve
+  File "/usr/local/lib/python3.12/site-packages/sklearn/impute/_base.py", line 356, in _validate_input
+    X = validate_data(
+        ^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/sklearn/utils/validation.py", line 3016, in validate_data
+    _check_feature_names(_estimator, X, reset=reset)
+  File "/usr/local/lib/python3.12/site-packages/sklearn/utils/validation.py", line 2806, in _check_feature_names
+    feature_names_in = _get_feature_names(X)
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/sklearn/utils/validation.py", line 2364, in _get_feature_names
+    feature_names = np.asarray(nw.from_native(X).columns, dtype=object)
+                               ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/narwhals/stable/v2/__init__.py", line 493, in from_native
+    return _from_native_impl(  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/narwhals/translate.py", line 370, in _from_native_impl
+    .compliant.from_native(native_object)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/narwhals/_compliant/namespace.py", line 284, in from_native
+    return self._dataframe.from_native(data, context=self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/narwhals/_pandas_like/dataframe.py", line 240, in from_native
+    return cls(
+           ^^^^
+  File "/usr/local/lib/python3.12/site-packages/narwhals/_pandas_like/dataframe.py", line 117, in __init__
+    check_column_names_are_unique(native_dataframe.columns)
+  File "/usr/local/lib/python3.12/site-packages/narwhals/_utils.py", line 1540, in check_column_names_are_unique
+    raise DuplicateError(msg)
+narwhals.exceptions.DuplicateError: Expected unique column names, got:
+- 'Side' 2 times
+
+

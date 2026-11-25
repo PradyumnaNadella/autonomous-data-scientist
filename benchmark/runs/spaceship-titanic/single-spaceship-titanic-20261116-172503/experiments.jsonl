@@ -1,0 +1,2 @@
+{"model": "RandomForestClassifier, default params", "cv_score": 0.7857, "notes": "FeatureEngineer: TotalSpend, Cabin split. Imputation: median for numeric, constant for categorical. Scaled numeric. OneHot encoded categorical."}
+{"model": "GradientBoostingClassifier, default params", "cv_score": 0.7962, "notes": "FeatureEngineer: TotalSpend, Cabin split. Imputation: median for numeric, constant for categorical. Scaled numeric. OneHot encoded categorical."}

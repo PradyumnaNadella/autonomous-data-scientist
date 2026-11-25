@@ -1,0 +1,12 @@
+exit_code: 1  timed_out: False  seconds: 4.1
+
+--- STDOUT ---
+
+
+--- STDERR ---
+Traceback (most recent call last):
+  File "/workspace/step_9ec8ac.py", line 4, in <module>
+    pipe = Pipeline([('pre', preprocessor), ('model', LGBMClassifier(random_state=42, verbose=-1))])
+           ^^^^^^^^
+NameError: name 'Pipeline' is not defined
+

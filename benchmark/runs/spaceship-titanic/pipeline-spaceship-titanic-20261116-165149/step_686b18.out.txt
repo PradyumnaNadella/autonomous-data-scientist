@@ -1,0 +1,8 @@
+exit_code: 0  timed_out: False  seconds: 1.2
+
+--- STDOUT ---
+Any mismatch in GroupSize calculation: 1144
+
+
+--- STDERR ---
+

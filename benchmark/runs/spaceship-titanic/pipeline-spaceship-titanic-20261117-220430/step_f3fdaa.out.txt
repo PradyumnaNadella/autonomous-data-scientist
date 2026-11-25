@@ -1,0 +1,21 @@
+exit_code: 0  timed_out: False  seconds: 0.4
+
+--- STDOUT ---
+{"model": "Random Forest, default params", "cv_score": 0.7715, "notes": "5-fold CV"}
+
+{"model": "XGBoost, default params", "cv_score": 0.7945, "notes": "5-fold CV"}
+
+{"model": "XGBoost, tuned", "cv_score": 0.8008, "notes": "n_estimators=100, max_depth=5, learning_rate=0.05"}
+
+{"model": "XGBoost, tuned (RandomizedSearchCV)", "cv_score": 0.7982, "notes": "Tuned with n_estimators=100, max_depth=5, learning_rate=0.05. OneHotEncoder for categoricals."}
+
+{"model": "Random Forest, default params", "cv_score": 0.7866, "notes": "Removed Group, handled Cabin split."}
+
+{"model": "Gradient Boosting, default params", "cv_score": 0.7977, "notes": "Removed Group, handled Cabin split. Chosen for final model."}
+
+{"model": "Gradient Boosting, tuned params", "cv_score": 0.7981, "notes": "n_estimators=200, learning_rate=0.1. Best model."}
+
+
+
+--- STDERR ---
+

@@ -1,0 +1,35 @@
+exit_code: 0  timed_out: False  seconds: 3.2
+
+--- STDOUT ---
+PassengerId         str
+HomePlanet          str
+CryoSleep        object
+Destination         str
+Age             float64
+VIP              object
+RoomService     float64
+FoodCourt       float64
+ShoppingMall    float64
+Spa             float64
+VRDeck          float64
+Transported        bool
+GroupId             str
+MemberId            str
+Deck                str
+CabinNum            str
+Side                str
+dtype: object
+CryoSleep
+False    4350
+True     2436
+NaN       168
+Name: count, dtype: int64
+VIP
+False    6637
+True      159
+NaN       158
+Name: count, dtype: int64
+
+
+--- STDERR ---
+

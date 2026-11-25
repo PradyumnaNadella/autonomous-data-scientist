@@ -1,0 +1,13 @@
+exit_code: 0  timed_out: False  seconds: 8.0
+
+--- STDOUT ---
+CryoSleep_False     0.564077
+HomePlanet_Earth    0.080125
+Deck_G              0.041334
+Spa                 0.034860
+RoomService         0.034729
+dtype: float32
+
+
+--- STDERR ---
+

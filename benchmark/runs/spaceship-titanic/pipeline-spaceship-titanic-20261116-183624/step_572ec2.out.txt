@@ -1,0 +1,10 @@
+exit_code: 0  timed_out: False  seconds: 68.8
+
+--- STDOUT ---
+RandomForest: 0.7811
+XGBoost (default): 0.7941
+XGBoost (tuned): 0.7998
+
+
+--- STDERR ---
+

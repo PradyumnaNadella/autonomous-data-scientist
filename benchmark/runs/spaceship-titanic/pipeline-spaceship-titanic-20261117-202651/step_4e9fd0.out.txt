@@ -1,0 +1,13 @@
+exit_code: 0  timed_out: False  seconds: 2.5
+
+--- STDOUT ---
+      feature  importance
+1         Num        1062
+0         Age         654
+2  TotalSpend         611
+7      VRDeck         587
+6         Spa         536
+
+
+--- STDERR ---
+

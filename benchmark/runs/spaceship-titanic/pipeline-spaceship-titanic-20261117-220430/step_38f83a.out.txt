@@ -1,0 +1,41 @@
+exit_code: 0  timed_out: False  seconds: 0.9
+
+--- STDOUT ---
+Train Shape: (6954, 14), Test Shape: (1739, 13)
+
+Column Types:
+ float64    6
+str        5
+object     2
+bool       1
+Name: count, dtype: int64
+
+Missing Values (Train):
+ HomePlanet      169
+CryoSleep       168
+Cabin           161
+Destination     153
+Age             139
+VIP             158
+RoomService     145
+FoodCourt       154
+ShoppingMall    169
+Spa             150
+VRDeck          144
+Name            159
+dtype: int64
+
+Target Distribution:
+ Transported
+True     0.503595
+False    0.496405
+Name: proportion, dtype: float64
+
+Potential Combined Columns (examples):
+  PassengerId    Cabin            Name
+0     3868_04  G/630/S  Harrie Braymon
+1     1336_01  G/201/S             NaN
+
+
+--- STDERR ---
+

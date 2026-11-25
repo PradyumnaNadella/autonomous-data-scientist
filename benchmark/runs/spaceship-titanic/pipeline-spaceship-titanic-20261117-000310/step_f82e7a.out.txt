@@ -1,0 +1,9 @@
+exit_code: 0  timed_out: False  seconds: 4.9
+
+--- STDOUT ---
+bool
+<class 'numpy.bool'>
+
+
+--- STDERR ---
+

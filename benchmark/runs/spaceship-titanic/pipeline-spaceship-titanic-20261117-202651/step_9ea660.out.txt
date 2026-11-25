@@ -1,0 +1,14 @@
+exit_code: 0  timed_out: False  seconds: 0.9
+
+--- STDOUT ---
+0    3868_04
+1    1336_01
+2    9193_01
+3    5422_01
+4    5076_01
+Name: PassengerId, dtype: str
+str
+
+
+--- STDERR ---
+

@@ -1,0 +1,9 @@
+exit_code: 0  timed_out: False  seconds: 37.4
+
+--- STDOUT ---
+LogisticRegression CV Accuracy: 0.7923 (+/- 0.0048)
+RandomForest CV Accuracy: 0.7931 (+/- 0.0046)
+
+
+--- STDERR ---
+

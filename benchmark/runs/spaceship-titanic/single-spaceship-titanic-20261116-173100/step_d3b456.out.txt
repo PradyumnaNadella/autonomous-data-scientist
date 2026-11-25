@@ -1,0 +1,9 @@
+exit_code: 0  timed_out: False  seconds: 0.4
+
+--- STDOUT ---
+RandomForest score: 0.7925
+LogisticRegression score: 0.7936
+
+
+--- STDERR ---
+

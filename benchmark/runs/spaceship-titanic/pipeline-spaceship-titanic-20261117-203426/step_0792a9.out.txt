@@ -1,0 +1,37 @@
+exit_code: 0  timed_out: False  seconds: 1.5
+
+--- STDOUT ---
+PassengerId         str
+HomePlanet          str
+CryoSleep        object
+Cabin               str
+Destination         str
+Age             float64
+VIP              object
+RoomService     float64
+FoodCourt       float64
+ShoppingMall    float64
+Spa             float64
+VRDeck          float64
+Name                str
+Transported        bool
+Group               str
+MemberId            str
+Deck                str
+Num                 str
+Side                str
+Surname          object
+dtype: object
+  PassengerId HomePlanet CryoSleep     Cabin  ... Deck   Num Side      Surname
+0     3868_04      Earth     False   G/630/S  ...    G   630    S      Braymon
+1     1336_01      Earth      True   G/201/S  ...    G   201    S          NaN
+2     9193_01      Earth       NaN  G/1483/S  ...    G  1483    S      Howence
+3     5422_01     Europa      True   D/164/S  ...    D   164    S       Sperap
+4     5076_01      Earth     False   G/818/P  ...    G   818    P  Wolferguson
+
+[5 rows x 20 columns]
+Boolean column found: Transported
+
+
+--- STDERR ---
+

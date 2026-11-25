@@ -1,0 +1,2 @@
+{"model": "RandomForest, default params", "cv_score": 0.7861664658208731, "notes": "Basic preprocessing: median imputation for numerical, most frequent for categorical, OHE for categorical. Cabin split."}
+{"model": "GradientBoosting, default params", "cv_score": 0.7975274762217545, "notes": "Basic preprocessing: median imputation for numerical, most frequent for categorical, OHE for categorical. Cabin split."}

@@ -1,0 +1,17 @@
+exit_code: 0  timed_out: False  seconds: 1.1
+
+--- STDOUT ---
+Index(['PassengerId', 'Transported'], dtype='str')
+PassengerId     str
+Transported    bool
+dtype: object
+  PassengerId  Transported
+0     3857_01         True
+1     7650_05         True
+2     9139_01        False
+3     6894_03         True
+4     8471_01        False
+
+
+--- STDERR ---
+

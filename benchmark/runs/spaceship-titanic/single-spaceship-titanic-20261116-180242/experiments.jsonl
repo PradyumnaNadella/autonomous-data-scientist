@@ -1,0 +1,2 @@
+{"model": "RandomForest, default params", "cv_score": 0.7856, "notes": "Imputed numerical with median, categorical with constant/onehot. Cabin split."}
+{"model": "GradientBoosting, default params", "cv_score": 0.8001, "notes": "Imputed numerical with median, categorical with constant/onehot. Cabin split."}

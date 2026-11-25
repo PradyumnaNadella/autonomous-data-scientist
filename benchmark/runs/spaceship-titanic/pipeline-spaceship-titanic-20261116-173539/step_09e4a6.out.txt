@@ -1,0 +1,12 @@
+exit_code: 1  timed_out: False  seconds: 2.7
+
+--- STDOUT ---
+
+
+--- STDERR ---
+Traceback (most recent call last):
+  File "/workspace/step_09e4a6.py", line 3, in <module>
+    rf_pipe = Pipeline([('prep', preprocessor), ('clf', RandomForestClassifier(n_estimators=100, random_state=42))])
+              ^^^^^^^^
+NameError: name 'Pipeline' is not defined
+
