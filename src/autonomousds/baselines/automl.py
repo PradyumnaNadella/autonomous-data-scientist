@@ -9,6 +9,7 @@ from autogluon.tabular import TabularPredictor
 
 from autonomousds.benchmark.tasks import ROOT, Task, score
 from autonomousds.benchmark.metrics import baseline_predictions_path
+from autonomousds.trigger import current_trigger
 
 RESULTS_DIR = ROOT / "benchmark" / "results"
 MODELS_DIR = ROOT / "runs"                  # big model files, not in Git
@@ -67,6 +68,7 @@ def run_automl(task: Task, time_limit: int = 300) -> dict:
         "seconds": round(secs, 1), "results": results,
     }
     out_dir = RESULTS_DIR / task.name
+    out["trigger"] = current_trigger()    
     out_dir.mkdir(parents=True, exist_ok=True)
     (out_dir / "automl.json").write_text(json.dumps(out, indent=2))
     print(f"Saved: {out_dir / 'automl.json'}")

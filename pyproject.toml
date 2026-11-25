@@ -18,6 +18,8 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = ["pytest", "ruff", "httpx"]
+direct = ["lightgbm==4.7.0"]
+automl = ["autogluon.tabular[all]==1.6.3"]
 
 [build-system]
 requires = ["setuptools>=68"]
