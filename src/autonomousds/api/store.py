@@ -9,8 +9,8 @@ from autonomousds.benchmark.tasks import ROOT, load_task
 
 RESULTS_DIR = ROOT / "benchmark" / "results"
 SUMMARY_DIR = ROOT / "benchmark" / "summary"
-# Where run folders can live: local runs, and published copies (for deployment)
-ARTIFACT_DIRS = [ROOT / "runs", ROOT / "benchmark" / "showcase"]
+# Where run folders can live: local runs, and the committed archive (for deployment)
+ARTIFACT_DIRS = [ROOT / "runs", ROOT / "benchmark" / "runs"]
 BASELINES = {"direct", "automl"}
 VIEWABLE_FILES = {"features.py", "train_model.py", "graph.mmd", "experiments.jsonl"}
 SAFE_NAME = re.compile(r"^[A-Za-z0-9_.-]+$")

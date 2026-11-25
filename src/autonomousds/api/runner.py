@@ -225,6 +225,18 @@ class LocalRunner(Runner):
         """
         self._queue.put(job)
 
+    def run_now(self, job: dict) -> dict:
+        """Run a job immediately in the foreground, without the queue.
+
+        Args:
+            job: A job from create_job().
+
+        Returns:
+            The finished job.
+        """
+        self._run(job)
+        return job
+
     def _recover(self) -> None:
         """Mark jobs that were queued or running when the API stopped as failed."""
         for path in sorted(JOBS_DIR.glob("*.json")):
