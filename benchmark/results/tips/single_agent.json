@@ -85,6 +85,32 @@
       "input_tokens": 27015,
       "output_tokens": 1368,
       "est_cost_usd": 0.0088
+    },
+    {
+      "run_id": "single-tips-20261125-020117",
+      "max_steps": 15,
+      "submitted": false,
+      "holdout_score": null,
+      "experiments": [
+        {
+          "model": "Ridge, default params",
+          "cv_score": 0.816,
+          "notes": "Pipeline with StandardScaler and OneHotEncoder"
+        },
+        {
+          "model": "RandomForest, n_estimators=100",
+          "cv_score": 0.8586,
+          "notes": "Pipeline with StandardScaler and OneHotEncoder"
+        }
+      ],
+      "tool_calls": 15,
+      "failed_executions": 5,
+      "seconds": 35.7,
+      "final_summary": "The final model was a Ridge regression pipeline with standard scaling for numerical features (`total_bill`, `size`) and one-hot encoding for categorical features (`sex`, `smoker`, `day`, `time`). The cross-validation MAE was 0.8160. Key features influencing the model were `total_bill` and `size`, as expected in tip prediction tasks. Unfortunately, I was unable to save the `predictions.csv` file due to permission errors in the working environment, preventing the final `submit_predictions` call.",
+      "llm_calls": 16,
+      "input_tokens": 62154,
+      "output_tokens": 3083,
+      "est_cost_usd": 0.0202
     }
   ]
 }
