@@ -11,6 +11,7 @@ from langchain_core.tools import StructuredTool
 
 from autonomousds.benchmark.tasks import ROOT, Task
 from autonomousds.llm.models import LOG_PATH, get_chat_model
+from autonomousds.trigger import current_trigger, run_id_prefix
 
 RESULTS_DIR = ROOT / "benchmark" / "results"
 BUDGET_MARGIN = 3        # extra graph room so a finishing agent is never cut off
@@ -19,6 +20,9 @@ BUDGET_MARGIN = 3        # extra graph room so a finishing agent is never cut of
 def new_run_id(system: str, task: Task) -> str:
     """Create a run id that sorts by time, e.g. pipeline-spaceship-titanic-20261116-165149.
 
+    Runs started from GitHub Actions get a "gha-" prefix, e.g.
+    gha-pipeline-spaceship-titanic-20261116-165149.
+
     Args:
         system: System name, e.g. "pipeline".
         task: The task being solved.
@@ -26,7 +30,7 @@ def new_run_id(system: str, task: Task) -> str:
     Returns:
         The run id.
     """
-    return f"{system}-{task.name}-{time.strftime('%Y%m%d-%H%M%S')}"
+    return f"{run_id_prefix()}{system}-{task.name}-{time.strftime('%Y%m%d-%H%M%S')}"
 
 
 def message_text(msg) -> str:
@@ -135,7 +139,7 @@ def append_result(task: Task, system: str, record: dict) -> Path:
     path = out_dir / f"{system}.json"
     data = (json.loads(path.read_text()) if path.exists() else
             {"task": task.name, "system": system, "metric": task.metric, "runs": []})
-    data["runs"].append(record)
+    data["runs"].append({"trigger": current_trigger(), **record})
     path.write_text(json.dumps(data, indent=2))
     return path
 

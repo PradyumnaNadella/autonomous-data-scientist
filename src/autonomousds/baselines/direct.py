@@ -18,6 +18,7 @@ from sklearn.preprocessing import OneHotEncoder, StandardScaler
 
 from autonomousds.benchmark.tasks import ROOT, Task, score
 from autonomousds.benchmark.metrics import baseline_predictions_path
+from autonomousds.trigger import current_trigger
 
 RESULTS_DIR = ROOT / "benchmark" / "results"
 MAX_CATEGORIES = 50          # drop text columns with more unique values
@@ -145,6 +146,7 @@ def run_direct(task: Task) -> list[dict]:
     out = {"task": task.name, "system": "direct", "metric": task.metric,
            "best_model": best["model"], "holdout_score": best["holdout_score"],
            "dropped_columns": dropped, "results": results}
+    out["trigger"] = current_trigger()
     (out_dir / "direct.json").write_text(json.dumps(out, indent=2))
     print(f"Saved: {out_dir / 'direct.json'}")
     return results

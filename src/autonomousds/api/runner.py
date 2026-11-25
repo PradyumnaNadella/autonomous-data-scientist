@@ -161,7 +161,7 @@ def record_failure(job: dict, reason: str) -> None:
     if find_record(job["task"], job["system"], job["run_id"]):
         return
     record = {"run_id": job["run_id"], "submitted": False, "holdout_score": None,
-              "seconds": job.get("seconds"), "failed_reason": reason, "trigger": "api"}
+              "seconds": job.get("seconds"), "failed_reason": reason}
     if job["system"] == "single_agent":
         record["max_steps"] = job["max_steps"]
     append_result(load_task(job["task"]), job["system"], record)

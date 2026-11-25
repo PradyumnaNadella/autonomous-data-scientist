@@ -16,8 +16,10 @@ from autonomousds.api import runner, store
 from autonomousds.benchmark.tasks import NAME_PATTERN, create_csv_task, load_task
 from autonomousds.sandbox.docker_runner import check_docker
 from autonomousds.systems.single_agent import MAX_STEPS
+from autonomousds.trigger import TRIGGER_ENV
 
 load_dotenv()
+os.environ.setdefault(TRIGGER_ENV, "api")      # runs started here are marked "api"
 TIME_LIMIT_MINUTES = int(os.getenv("RUN_TIME_LIMIT_MINUTES", "30"))
 RUNNER: runner.Runner = runner.LocalRunner()
 
