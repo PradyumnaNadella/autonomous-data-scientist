@@ -1,0 +1,119 @@
+# "Run agent" button: runs a system on a task on GitHub's machine and commits results.
+name: Run agent
+
+on:
+  workflow_dispatch:
+    inputs:
+      system:
+        description: Agent system
+        type: choice
+        options: [single_agent, pipeline]
+        default: single_agent
+      task:
+        description: Existing task name (leave empty to add a new CSV dataset)
+        type: string
+        default: ""
+      name:
+        description: "New dataset: task name"
+        type: string
+        default: ""
+      url:
+        description: "New dataset: CSV URL"
+        type: string
+        default: ""
+      target:
+        description: "New dataset: column to predict"
+        type: string
+        default: ""
+      task_type:
+        description: "New dataset: classification or regression"
+        type: string
+        default: ""
+      metric:
+        description: "New dataset: accuracy, rmse or mae"
+        type: string
+        default: ""
+      id_column:
+        description: "New dataset: ID column (optional)"
+        type: string
+        default: ""
+      max_steps:
+        description: single_agent step budget (optional, default 15)
+        type: string
+        default: ""
+      time_limit_minutes:
+        description: Stop the run after this many minutes
+        type: string
+        default: "30"
+
+permissions:
+  contents: write          # to commit results
+
+concurrency:
+  group: agent-runs        # one run at a time, so result commits never clash
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      ALLOW_PAID: "false"
+      KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}   # only for Kaggle tasks
+      KAGGLE_KEY: ${{ secrets.KAGGLE_KEY }}
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: pyproject.toml
+      - run: pip install -e .
+
+      - name: Build sandbox image
+        run: docker build -t autonomousds-sandbox:latest -f docker/sandbox.Dockerfile .
+
+      - name: Restore earlier runs
+        run: python scripts/archive_runs.py restore
+
+      - name: Run agent
+        env:              # inputs passed as env vars, never pasted into the script
+          SYSTEM: ${{ inputs.system }}
+          TASK: ${{ inputs.task }}
+          NAME: ${{ inputs.name }}
+          URL: ${{ inputs.url }}
+          TARGET: ${{ inputs.target }}
+          TASK_TYPE: ${{ inputs.task_type }}
+          METRIC: ${{ inputs.metric }}
+          ID_COLUMN: ${{ inputs.id_column }}
+          MAX_STEPS: ${{ inputs.max_steps }}
+          LIMIT: ${{ inputs.time_limit_minutes }}
+        run: |
+          args=(--system "$SYSTEM" --time-limit-minutes "$LIMIT")
+          if [ -n "$TASK" ]; then
+            args+=(--task "$TASK")
+          else
+            args+=(--name "$NAME" --url "$URL" --target "$TARGET" --task-type "$TASK_TYPE" --metric "$METRIC")
+            if [ -n "$ID_COLUMN" ]; then args+=(--id-column "$ID_COLUMN"); fi
+          fi
+          if [ -n "$MAX_STEPS" ]; then args+=(--max-steps "$MAX_STEPS"); fi
+          python scripts/run_job.py "${args[@]}"
+
+      - name: Save run to archive
+        if: always()
+        run: python scripts/archive_runs.py export
+
+      - name: Commit results
+        if: always()
+        env:
+          SYSTEM: ${{ inputs.system }}
+          LABEL: ${{ inputs.task || inputs.name }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git add benchmark/ README.md
+          if git diff --cached --quiet; then echo "Nothing to commit"; exit 0; fi
+          git commit -m "Add $SYSTEM run on $LABEL"
+          git pull --rebase
+          git push
